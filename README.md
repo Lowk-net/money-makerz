@@ -19,7 +19,7 @@ Projet pédagogique YDays 2026. Récit complet d'un média Instagram qui a écho
 
 ## 🎯 Le projet en 1 phrase
 
-7 étudiants ont voulu prouver qu'on pouvait apprendre à gagner sa vie en ligne. Le compte Instagram a été banni. **4 sur 7 sont aujourd'hui entrepreneurs** (2 sur l'agence AI Need, 2 sur une appli coiffeurs-clients).
+**95% des business en ligne échouent.** 7 étudiants ont voulu être les 5%. Le compte Instagram a été banni. **4 sur 7 sont aujourd'hui entrepreneurs** : 2 sur l'agence **AI Need** (web propulsée à l'IA), 2 sur **FADY** (l'app pour réserver son coiffeur en 2 clics).
 
 ## 🔄 Déploiement
 

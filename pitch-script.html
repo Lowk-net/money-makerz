@@ -9,14 +9,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy-900:#0B2444;
-  --navy-700:#173E72;
-  --paper:#F4EFE2;
-  --ink:#0A0A0A;
-  --white:#FFFFFF;
-  --red:#E63946;
-  --yellow:#FFD23F;
-  --green:#3BB273;
+  --navy-900:#0B2444; --navy-700:#173E72; --paper:#F4EFE2; --ink:#0A0A0A;
+  --white:#FFFFFF; --red:#E63946; --yellow:#FFD23F; --green:#3BB273;
   --font-display:'Anton',Impact,sans-serif;
   --font-body:'Inter',Arial,sans-serif;
   --font-mono:'JetBrains Mono',monospace;
@@ -29,9 +23,7 @@ html,body{background:#444;font-family:var(--font-body);line-height:1.5;color:var
 .page{
   width:210mm;height:297mm;
   margin:0 auto 24px;background:var(--paper);
-  background-image:
-    linear-gradient(rgba(11,36,68,.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(11,36,68,.05) 1px,transparent 1px);
+  background-image:linear-gradient(rgba(11,36,68,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(11,36,68,.05) 1px,transparent 1px);
   background-size:8mm 8mm;
   padding:14mm 16mm 14mm;
   position:relative;overflow:hidden;
@@ -80,10 +72,7 @@ p{font-size:10.5pt;line-height:1.5;margin-bottom:2.5mm}
   letter-spacing:2pt;margin:6mm 0 2mm;border-bottom:2pt solid var(--red);padding-bottom:2mm;
 }
 
-/* Slide block (one per slide) */
-.slide-block{
-  margin-bottom:0;
-}
+.slide-block{margin-bottom:0}
 .slide-header{
   display:flex;justify-content:space-between;align-items:flex-end;
   border-bottom:2pt solid var(--navy-900);padding-bottom:2.5mm;margin-bottom:3mm;
@@ -160,7 +149,6 @@ p{font-size:10.5pt;line-height:1.5;margin-bottom:2.5mm}
 }
 .cover .page-num, .cover .page-tag{color:rgba(255,255,255,.5)}
 
-/* Final QA page */
 .qa-card{
   background:var(--white);border:1.2pt solid var(--ink);padding:4mm 5mm;border-radius:2mm;
   margin-bottom:3mm;box-shadow:2mm 2mm 0 var(--navy-900);
@@ -183,17 +171,18 @@ p{font-size:10.5pt;line-height:1.5;margin-bottom:2.5mm}
     <div class="mark">MONEY<br>MAKERZ</div>
     <span class="eyebrow" style="color:var(--yellow)">★ SCRIPT DE PITCH · YDAYS 2026</span>
     <h1 style="font-size:60pt">Le texte<br>à tenir<br>en main.</h1>
-    <p style="font-size:13pt;margin-top:8mm;opacity:.9;max-width:140mm">13 slides · 10 minutes · 1300 mots environ. Ce document n'est pas à lire mot pour mot. C'est un <b style="color:var(--yellow)">filet de sécurité</b> — pour les transitions, les pauses, et les phrases qui doivent tomber juste.</p>
+    <p style="font-size:13pt;margin-top:8mm;opacity:.9;max-width:140mm">13 slides · 10 minutes · <b style="color:var(--yellow)">~800 mots parlés</b>. Les slides portent le détail. <b style="color:var(--yellow)">Toi, tu portes l'émotion.</b></p>
   </div>
   <div>
-    <h3 style="color:var(--yellow)">★ COMMENT L'UTILISER</h3>
-    <p style="font-size:11pt;opacity:.95">— Une page par slide. Repère-toi au numéro en haut.<br>
+    <h3 style="color:var(--yellow)">★ NOUVELLE LOGIQUE</h3>
+    <p style="font-size:11pt;opacity:.95">— Les slides sont denses : les coachs peuvent lire en t'écoutant.<br>
+    — Toi, tu ne lis pas le slide. <b style="color:var(--yellow)">Tu ajoutes</b> ce qui n'y est pas : émotion, story, contexte.<br>
     — En italique rouge : phrases-clés à <em>vraiment</em> dire.<br>
     — Encadré bleu : indication de mise en scène (voix, pause, posture).<br>
     — <span class="pause">[PAUSE]</span> : laisse 1 à 2 secondes de silence.<br>
-    — Le reste : reformulable. Ne récite pas, raconte.</p>
+    — Le silence, c'est ton arme. Les slides aident.</p>
   </div>
-  <div class="meta"><span>MONEY.MAKERZ · ED.PITCH</span><span>10 MIN · 13 SLIDES</span></div>
+  <div class="meta"><span>MONEY.MAKERZ · ED.PITCH v2</span><span>10 MIN · 13 SLIDES</span></div>
 </div>
 
 <!-- ============= TOC ============= -->
@@ -201,82 +190,78 @@ p{font-size:10.5pt;line-height:1.5;margin-bottom:2.5mm}
   <span class="eyebrow">★ SOMMAIRE</span>
   <h1>Plan de course.</h1>
 
-  <div class="toc-act">★ ACTE I — LE RÊVE · 2:30</div>
-  <div class="toc-item"><div class="l"><span class="n">01</span><span class="t">Hook</span></div><span class="d">0:15</span></div>
+  <div class="toc-act">★ ACTE I — LE RÊVE · 2:50</div>
+  <div class="toc-item"><div class="l"><span class="n">01</span><span class="t">⚡ Hook + KPI 95% — la mission</span></div><span class="d">0:25</span></div>
   <div class="toc-item"><div class="l"><span class="n">02</span><span class="t">L'idée d'origine</span></div><span class="d">0:45</span></div>
   <div class="toc-item"><div class="l"><span class="n">03</span><span class="t">Pourquoi c'était une bonne idée</span></div><span class="d">0:45</span></div>
-  <div class="toc-item"><div class="l"><span class="n">04</span><span class="t">Ce qu'on a construit</span></div><span class="d">0:45</span></div>
+  <div class="toc-item"><div class="l"><span class="n">04</span><span class="t">⚡ Équipe en veille + IA + screen Insta</span></div><span class="d">0:50</span></div>
 
   <div class="toc-act">★ ACTE II — LA RÉALITÉ · 4:30</div>
-  <div class="toc-item"><div class="l"><span class="n">05</span><span class="t">La montée</span></div><span class="d">0:45</span></div>
+  <div class="toc-item"><div class="l"><span class="n">05</span><span class="t">La montée + Reel vidéo réelle</span></div><span class="d">0:45</span></div>
   <div class="toc-item"><div class="l"><span class="n">06</span><span class="t">⚡ Le mur — racontée en "je"</span></div><span class="d">1:00</span></div>
-  <div class="toc-item"><div class="l"><span class="n">07</span><span class="t">Plan B : TikTok IA — choix éthique</span></div><span class="d">1:00</span></div>
-  <div class="toc-item"><div class="l"><span class="n">08</span><span class="t">Ce qu'on a appris dans la douleur</span></div><span class="d">0:45</span></div>
+  <div class="toc-item"><div class="l"><span class="n">07</span><span class="t">TikTok IA — choix éthique</span></div><span class="d">1:00</span></div>
+  <div class="toc-item"><div class="l"><span class="n">08</span><span class="t">Bilan honnête</span></div><span class="d">0:45</span></div>
   <div class="toc-item"><div class="l"><span class="n">09</span><span class="t">⚡ Compétences humaines + techniques</span></div><span class="d">1:00</span></div>
 
-  <div class="toc-act">★ ACTE III — LE PIVOT · 2:45</div>
-  <div class="toc-item"><div class="l"><span class="n">10</span><span class="t">⚡ KPI marché 5% · le déclic · café Paris</span></div><span class="d">0:45</span></div>
-  <div class="toc-item"><div class="l"><span class="n">11</span><span class="t">⚡ AI Need · hub services + paiements</span></div><span class="d">0:45</span></div>
-  <div class="toc-item"><div class="l"><span class="n">12</span><span class="t">⚡ La preuve + 1er client signé</span></div><span class="d">0:45</span></div>
-  <div class="toc-item"><div class="l"><span class="n">13</span><span class="t">Closing — callback 5%</span></div><span class="d">0:30</span></div>
+  <div class="toc-act">★ ACTE III — LE PIVOT · 2:50</div>
+  <div class="toc-item"><div class="l"><span class="n">10</span><span class="t">⚡ On s'est trompé d'objectif → AI Need + FADY</span></div><span class="d">0:50</span></div>
+  <div class="toc-item"><div class="l"><span class="n">11</span><span class="t">AI Need · hub services + paiements</span></div><span class="d">0:45</span></div>
+  <div class="toc-item"><div class="l"><span class="n">12</span><span class="t">⚡ La preuve + 1er client</span></div><span class="d">0:45</span></div>
+  <div class="toc-item"><div class="l"><span class="n">13</span><span class="t">Closing — callback 95%</span></div><span class="d">0:30</span></div>
 
-  <h3 style="margin-top:8mm">★ MOMENTS CLÉS — À NE PAS RATER</h3>
+  <h3 style="margin-top:8mm">★ LES 5 MOMENTS À NE PAS RATER</h3>
   <ul style="margin-left:6mm;font-size:10.5pt">
-    <li><b>Slide 06</b> — racontée en "je" (un seul des fondateurs parle pendant 1 min). Pause de 1s après "supprimé".</li>
-    <li><b>Slide 09</b> — pointer la colonne <em>humaine</em> en premier, technique en second. C'est le slide-clé du jury.</li>
-    <li><b>Slide 10</b> — appuyer le <b>57% vs 5%</b> : la stat retourne la perception du jury.</li>
-    <li><b>Slide 11</b> — slide business pure : pointer le centre (audit offert) avant les services.</li>
-    <li><b>Slide 12</b> — pause de 2 secondes <em>avant</em> de commencer. Mentionner le 1<sup>er</sup> client signé.</li>
+    <li><b>Slide 01</b> — <em>"95% des business en ligne échouent"</em> : phrase d'ouverture. Pause 1s avant. Posture droite, regard jury.</li>
+    <li><b>Slide 06</b> — racontée en "je" par un seul fondateur. Pause de 1s après "supprimé". La salle doit entendre voler une mouche.</li>
+    <li><b>Slide 09</b> — pointer la colonne <em>humaine</em> en premier, technique en second.</li>
+    <li><b>Slide 10</b> — <em>"on s'est trompé d'objectif"</em> est la phrase la plus stratégique du pitch. Marque-la.</li>
+    <li><b>Slide 12</b> — pause de 2 secondes avant de parler. Mentionner le 1<sup>er</sup> client AI Need.</li>
   </ul>
 
   <div class="page-tag">SOMMAIRE</div>
   <div class="page-num">— 02 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SLIDE 01                                                    -->
-<!-- =========================================================== -->
+<!-- =========== SLIDE 01 =========== -->
 <div class="page">
   <div class="slide-block">
     <div class="slide-header">
       <div class="left">
-        <span class="slide-id act-1">01</span>
-        <span class="eyebrow" style="display:inline-block;margin:0">ACTE I — LE RÊVE</span>
-        <h2 style="margin-top:3mm">Hook</h2>
+        <span class="slide-id act-1" style="background:var(--ink);color:var(--yellow)">01 ⚡</span>
+        <span class="eyebrow" style="display:inline-block;margin:0">ACTE I — HOOK + KPI</span>
+        <h2 style="margin-top:3mm">95% échouent · la mission</h2>
       </div>
-      <span class="slide-time">⏱ 0:15</span>
+      <span class="slide-time">⏱ 0:25</span>
     </div>
 
     <div class="what-onscreen">
       <span class="lbl">★ CE QUI EST À L'ÉCRAN</span>
-      Logo Money Makerz centré, fond noir grille papier · titre <b>"Tout le monde veut gagner de l'argent en ligne."</b> · sous-titre <b>7 étudiants · 0 abonnés au départ</b>
+      Fond noir grille · logo Money Makerz · titre <b>"95% des business en ligne échouent"</b> (avec "échouent" barré rouge) · sous-titre <b>"Money Makerz veut pallier ce problème et donner les clés pour réussir un business digital"</b> · ligne <b>"7 étudiants · en veille continue · FR · 2026"</b>
     </div>
 
     <div class="cue-row">
-      <span class="cue">VOIX NEUTRE, POSÉE</span>
-      <span class="cue red">PAUSE 1s APRÈS LE LOGO</span>
-      <span class="cue yellow">DERNIÈRE PHRASE = HOOK</span>
+      <span class="cue red">⚠ POSTURE DROITE · REGARD JURY</span>
+      <span class="cue">PAUSE 1s AVANT LA 1ÈRE PHRASE</span>
+      <span class="cue yellow">VOIX CALME, ASSUMÉE</span>
     </div>
 
     <div class="script-block">
-      <span class="stage">Lumière sur l'écran, logo plein cadre. 1 seconde de silence avant la première phrase. On regarde le jury, pas l'écran.</span>
+      <span class="stage">Lumière sur l'écran. Pause 1s. Regard franc au jury. Ne lis pas le slide — pose le contexte.</span>
 
-      <p>7 étudiants ont voulu prouver qu'on pouvait apprendre à gagner sa vie en ligne.</p>
-
-      <p>Voici ce qu'on en a <em>vraiment</em> appris.</p>
+      <p><b>95% des business en ligne échouent.</b></p>
+      <p>Money Makerz, c'est l'histoire de <b>7 étudiants</b> qui ont essayé d'être les 5% restants.</p>
+      <p>On va vous raconter, en 10 minutes, <em>pourquoi on s'est plantés</em> — et ce que cet échec nous a vraiment donné.</p>
     </div>
 
     <div class="tip">
-      <b>★ Astuce</b> — Cette accroche fait moins de 20 mots. Elle doit tomber juste. C'est la seule phrase qu'on apprend <em>mot pour mot</em> de tout le pitch.
+      <b>★ Astuce</b> — Cette accroche est ta première note. <em>Apprends-la par cœur, mot pour mot.</em> Si elle tombe juste, le jury est avec toi pour les 10 prochaines minutes. Si elle tombe à plat, tu cours derrière.
     </div>
   </div>
   <div class="page-tag">SLIDE 01 · HOOK</div>
   <div class="page-num">— 03 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SLIDE 02                                                    -->
-<!-- =========================================================== -->
+<!-- =========== SLIDE 02 =========== -->
 <div class="page">
   <div class="slide-block">
     <div class="slide-header">
@@ -290,31 +275,27 @@ p{font-size:10.5pt;line-height:1.5;margin-bottom:2.5mm}
 
     <div class="what-onscreen">
       <span class="lbl">★ CE QUI EST À L'ÉCRAN</span>
-      Titre <b>"Une idée tenue en une phrase"</b> · citation jaune <b>"construire le compte qu'on aurait voulu suivre nous-mêmes"</b> · diagramme <b>2 piliers : Média ⇄ Labo</b> · ligne du bas : <b>PROMESSE : DE L'IDÉE — AUX REVENUS</b>
+      Titre <b>"Une idée tenue en une phrase"</b> · citation jaune <em>"construire le compte qu'on aurait voulu suivre nous-mêmes"</em> · diagramme <b>2 piliers : Média ⇄ Labo</b> · ligne du bas : <b>PROMESSE : DE L'IDÉE — AUX REVENUS</b>
     </div>
 
     <div class="cue-row">
-      <span class="cue">VOIX CALME · ON POSE LE DÉCOR</span>
+      <span class="cue">VOIX QUI POSE LE DÉCOR</span>
       <span class="cue yellow">RACONTER, PAS LIRE</span>
     </div>
 
     <div class="script-block">
-      <span class="stage">Voix qui pose le décor. On raconte une genèse à un ami, pas à un jury. On peut sourire un peu sur "même galère".</span>
+      <span class="stage">Voix qui pose le décor. Les slides portent le détail des 2 piliers — toi, raconte la frustration humaine qui a tout déclenché.</span>
 
-      <p>Au début, on était 7. Étudiants, même promo, même galère. Tous lassés du même truc : sur Instagram, on voyait défiler des comptes qui parlaient business en ligne, et personne ne montrait jamais <em>comment</em>, jamais les vrais chiffres, jamais les ratés.</p>
-
-      <p>Notre idée a tenu en une phrase : <em>construire le compte qu'on aurait voulu suivre nous-mêmes</em>. Un média qui teste chaque jour une vraie idée de business. Et un labo qui documente ce qui se passe — temps passé, euros sortis, euros rentrés.</p>
-
-      <p>Deux piliers : <b>média</b> pour acquérir l'audience, <b>labo</b> pour la convaincre. Et tout ça branché sur une seule promesse : <em>de l'idée aux revenus</em>.</p>
+      <p>Au départ, c'était une frustration partagée : sur Instagram, tout le monde parle business, <b>personne ne prouve rien</b>.</p>
+      <p>On a voulu créer le compte qu'on aurait voulu suivre nous-mêmes. Un média qui partage, un labo qui teste.</p>
+      <p><em>Preuve avant promesse.</em></p>
     </div>
   </div>
   <div class="page-tag">SLIDE 02 · IDÉE D'ORIGINE</div>
   <div class="page-num">— 04 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SLIDE 03                                                    -->
-<!-- =========================================================== -->
+<!-- =========== SLIDE 03 =========== -->
 <div class="page">
   <div class="slide-block">
     <div class="slide-header">
@@ -332,118 +313,106 @@ p{font-size:10.5pt;line-height:1.5;margin-bottom:2.5mm}
     </div>
 
     <div class="cue-row">
-      <span class="cue">POINTER CHAQUE CARTE</span>
-      <span class="cue">LOGIQUE BUSINESS · RYTHME RAPIDE</span>
+      <span class="cue">VOIX FACTUELLE · POINTER LES CARTES</span>
+      <span class="cue yellow">NE PAS LIRE LE DÉTAIL — LE PUBLIC LE LIT</span>
     </div>
 
     <div class="script-block">
-      <span class="stage">Énumérer les 3 raisons en pointant chaque carte. Voix qui pose la logique business. On accélère un peu — c'est du factuel, pas du récit.</span>
+      <span class="stage">Pointer les 3 cartes mais NE PAS LIRE leur contenu. Les coachs lisent en t'écoutant. Toi, tu poses l'arc dramatique : on était convaincus, et on avait tort.</span>
 
-      <p>Trois raisons nous ont fait croire qu'on tenait quelque chose.</p>
+      <p>Sur le papier, on était convaincus.</p>
+      <p>Marché énorme, angle différenciant, modèle qui s'auto-finance. <b>C'était solide.</b></p>
+      <p><em>Trop solide. Parce qu'on n'avait pas vu venir la suite.</em></p>
+    </div>
 
-      <p><b>Un</b> — le marché est énorme et il ne se vide pas. Des dizaines de millions de jeunes en France et en Europe se posent la question "comment je peux gagner ma vie autrement". La demande est massive.</p>
-
-      <p><b>Deux</b> — l'angle était notre avantage. <em>Tester</em> au lieu de <em>promettre</em>. Là où les influenceurs racontent une vie qu'ils n'ont pas, nous, on aurait des screenshots, des chiffres, des échecs assumés.</p>
-
-      <p><b>Trois</b> — la double monétisation. L'audience payait via l'ebook et les templates. Et nos propres tests d'idées nous généraient déjà du revenu. Le projet pouvait s'auto-financer.</p>
-
-      <p>Sur le papier, c'était solide.</p>
+    <div class="tip">
+      <b>★ Phrase qui doit tomber juste</b> — "<em>Trop solide</em>" est ton premier hameçon dramatique. Marque-la par une légère baisse de voix. Elle annonce que ça va déraper.
     </div>
   </div>
   <div class="page-tag">SLIDE 03 · HYPOTHÈSE</div>
   <div class="page-num">— 05 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SLIDE 04                                                    -->
-<!-- =========================================================== -->
+<!-- =========== SLIDE 04 =========== -->
 <div class="page">
   <div class="slide-block">
     <div class="slide-header">
       <div class="left">
-        <span class="slide-id act-1">04</span>
-        <span class="eyebrow" style="display:inline-block;margin:0">ACTE I — LE RÊVE</span>
-        <h2 style="margin-top:3mm">Ce qu'on a construit</h2>
+        <span class="slide-id act-1" style="background:var(--ink);color:var(--yellow)">04 ⚡</span>
+        <span class="eyebrow" style="display:inline-block;margin:0">ACTE I — ÉQUIPE & MÉCANIQUE</span>
+        <h2 style="margin-top:3mm">Veille continue + IA</h2>
       </div>
-      <span class="slide-time">⏱ 0:45 · transition Acte II</span>
+      <span class="slide-time">⏱ 0:50 · transition Acte II</span>
     </div>
 
     <div class="what-onscreen">
       <span class="lbl">★ CE QUI EST À L'ÉCRAN</span>
-      Titre <b>"Ce qu'on a posé sur la table"</b> · 3 livrables : <b>① IDENTITÉ</b> (logo, charte) · <b>② COMPTE INSTA</b> (phone mockup) · <b>③ UNE ÉQUIPE</b> (7 avatars) · phrase finale : <b>"→ Et puis on a touché du doigt la vraie réalité"</b>
+      Titre <b>"7 personnes, une veille continue"</b> · à gauche : liste 4 points méthode (veille quotidienne, tendances courtes/impact fort, listing ebook 80p, tests par l'équipe) + <b>callout "L'IA, outil logique"</b> + 7 avatars prénoms · à droite : <b>screen réel du compte @money.makerz</b> avec mention "91 reels publiés"
     </div>
 
     <div class="cue-row">
-      <span class="cue">POINTER LES 3 LIVRABLES</span>
-      <span class="cue yellow">FIERTÉ COLLECTIVE SUR LA DERNIÈRE PHRASE</span>
-      <span class="cue red">⚠ TRANSITION VERS ACTE II</span>
+      <span class="cue yellow">POINTER LA LISTE À GAUCHE, PUIS LE SCREEN À DROITE</span>
+      <span class="cue">VERS LA FIN : TRANSITION ACTE II</span>
     </div>
 
     <div class="script-block">
-      <span class="stage">Présenter les livrables visuellement. Voix qui appuie la fierté collective sur la dernière phrase. Marquer une pause d'une seconde après "premier livrable", regard au jury, avant la phrase de transition.</span>
+      <span class="stage">Désigner physiquement la liste à gauche, puis l'écran Instagram à droite. NE PAS lire la liste, le jury la lit. Toi, tu racontes l'identité du groupe — concis.</span>
 
-      <p>En quelques semaines, on a sorti une identité de marque complète : logo, charte, ligne édito autour de trois mots — <em>Impactant, Street, Bold</em>. On voulait une marque qu'on reconnaisse en une demi-seconde dans le scroll.</p>
+      <p>Concrètement : <b>7 personnes, veille permanente sur le digital.</b></p>
+      <p>Les tendances sont courtes mais puissantes — on les capte vite, on les liste dans l'ebook, on en teste certaines.</p>
+      <p><em>L'IA s'est intégrée d'elle-même dans nos workflows.</em> C'est devenu logique.</p>
+      <span class="stage">[Pause d'1s. Regard au jury. Puis bascule vers Acte II.]</span>
+      <p>Et puis on a touché du doigt la vraie réalité du jeu.</p>
+    </div>
 
-      <p>On a lancé le compte Instagram. Et on a tenu une cadence intense : <b>91 reels publiés en 5 mois</b>, à tour de rôle. Quasiment un par jour, week-ends compris.</p>
-
-      <p>Mais au-delà des livrables, à ce moment-là, <em>on n'était plus 7 colocataires d'un projet</em>. On était une équipe. Et ça, c'était notre vrai premier livrable.</p>
-
-      <span class="stage">[Transition vers Acte II — pause d'1 seconde, regard au jury.]</span>
-
-      <p><b>Et puis on a touché du doigt la vraie réalité du jeu.</b></p>
+    <div class="tip">
+      <b>★ Le screen Insta à l'écran</b> — C'est ta preuve visuelle que le compte a vraiment existé. Tu peux pointer "regardez : 8 236 followers, 42 publications visibles" mais sans le dire — le jury le voit.
     </div>
   </div>
-  <div class="page-tag">SLIDE 04 · LIVRABLES</div>
+  <div class="page-tag">SLIDE 04 · ÉQUIPE + IA</div>
   <div class="page-num">— 06 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SLIDE 05                                                    -->
-<!-- =========================================================== -->
+<!-- =========== SLIDE 05 =========== -->
 <div class="page">
   <div class="slide-block">
     <div class="slide-header">
       <div class="left">
         <span class="slide-id act-2">05</span>
         <span class="eyebrow" style="display:inline-block;margin:0">ACTE II — LA RÉALITÉ</span>
-        <h2 style="margin-top:3mm">La montée</h2>
+        <h2 style="margin-top:3mm">La montée + Reel vidéo</h2>
       </div>
       <span class="slide-time">⏱ 0:45</span>
     </div>
 
     <div class="what-onscreen">
       <span class="lbl">★ CE QUI EST À L'ÉCRAN</span>
-      Titre <b>"5 mois, on a poussé fort"</b> · 4 KPI verts : <b>8 236 abos · 91 reels · 5 mois cadence · 100% identité</b> · encadré navy <b>"Le revers honnête : &lt;50K vues cumulées, pas de viralité"</b> · scène jaune <b>"WhatsApp en feu à 1 000 vues, victoires modestes mais à nous"</b>
+      Titre <b>"5 mois, on a poussé fort"</b> · 4 KPI verts : <b>8 236 abos · 91 reels · 5 mois cadence · 100% identité</b> · encadré navy <b>"Revers honnête : &lt;50K vues cumulées, pas de viralité"</b> · scène jaune <b>"WhatsApp en feu à 1 000 vues"</b> · à droite : <b>vrai reel qu'on a publié</b> (autoplay, vertical, dans un mockup iPhone)
     </div>
 
     <div class="cue-row">
-      <span class="cue yellow">ÉNERGIE QUI REMONTE · HUMBLE</span>
-      <span class="cue">EFFORT ASSUMÉ, PAS TRIOMPHE</span>
+      <span class="cue yellow">POINTER LE REEL À DROITE</span>
+      <span class="cue">VOIX HUMBLE · EFFORT, PAS TRIOMPHE</span>
     </div>
 
     <div class="script-block">
-      <span class="stage">Énergie qui remonte mais reste humble. Voix qui sourit légèrement — on raconte un effort, pas un triomphe. C'est important : la vraie story est qu'on a bossé énormément pour peu de viralité — c'est ce qui rend le ban encore plus douloureux après.</span>
+      <span class="stage">La vidéo joue en boucle muette à droite — preuve concrète. Toi, tu portes la fierté modeste : on a vraiment bossé, ça n'a pas explosé, mais c'était à nous.</span>
 
-      <p>Pendant 5 mois, on a poussé fort. De zéro à 8 236 abonnés. <b>91 reels publiés</b> — quasiment un par jour, sept jours sur sept.</p>
-
-      <p>Les vues, par contre, n'ont jamais vraiment explosé. <b>Moins de 50 000 cumulées sur tout le compte.</b> Pas de viralité. On gagnait des followers <em>à la main</em>, un par un, par le bouche-à-oreille de notre cercle élargi.</p>
-
-      <p>Mais le WhatsApp du groupe explosait dès qu'un reel passait les 1 000 vues. <b>On célébrait des victoires modestes, mais elles étaient à nous.</b> On adaptait la stratégie le dimanche soir, en visio.</p>
-
-      <p>C'était la première fois que la plupart d'entre nous voyaient un truc qu'on avait construit ensemble <em>exister vraiment</em> pour des inconnus. On se disait qu'on tenait quelque chose. On avait raison. <b>Mais pas pour les bonnes raisons.</b></p>
+      <p>Cinq mois de travail intense. Le compte montait — pas par viralité, à la main. Un par un.</p>
+      <p>À droite, un vrai reel qu'on a publié. <em>Un des 91. Preuve par l'image.</em></p>
+      <p>À 1 000 vues, le WhatsApp s'enflammait. <b>C'était modeste. Mais c'était à nous.</b></p>
+      <p>On tenait quelque chose. <em>Mais pas pour les bonnes raisons.</em></p>
     </div>
 
     <div class="tip">
-      <b style="color:var(--yellow)">★ Astuce d'honnêteté</b> — Le contraste "<em>91 reels / &lt;50K vues</em>" rend ta story plus crédible que des chiffres surdimensionnés. Les 7 ont bossé énormément pour peu de viralité. C'est <em>ça</em> qui rend le ban dévastateur, et la suite vendable. Ne minimise pas l'effort ; ne survends pas le résultat.
+      <b>★ Le reel à droite</b> — Le simple fait qu'une vraie vidéo joue à l'écran change la perception du jury : ce n'est pas du blabla, vous avez vraiment produit. Laisse-la jouer, ne la commente pas longtemps.
     </div>
   </div>
-  <div class="page-tag">SLIDE 05 · MONTÉE</div>
+  <div class="page-tag">SLIDE 05 · MONTÉE + REEL</div>
   <div class="page-num">— 07 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SLIDE 06 — LE BAN (CRITICAL)                                -->
-<!-- =========================================================== -->
+<!-- =========== SLIDE 06 — LE MUR (CRITICAL) =========== -->
 <div class="page">
   <div class="slide-block">
     <div class="slide-header">
@@ -462,32 +431,22 @@ p{font-size:10.5pt;line-height:1.5;margin-bottom:2.5mm}
 
     <div class="cue-row">
       <span class="cue red">⚠ UN SEUL DES 2 FONDATEURS PARLE</span>
-      <span class="cue red">VOIX EN "JE" · CALME · LENTE</span>
+      <span class="cue red">EN "JE" · CALME · LENT</span>
       <span class="cue">PAUSE 1s APRÈS "SUPPRIMÉ"</span>
     </div>
 
     <div class="script-block">
-      <span class="stage">Voix change : un seul des fondateurs parle, en "je". Calme, lent, presque chuchoté au début. On peut s'arrêter de marcher si on bougeait. Regard au jury, pas à l'écran. La salle DOIT entendre une mouche voler.</span>
+      <span class="stage">Une seule voix, en "je". Calme, lent, presque chuchoté au début. On peut s'arrêter de marcher si on bougeait. Regard au jury, pas à l'écran. La salle DOIT entendre une mouche voler.</span>
 
-      <p>C'était un mardi matin. J'ouvre l'app pour checker les stats du reel de la veille.</p>
-
-      <p>Le compte n'existe plus.</p>
-
+      <p>Un mardi matin. J'ouvre l'app.</p>
+      <p><b>Le compte n'existe plus.</b></p>
       <span class="stage"><span class="pause">[PAUSE 1s]</span></span>
-
-      <p>Pas suspendu. <em>Supprimé.</em> 8 236 abonnés évaporés. <b>91 reels invisibles.</b> Cinq mois de travail. Disparus.</p>
-
-      <p>En deux heures, le WhatsApp du groupe a explosé. Certains essayaient de comprendre. D'autres voulaient tout arrêter. Un autre encore est resté silencieux toute la journée — c'était sa façon à lui d'encaisser.</p>
-
-      <span class="stage">[Voix reprend de la consistance, ton un peu plus technique sur l'erreur. Mais ne pas la mettre en avant — vite passer.]</span>
-
-      <p>L'erreur technique, on l'a comprise après. On scrapait des reels concurrents pour analyse — depuis le même compte qui publiait. Instagram l'a vu comme un comportement automatisé. Couperet immédiat.</p>
-
-      <p>Le soir même, on s'est mis en visio. Tous les 7. <b>On n'a pas parlé technique.</b> On s'est juste dit <em>comment on vivait ça</em>. Et à la fin de la visio, personne n'avait quitté la conversation.</p>
-
+      <p>Pas suspendu. <em>Supprimé.</em> Huit mille abonnés évaporés. Cinq mois disparus.</p>
+      <p>En deux heures, le WhatsApp explose. Certains veulent comprendre, d'autres veulent tout arrêter. Un autre encore reste silencieux.</p>
+      <p>Le soir, on se met en visio. <b>Tous les sept.</b> On ne parle pas technique. On dit juste <em>comment on le vit</em>.</p>
+      <p>À la fin, personne n'avait quitté.</p>
       <span class="stage"><span class="pause">[PAUSE 1s — regard franc au jury]</span></span>
-
-      <p><em>C'est cette soirée-là qu'on a appris ce qu'aucun cours ne nous apprendra jamais : tenir ensemble, quand tout s'écroule.</em></p>
+      <p>C'est cette soirée-là qu'on a appris ce qu'aucun cours ne nous apprendra : <em>tenir ensemble.</em></p>
     </div>
 
     <div class="tip">
@@ -498,9 +457,7 @@ p{font-size:10.5pt;line-height:1.5;margin-bottom:2.5mm}
   <div class="page-num">— 08 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SLIDE 07                                                    -->
-<!-- =========================================================== -->
+<!-- =========== SLIDE 07 =========== -->
 <div class="page">
   <div class="slide-block">
     <div class="slide-header">
@@ -514,83 +471,67 @@ p{font-size:10.5pt;line-height:1.5;margin-bottom:2.5mm}
 
     <div class="what-onscreen">
       <span class="lbl">★ CE QUI EST À L'ÉCRAN</span>
-      Titre <b>"On a essayé. Puis on a choisi d'arrêter"</b> · 2 colonnes : <b>CE QU'ON A FAIT</b> (4 puces) / <b>POURQUOI ON A COUPÉ</b> (scène + question collective) · encadré jaune final : <b>"L'IA accélère. Elle ne remplace pas la voix"</b>
+      Titre <b>"On a essayé. Puis on a choisi d'arrêter"</b> · 2 colonnes : <b>CE QU'ON A FAIT</b> / <b>POURQUOI ON A COUPÉ</b> · encadré jaune final : <b>"L'IA accélère. Elle ne remplace pas la voix"</b>
     </div>
 
     <div class="cue-row">
       <span class="cue">RETOUR À "ON" COLLECTIF</span>
-      <span class="cue yellow">PRÉSENTER COMME UNE DÉCISION, PAS UN ÉCHEC</span>
+      <span class="cue yellow">DÉCISION POSÉE, PAS EXCUSE</span>
     </div>
 
     <div class="script-block">
-      <span class="stage">Retour à un "on" collectif (les 2 fondateurs peuvent reprendre la main à 2 voix ici, ou rester à 1). Voix qui pose une décision difficile, pas une excuse.</span>
+      <span class="stage">Retour à un "on" collectif. Présenter comme une décision mature, pas comme un échec. La phrase finale "L'IA accélère, ne remplace pas la voix" doit être prononcée lentement.</span>
 
-      <p>On n'a pas baissé les bras. Quelques jours après, on a tenté un plan B : pivoter sur TikTok, avec du contenu généré par IA. Voix off synthétique, montages CapCut, niches motivation et side hustles. L'objectif : atteindre le seuil de monétisation du programme créateur.</p>
-
-      <p>Pendant trois semaines, on a posté tous les jours. <b>Et on a regardé ce qu'on était en train de produire.</b></p>
-
-      <p>C'était propre. C'était calibré. <em>Et c'était vide.</em> Aucune voix dedans. On générait du contenu qui aurait pu être fait par n'importe quel autre compte sur la planète.</p>
-
-      <p>On s'est posé une vraie question, en groupe. <em>Est-ce que c'est ça qu'on veut signer ?</em> La réponse a été non, à l'unanimité.</p>
-
-      <span class="stage">[Voix qui appuie la phrase suivante. C'est ici qu'on règle le score moral.]</span>
-
-      <p>On a coupé. Volontairement. Pas parce que ça ne marchait pas — <b>parce que ça ne nous ressemblait plus</b>. Et avec le recul, c'est peut-être la décision la plus mature qu'on ait prise.</p>
+      <p>Plan B : du contenu IA sur TikTok. Trois semaines de posts.</p>
+      <p>Un soir, on regarde ce qu'on produit. C'est calibré. C'est propre. <em>Et c'est vide.</em></p>
+      <p>On se pose la question, à sept : <em>est-ce qu'on veut signer ça ?</em> Non. À l'unanimité.</p>
+      <p>On a coupé. Pas parce que ça ne marchait pas — <em>parce que ça ne nous ressemblait plus.</em></p>
+      <p><b>L'IA accélère. Elle ne remplace pas la voix.</b></p>
     </div>
 
     <div class="tip">
-      <b>★ Phrase qui doit tomber juste</b> — "<em>L'IA accélère. Elle ne remplace pas la voix.</em>" Le coach a validé celle-là. Elle peut être prononcée par l'autre fondateur si vous parlez à deux voix.
+      <b>★ Phrase validée par le coach</b> — "<em>L'IA accélère. Elle ne remplace pas la voix.</em>" Cette phrase est la signature éditoriale de tout le pitch. Ralentis dessus. Si vous parlez à 2 voix, c'est l'autre fondateur qui peut la prononcer.
     </div>
   </div>
   <div class="page-tag">SLIDE 07 · TIKTOK IA</div>
   <div class="page-num">— 09 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SLIDE 08                                                    -->
-<!-- =========================================================== -->
+<!-- =========== SLIDE 08 =========== -->
 <div class="page">
   <div class="slide-block">
     <div class="slide-header">
       <div class="left">
         <span class="slide-id act-2">08</span>
         <span class="eyebrow" style="display:inline-block;margin:0">ACTE II — LA RÉALITÉ</span>
-        <h2 style="margin-top:3mm">Ce qu'on a appris dans la douleur</h2>
+        <h2 style="margin-top:3mm">Bilan honnête</h2>
       </div>
       <span class="slide-time">⏱ 0:45</span>
     </div>
 
     <div class="what-onscreen">
       <span class="lbl">★ CE QUI EST À L'ÉCRAN</span>
-      Fond paper (clair) · titre <b>"3 événements, 3 réactions collectives"</b> · tableau 3 colonnes : <b>L'événement / Ce qu'on a fait techniquement / Ce qu'on en a fait à 7</b> · phrase finale : <b>"Ce qui compte, c'est qu'elle ait été prise à 7"</b>
+      Fond paper · titre <b>"3 événements, 3 réactions collectives"</b> · tableau 3 colonnes (événement / technique / réaction à 7) · phrase finale <b>"Ce qui compte, c'est qu'elle ait été prise à 7"</b>
     </div>
 
     <div class="cue-row">
-      <span class="cue">VOIX MESURÉE · BILAN HONNÊTE</span>
-      <span class="cue yellow">PAS DRAMATIQUE — ANALYTIQUE</span>
+      <span class="cue">VOIX MESURÉE · BILAN</span>
+      <span class="cue yellow">POINTER LE TABLEAU, NE PAS LIRE</span>
     </div>
 
     <div class="script-block">
-      <span class="stage">Voix mesurée. On présente un bilan honnête mais structuré. Pas dramatique. C'est le moment où le jury voit la maturité — pas où on les fait pleurer.</span>
+      <span class="stage">Voix mesurée, posée. C'est un slide de transition. Les coachs lisent le tableau, toi tu poses la leçon humaine.</span>
 
-      <p>On a compilé honnêtement ce qu'on a vécu, et surtout, ce qu'on en a fait <em>collectivement</em>. Trois événements. Trois réactions de groupe.</p>
-
-      <p><b>Le ban Instagram</b> : on s'est parlé sans se blâmer. Personne n'a tenu personne pour responsable. Décision collective : on continue.</p>
-
-      <p><b>Le contenu IA TikTok</b> : on a posé une limite éthique commune. Décision collective : on coupe.</p>
-
-      <p><b>La dispersion d'équipe</b> : à 7, c'est compliqué de tout pousser à fond. Au lieu d'enterrer le projet, on a redécoupé les rôles selon les <em>vraies</em> envies de chacun. Décision collective : on se spécialise.</p>
-
-      <p>À chaque fois, ce n'est pas la décision qui compte. <em>C'est qu'elle ait été prise à 7.</em></p>
+      <p>Trois échecs, <b>trois réactions de groupe</b>.</p>
+      <p>À chaque fois la même chose : on s'est parlé honnêtement, on a redécoupé les rôles, et on a tenu.</p>
+      <p>Ce qui compte, ce n'est pas la décision. <em>C'est qu'elle ait été prise à sept.</em></p>
     </div>
   </div>
   <div class="page-tag">SLIDE 08 · BILAN</div>
   <div class="page-num">— 10 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SLIDE 09 — SKILLS (CRITICAL)                                -->
-<!-- =========================================================== -->
+<!-- =========== SLIDE 09 — SKILLS (CRITICAL) =========== -->
 <div class="page">
   <div class="slide-block">
     <div class="slide-header">
@@ -604,95 +545,80 @@ p{font-size:10.5pt;line-height:1.5;margin-bottom:2.5mm}
 
     <div class="what-onscreen">
       <span class="lbl">★ CE QUI EST À L'ÉCRAN</span>
-      Titre <b>"Deux colonnes, une seule importe vraiment"</b> · <b>COLONNE GAUCHE (humain, en avant)</b> : 6 compétences de groupe · <b>COLONNE DROITE (technique)</b> : 6 compétences techniques · ligne manuscrite : <b>"→ la colonne de gauche rend la colonne de droite vendable"</b>
+      Titre <b>"Deux colonnes, une seule importe vraiment"</b> · <b>COLONNE GAUCHE (humaine, mise en avant)</b> : 6 compétences de groupe · <b>COLONNE DROITE (technique)</b> : 6 compétences techniques · phrase manuscrite finale : <b>"→ la colonne de gauche rend la colonne de droite vendable"</b>
     </div>
 
     <div class="cue-row">
       <span class="cue red">⚠ POINTER LA COLONNE GAUCHE EN PREMIER</span>
-      <span class="cue yellow">VOIX QUI APPUIE SUR "HUMAIN"</span>
+      <span class="cue yellow">LENTEUR SUR "HUMAIN"</span>
     </div>
 
     <div class="script-block">
-      <span class="stage">Slide-clé. Pointer physiquement la colonne de gauche en premier. Voix qui appuie sur "humain" avec lenteur. C'est le slide qui répond directement à la remarque du coach.</span>
+      <span class="stage">Slide-clé. Pointer physiquement la colonne de gauche en premier. NE LIS PAS les compétences — le jury les voit. Toi, tu portes la révélation : c'est la gauche qui rend la droite vendable.</span>
 
-      <p>Et c'est ici que les choses deviennent intéressantes. Quand on regarde ce qu'on a vraiment appris sur six mois, il y a deux colonnes.</p>
-
-      <p><b>À droite</b>, des compétences techniques. Production de contenu, design système, copywriting, automatisation no-code, prompt engineering, gestion d'audience. Toutes utiles. Toutes monnayables.</p>
-
-      <span class="stage">[Pause courte. Tourner physiquement la tête vers la colonne de gauche.]</span>
-
-      <p><b>Mais à gauche</b>, il y a une colonne qu'aucun cours en école ne nous aurait apprise. Se parler honnêtement quand tout casse. Reconnaître ses limites individuelles sans se cacher derrière le groupe. Distribuer des rôles selon les vraies envies, pas les CV. Décider à 7 quand il faut couper. Garder le lien quand le projet vacille. Et transformer un échec en école commune.</p>
-
-      <p>Et c'est cette colonne de gauche qui rend la colonne de droite <em>vendable</em>. Sans elle, on serait juste 7 personnes avec des compétences. <b>Avec elle, on est un collectif qui sait travailler ensemble même quand c'est dur.</b></p>
+      <p>Deux colonnes.</p>
+      <p>À droite, des compétences techniques. <b>Utiles. Monnayables.</b></p>
+      <span class="stage">[Pause. Tourner physiquement la tête vers la colonne de gauche.]</span>
+      <p>À gauche, une colonne qu'aucun cours ne nous aurait donnée.</p>
+      <p><em>Et c'est cette colonne-là qui rend l'autre vendable.</em></p>
+      <p>Sans elle, on est sept personnes avec des compétences. Avec elle, on est un collectif qui sait travailler ensemble <em>quand c'est dur.</em></p>
     </div>
 
     <div class="tip">
-      <b>★ C'est le slide du jury</b> — Si une seule slide doit être impeccable, c'est celle-là. C'est ici que la note de "groupe soudé" se gagne. <em>Ne pas la précipiter, c'est 7 secondes de plus mais 2 points de plus.</em>
+      <b>★ C'est le slide du jury</b> — Si une seule slide doit être impeccable, c'est celle-là. C'est ici que la note "groupe soudé" se gagne. Ne précipite pas. <em>7 secondes de plus = 2 points de plus.</em>
     </div>
   </div>
   <div class="page-tag">SLIDE 09 · ⚡ COMPÉTENCES</div>
   <div class="page-num">— 11 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SLIDE 10 — KPI 5% + CAFÉ                                    -->
-<!-- =========================================================== -->
+<!-- =========== SLIDE 10 — TROMPÉ D'OBJECTIF + AI NEED + FADY =========== -->
 <div class="page">
   <div class="slide-block">
     <div class="slide-header">
       <div class="left">
         <span class="slide-id act-3" style="background:var(--ink);color:var(--yellow)">10 ⚡</span>
         <span class="eyebrow" style="display:inline-block;margin:0">ACTE III — LE RETOURNEMENT</span>
-        <h2 style="margin-top:3mm">KPI marché 5% + déclic</h2>
+        <h2 style="margin-top:3mm">On s'est trompé d'objectif</h2>
       </div>
-      <span class="slide-time">⏱ 0:45</span>
+      <span class="slide-time">⏱ 0:50</span>
     </div>
 
     <div class="what-onscreen">
       <span class="lbl">★ CE QUI EST À L'ÉCRAN</span>
-      Titre <b>"95% échouent. Nous, 4 sur 7 sont entrepreneurs"</b> · à gauche : <b>grille de 100 points (5 jaunes = le 5% qui réussit)</b> · à droite : <b>7 avatars (4 colorés agence/appli + 3 grisés) · "4/7 = 57%"</b> · callout <b>"57% vs 5%"</b> · phrase manuscrite finale : <em>"on continue ensemble, ou on s'arrête là ?"</em>
+      Titre <b>"On s'est trompé d'objectif"</b> · à gauche : <b>grille de 100 points (5 jaunes)</b> · à droite : 2 callouts (<b>NOTRE ERREUR : voulait éviter les 95%</b> / <b>LA VRAIE LEÇON : accepter les 95% comme matière première</b>) · en bas : 2 cards startups (<b>🤖 AI NEED — Loic·Louis</b> / <b>💈 FADY — Nathan·Enzo</b>)
     </div>
 
     <div class="cue-row">
-      <span class="cue red">⚠ STATISTIQUE QUI RETOURNE LE JURY</span>
-      <span class="cue yellow">POINTER LA GRILLE 100 PTS PUIS LES 7 AVATARS</span>
-      <span class="cue">SCÈNE DU CAFÉ EN FIN</span>
+      <span class="cue red">⚠ LA PHRASE "S'EST TROMPÉ D'OBJECTIF" EST CRITIQUE</span>
+      <span class="cue yellow">MARQUER LES 2 STARTUPS À LA FIN</span>
     </div>
 
     <div class="script-block">
-      <span class="stage">Énergie qui se transforme. On entre dans l'acte III. Voix calme mais qui retourne la perception. C'est le slide qui change l'angle du jury : on n'a pas raté, on est statistiquement au-dessus.</span>
+      <span class="stage">Voix calme qui retourne la perception. C'est ici que le jury comprend que vous n'êtes pas en train d'expliquer un échec — vous êtes en train de présenter une transformation. Marquer une pause après "trompé d'objectif".</span>
 
-      <p>On a longtemps cru qu'on avait échoué. <b>Et puis on a regardé les chiffres du marché.</b></p>
-
-      <p><em>95% des projets de business en ligne échouent dans leur première année.</em> Seulement 5% survivent. C'est le benchmark.</p>
-
-      <span class="stage">[Pointer la grille de 100 points à gauche, puis basculer le regard vers les 7 avatars à droite.]</span>
-
-      <p>Nous, on a lancé un projet. Aujourd'hui, sur les 7 du groupe, <b>4 sont entrepreneurs</b>. Deux ont fondé une agence — <b>Loic et Louis</b>. Deux autres ont lancé une appli coiffeurs/clients — <b>Nathan et Enzo</b>. <em>Fannie, JB et Mahou</em> ont choisi d'autres voies, mais on garde tous le fil.</p>
-
-      <p><em>Mathématiquement, on est très au-dessus du marché.</em> <b>57% versus 5%.</b></p>
-
-      <span class="stage">[Petite pause. La scène du café en transition vers slide 11.]</span>
-
-      <p>Et entre les deux, il y a eu un soir, à deux, dans un café à Paris. <em>"On continue ensemble, ou on s'arrête là ?"</em> On a continué. Et on a fondé une agence.</p>
+      <p>Rappel : <b>95% des business en ligne échouent.</b></p>
+      <p>Et c'est exactement là qu'on s'est trompés. <em>On s'était fixé comme objectif d'éviter cet échec.</em></p>
+      <span class="stage"><span class="pause">[PAUSE 1s]</span></span>
+      <p>La vraie leçon, on l'a comprise trop tard : il ne fallait pas l'éviter. <b>Il fallait l'accepter comme matière première.</b> Apprendre dans les 95% pour mériter d'arriver dans les 5%.</p>
+      <p>C'est ce qui nous a permis de monter <em>deux nouvelles startups depuis</em> :</p>
+      <p><b>AI Need</b>, agence web propulsée à l'IA.<br>Et <b>FADY</b>, l'app pour réserver son coiffeur en 2 clics.</p>
     </div>
 
     <div class="tip">
-      <b style="color:var(--yellow)">★ Le retournement du jury</b> — La phrase "<em>57% versus 5%</em>" est LA stat à faire tomber juste. C'est elle qui transforme la perception : on passe d'<em>"ils ont échoué"</em> à <em>"ils ont créé 4 entrepreneurs"</em>. Marque-la avec une pause d'1 seconde derrière.
+      <b style="color:var(--yellow)">★ Le retournement stratégique</b> — "<em>On s'est trompés d'objectif</em>" est la phrase qui retourne le pitch. Sans elle, vous racontez un échec. Avec elle, vous racontez une maturité. <b>Apprends-la par cœur.</b>
     </div>
   </div>
-  <div class="page-tag">SLIDE 10 · ⚡ KPI 5%</div>
+  <div class="page-tag">SLIDE 10 · ⚡ TROMPÉ D'OBJECTIF</div>
   <div class="page-num">— 12 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SLIDE 11 — AI NEED · HUB AGENCE                             -->
-<!-- =========================================================== -->
+<!-- =========== SLIDE 11 — AI NEED HUB =========== -->
 <div class="page">
   <div class="slide-block">
     <div class="slide-header">
       <div class="left">
-        <span class="slide-id act-3" style="background:var(--ink);color:var(--yellow)">11 ⚡</span>
+        <span class="slide-id act-3">11</span>
         <span class="eyebrow" style="display:inline-block;margin:0">ACTE III — SLIDE BUSINESS</span>
         <h2 style="margin-top:3mm">AI Need · le modèle</h2>
       </div>
@@ -701,43 +627,33 @@ p{font-size:10.5pt;line-height:1.5;margin-bottom:2.5mm}
 
     <div class="what-onscreen">
       <span class="lbl">★ CE QUI EST À L'ÉCRAN</span>
-      Titre <b>"AI Need — l'agence"</b> · sous-titre <em>"L'IA accélère. Nous portons la voix."</em> · <b>HUB</b> : grand cercle jaune central <b>AUDIT STRATÉGIQUE OFFERT</b> · 6 services autour (Site web · SEO · Ads · Contenu IA · Automatisations · Newsletter) · 2 cards paiement en bas : <b>💼 AU PROJET</b> / <b>📈 % SUR LEADS APPORTÉS (★ INNOVATION)</b>
+      Titre <b>"AI Need — l'agence"</b> · sous-titre <em>"L'IA accélère. Nous portons la voix."</em> · <b>HUB</b> : cercle jaune central <b>AUDIT STRATÉGIQUE 100% OFFERT</b> · 6 services autour (Site web · SEO · Ads · Contenu IA · Automatisations · Newsletter) · 2 cards paiement : <b>💼 AU PROJET</b> / <b>📈 % SUR LEADS APPORTÉS (★ INNOVATION)</b>
     </div>
 
     <div class="cue-row">
       <span class="cue yellow">VOIX QUI PREND DU COFFRE · BUSINESS</span>
-      <span class="cue red">POINTER LE CENTRE, PUIS LES SERVICES, PUIS LES PAIEMENTS</span>
+      <span class="cue red">POINTER CENTRE → SERVICES → PAIEMENTS</span>
     </div>
 
     <div class="script-block">
-      <span class="stage">Slide business pure. Voix qui prend du coffre, présente clairement le modèle. C'est le moment où le jury voit qu'il y a une vraie offre derrière le récit. Pointer physiquement le centre du hub avant d'énumérer les services.</span>
+      <span class="stage">Slide business pure. Voix qui prend du coffre. Pointer le hub physiquement : centre puis services puis paiements. NE LIS PAS les 6 services — le jury les voit. Insiste sur l'innovation pricing.</span>
 
-      <p>Notre agence s'appelle <em>AI Need</em>. Une agence digitale propulsée — pas remplacée — par l'IA.</p>
-
-      <p>Notre modèle tient en une logique simple. Au centre : un <b>audit stratégique offert</b> à chaque prospect. Pas un appel commercial déguisé. Un vrai audit livrable, en 7 jours. C'est notre porte d'entrée. C'est ce qui nous distingue.</p>
-
-      <span class="stage">[Pointer les services autour du hub, en glissant le doigt en cercle.]</span>
-
-      <p>Autour, six services qui se déclenchent selon le besoin identifié : la création de <b>site web</b>, le <b>SEO</b>, les <b>ads Meta et Google</b>, le <b>contenu IA</b>, les <b>automatisations</b>, et la <b>newsletter</b>.</p>
-
-      <span class="stage">[Descendre vers les 2 cards paiement. Bien marquer la 2e (innovation).]</span>
-
-      <p>Et surtout, deux modèles de paiement au choix du client. <b>Au projet</b>, en forfait classique. Ou — et c'est notre vraie innovation — <em>au pourcentage des leads apportés</em>. On prend le risque avec nos clients : <b>si on ne livre pas, on ne gagne pas.</b></p>
-
-      <p>C'est ça AI Need. Une agence qui parie sur ses propres résultats.</p>
+      <p>Voici <b>AI Need</b>.</p>
+      <p>Au centre : l'audit stratégique, <em>offert</em>. C'est notre porte d'entrée.</p>
+      <p>Autour : six services classiques.</p>
+      <p>Notre vraie innovation, c'est en bas : on peut être payé <em>au pourcentage des leads apportés</em>. On prend le risque avec nos clients.</p>
+      <p><b>Si on ne livre pas, on ne gagne pas.</b></p>
     </div>
 
     <div class="tip">
-      <b style="color:var(--yellow)">★ Le pricing au % des leads</b> — C'est extrêmement rare en France. C'est ton vrai argument de différenciation. Ralentis sur cette phrase, et regarde le jury : <em>"si on ne livre pas, on ne gagne pas."</em> C'est ce qui restera dans leur tête.
+      <b style="color:var(--yellow)">★ Le pricing au % des leads</b> — C'est extrêmement rare en France. C'est ton vrai argument de différenciation. Ralentis sur la phrase finale, regarde le jury : <em>"si on ne livre pas, on ne gagne pas."</em>
     </div>
   </div>
-  <div class="page-tag">SLIDE 11 · ⚡ AI NEED</div>
+  <div class="page-tag">SLIDE 11 · AI NEED</div>
   <div class="page-num">— 13 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SLIDE 12 — PREUVE + 1ER CLIENT                              -->
-<!-- =========================================================== -->
+<!-- =========== SLIDE 12 — PREUVE + 1ER CLIENT =========== -->
 <div class="page">
   <div class="slide-block">
     <div class="slide-header">
@@ -751,55 +667,43 @@ p{font-size:10.5pt;line-height:1.5;margin-bottom:2.5mm}
 
     <div class="what-onscreen">
       <span class="lbl">★ CE QUI EST À L'ÉCRAN</span>
-      Fond noir · spotlight rouge : <b>"Ce site, cet ebook… on les a refaits à 2, en 1 journée"</b> · sous-texte : <b>"L'IA → 4 heures. Le groupe → 6 mois"</b> · callout jaune : <b>✅ 1er client AI Need déjà signé</b> · phrase finale : <b>"Une équipe qui sait penser ensemble"</b>
+      Fond noir · spotlight rouge : <b>"Ce site, cet ebook… on les a refaits à 2, en 1 journée"</b> · sous-texte : <b>"L'IA → 4 heures. Le groupe → 6 mois"</b> · callout jaune : <b>✅ 1er client AI Need déjà signé</b>
     </div>
 
     <div class="cue-row">
-      <span class="cue red">⚠ PAUSE 2s AVANT DE COMMENCER</span>
-      <span class="cue">VOIX BASSE SUR LA 1ÈRE PHRASE</span>
-      <span class="cue yellow">MONTRER LE CLIENT SIGNÉ AVEC FIERTÉ</span>
+      <span class="cue red">⚠ PAUSE 2s AVANT DE PARLER</span>
+      <span class="cue">VOIX BASSE · PRESQUE CHUCHOTÉE</span>
     </div>
 
     <div class="script-block">
-      <span class="stage">Pause de 2 secondes complètes avant de commencer. Voix posée, presque chuchotée pour la première phrase. Le slide doit faire son effet visuel avant qu'on parle.</span>
+      <span class="stage">Pause de 2 secondes complètes avant de parler. Voix posée, presque chuchotée pour les premières phrases. Le slide doit faire son effet visuel avant qu'on parle.</span>
 
       <span class="stage"><span class="pause">[PAUSE 2s — laisser la slide apparaître]</span></span>
-
-      <p>Et le site Money Makerz, l'ebook de 80 pages que vous avez vus au tout début de cette présentation ?</p>
-
+      <p>Le site et l'ebook que vous avez vus au début ?</p>
       <span class="stage"><span class="pause">[PAUSE 1s]</span></span>
-
-      <p><b>On les a refaits, à deux, en une seule journée.</b></p>
-
+      <p><b>On les a refaits à deux, en une journée.</b></p>
       <span class="stage"><span class="pause">[PAUSE 1s]</span></span>
-
-      <p>Pas parce qu'on a une IA. <em>Parce qu'on a passé 6 mois à 7 à apprendre à designer, à écrire, à structurer une marque.</em> L'IA nous a fait gagner peut-être 4 heures. Les 5 autres mois d'apprentissage à 7 — <b>c'est ce qui a fait la vraie différence.</b></p>
-
-      <span class="stage">[Voix qui pose la preuve concrète, fierté discrète.]</span>
-
-      <p>Et la meilleure preuve qu'on a aujourd'hui : <b>on a déjà signé notre premier client.</b> Avec le même process. Audit offert, brief précis, livrable rapide. <em>Le modèle fonctionne avant même la sortie des YDays.</em></p>
-
-      <p>C'est ça qu'on vend aux marques. Pas un service IA. <b style="color:var(--red)">Une équipe qui sait penser ensemble</b>, et qui utilise l'IA comme outil, parmi d'autres.</p>
+      <p>Pas grâce à l'IA. <em>Grâce à six mois à sept d'apprentissage.</em></p>
+      <p>Et notre premier client AI Need est déjà signé. <b>Le modèle fonctionne.</b></p>
+      <p><em>C'est ça qu'on vend.</em></p>
     </div>
 
     <div class="tip">
-      <b style="color:var(--yellow)">★ Le 1<sup>er</sup> client</b> — Cette ligne transforme ta projection en preuve. Si le jury demande qui est ce client, tu peux rester général ("<em>une PME française dans le secteur X</em>") sans le nommer. L'important : <b>le ticket est encaissé, le process est validé</b>.
+      <b>★ Les pauses ne sont pas optionnelles</b> — Compte mentalement <em>"un, deux"</em> sur chaque pause notée. Si tu enchaînes trop vite, le jury ne sentira pas le mic drop.
     </div>
   </div>
   <div class="page-tag">SLIDE 12 · ⚡ PREUVE</div>
   <div class="page-num">— 14 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- SLIDE 13                                                    -->
-<!-- =========================================================== -->
+<!-- =========== SLIDE 13 — CLOSING =========== -->
 <div class="page">
   <div class="slide-block">
     <div class="slide-header">
       <div class="left">
         <span class="slide-id act-3">13</span>
         <span class="eyebrow" style="display:inline-block;margin:0">ACTE III — CLOSING</span>
-        <h2 style="margin-top:3mm">Closing</h2>
+        <h2 style="margin-top:3mm">Callback 95%</h2>
       </div>
       <span class="slide-time">⏱ 0:30</span>
     </div>
@@ -811,124 +715,104 @@ p{font-size:10.5pt;line-height:1.5;margin-bottom:2.5mm}
 
     <div class="cue-row">
       <span class="cue yellow">POSTURE DROITE · REGARD JURY</span>
-      <span class="cue">VOIX CALME, ASSUMÉE</span>
-      <span class="cue red">CALLBACK DU 5% EN OUVERTURE</span>
+      <span class="cue red">CALLBACK DU 95% (BOUCLE AVEC SLIDE 1)</span>
     </div>
 
     <div class="script-block">
-      <span class="stage">Closing. Posture droite, regard direct sur le jury. Voix calme, assumée — pas triomphante. Le callback du 5% boucle la boucle avec slide 10. Marquer une pause entre chaque phrase.</span>
+      <span class="stage">Closing. Posture droite, regard direct sur le jury. Voix calme, assumée — pas triomphante. Le callback du 95% boucle la boucle avec slide 1. Pause entre chaque phrase.</span>
 
-      <p>95% des projets en ligne échouent.</p>
-
+      <p>95% des business en ligne échouent.</p>
       <span class="stage"><span class="pause">[PAUSE 1s]</span></span>
-
-      <p>Nous, <b>on a survécu</b> — pas en tant que projet, en tant que groupe.</p>
-
-      <span class="stage"><span class="pause">[PAUSE 1s]</span></span>
-
-      <p>Et c'est ça qu'on vend maintenant aux marques. <em>Une équipe qui a appris à rester soudée quand tout s'écroule.</em></p>
-
+      <p>Nous, on a <em>survécu</em> — en tant que groupe.</p>
       <span class="stage"><span class="pause">[PAUSE 2s]</span></span>
-
       <p>De l'idée aux revenus — <em>autrement.</em></p>
-
       <span class="stage"><span class="pause">[PAUSE 1s — souffle, sourire léger]</span></span>
-
-      <p><b>Merci.</b> On est prêts à répondre à vos questions.</p>
+      <p><b>Merci.</b></p>
     </div>
 
     <div class="tip">
-      <b style="color:var(--yellow)">★ Le callback</b> — Reprendre le "95% échouent" en ouverture du closing crée une boucle parfaite avec slide 10. Le jury <em>sent</em> la cohérence narrative et ça boucle ton score sur le critère "storytelling".
+      <b style="color:var(--yellow)">★ Le callback</b> — Reprendre le 95% en ouverture du closing crée une boucle parfaite avec slide 1. Le jury <em>sent</em> la cohérence narrative. Ça boucle ton score sur le critère "storytelling".
     </div>
   </div>
   <div class="page-tag">SLIDE 13 · CLOSING</div>
   <div class="page-num">— 15 —</div>
 </div>
 
-<!-- =========================================================== -->
-<!-- Q&A PREP                                                    -->
-<!-- =========================================================== -->
+<!-- =========== Q&A =========== -->
 <div class="page">
   <span class="eyebrow">★ APRÈS LA PRÉSENTATION</span>
   <h1>Questions probables.<br>Réponses préparées.</h1>
-  <p style="font-size:11pt;margin-bottom:6mm">La grille de notation évalue explicitement la <em>capacité à répondre aux questions / argumenter</em>. Mémorise ces 6 réponses au format <b>(1) fait, (2) raison, (3) ce qu'on en a tiré</b>. Tu auras toujours une longueur d'avance.</p>
+  <p style="font-size:11pt;margin-bottom:5mm">Mémorise ces 6 réponses au format <b>(1) fait, (2) raison, (3) ce qu'on en a tiré</b>.</p>
 
   <div class="qa-card">
     <div class="q">Q. Pourquoi Instagram vous a bannis exactement ?</div>
-    <div class="a">On scrapait des reels concurrents pour analyse, depuis le même compte qui publiait. Instagram lit ça comme un bot. <b>Aujourd'hui, on opère toujours via comptes séparés</b> — pour nous, pour nos clients agence.</div>
+    <div class="a">On scrapait des reels concurrents depuis le même compte qui publiait. Instagram l'a lu comme un bot. <b>Aujourd'hui, on opère toujours via comptes séparés</b> — pour nous, pour nos clients AI Need.</div>
   </div>
 
   <div class="qa-card">
-    <div class="q">Q. Le compte Instagram, vous l'avez relancé ?</div>
-    <div class="a">Non — et c'est volontaire. On a estimé que le temps de reconstruire 8k abonnés ne valait pas la valeur que ça nous apportait. <b>L'agence est devenue prioritaire</b>, et elle utilise ce qu'on a appris au lieu de répéter le même chemin.</div>
+    <div class="q">Q. Vous êtes 2 sur AI Need. Que font les 5 autres ?</div>
+    <div class="a"><b>Nathan et Enzo</b> ont fondé <b>FADY</b> — l'app pour réserver son coiffeur en 2 clics, leur propre projet entrepreneurial. <b>Fannie, JB et Mahou</b> ont fait d'autres choix : études, alternance, vie perso. <b>Tous gardent un fil avec nous.</b> Le groupe a engendré <em>2 startups + 3 trajectoires assumées</em>.</div>
   </div>
 
   <div class="qa-card">
     <div class="q">Q. Combien AI Need a-t-elle de clients aujourd'hui ?</div>
-    <div class="a"><b>1 client déjà signé</b>, le process complet (audit offert → brief → livrable) a été validé en conditions réelles. 2-3 prospects en discussion avancée. <b>Objectif 6 mois : 3 clients récurrents pour atteindre ~4 500 € de CA mensuel.</b></div>
+    <div class="a"><b>1 client déjà signé</b>, le process complet (audit offert → brief → livrable) a été validé en conditions réelles. 2-3 prospects en discussion. <b>Objectif 6 mois : 3 clients récurrents pour ~4 500 € de CA mensuel.</b></div>
   </div>
 
   <div class="qa-card">
-    <div class="q">Q. Vous êtes 2 fondateurs ? Que font les 5 autres exactement ?</div>
-    <div class="a"><b>Nathan et Enzo</b> ont fondé une appli coiffeurs/clients — leur propre projet entrepreneurial. <b>Fannie, JB et Mahou</b> ont fait d'autres choix : études, alternance, vie perso. <b>Tous gardent un fil avec nous</b> — on s'appelle, ils nous conseillent ponctuellement. Le groupe a engendré <em>2 startups + 3 trajectoires assumées</em>.</div>
+    <div class="q">Q. Pourquoi le chiffre 95% ? D'où il vient ?</div>
+    <div class="a">C'est le benchmark marché du taux d'échec des projets digitaux dans leur première année (études Failory, Insee). Nous, sur 7 personnes, 4 sont aujourd'hui entrepreneurs : 2 sur AI Need, 2 sur FADY. <b>Statistiquement, on est très au-dessus du marché.</b></div>
   </div>
 
   <div class="qa-card">
-    <div class="q">Q. Quelle est votre différenciation face aux autres agences IA ?</div>
-    <div class="a">Trois choses : <b>(1)</b> on est passés par l'échec, donc on connaît les pièges du marketing IA générique. <b>(2)</b> Notre angle : "<em>l'IA accélère, la voix reste humaine</em>". <b>(3)</b> Notre <b>pricing au % des leads apportés</b> — quasiment inexistant en France. Concrètement, si on ne livre pas, on ne gagne pas. C'est notre prise de risque.</div>
+    <div class="q">Q. Comment fonctionne le pricing au % des leads ?</div>
+    <div class="a">Trois étapes : <b>(1)</b> audit stratégique offert qui définit le KPI cible. <b>(2)</b> Contrat de 3 mois minimum avec un seuil de leads garanti. <b>(3)</b> Au-delà du seuil, on prend <b>15 à 25%</b> de la valeur générée. On ne signe que si on est convaincus de pouvoir livrer.</div>
   </div>
 
   <div class="qa-card">
-    <div class="q">Q. Pourquoi citez-vous le chiffre de 5% des business en ligne qui fonctionnent ?</div>
-    <div class="a">C'est le benchmark marché — études Insee et Failory entre autres — sur les projets digitaux qui survivent au-delà de leur 1<sup>re</sup> année. Nous, sur 7 personnes, 4 sont aujourd'hui entrepreneurs (2 sur AI Need, 2 sur l'appli coiffeurs). <b>57% versus 5%</b> — on est très au-dessus du marché. Ce chiffre n'est pas une vantardise : c'est ce qui contextualise pourquoi nos "échecs" sont en réalité des indicateurs de rebond.</div>
-  </div>
-
-  <div class="qa-card">
-    <div class="q">Q. Le pricing au % des leads, comment ça marche concrètement ?</div>
-    <div class="a">Trois étapes : <b>(1)</b> audit stratégique offert qui définit le KPI cible (leads qualifiés, RDV pris, conversions). <b>(2)</b> Contrat de 3 mois minimum avec un seuil de leads garanti. <b>(3)</b> Au-delà du seuil, on prend <b>15 à 25%</b> de la valeur générée. On ne signe que si on est convaincus qu'on peut livrer. C'est risqué pour nous, mais ça aligne nos intérêts avec ceux du client.</div>
-  </div>
-
-  <div class="qa-card">
-    <div class="q">Q. Quel investissement initial avez-vous mis dans AI Need ?</div>
-    <div class="a">Très peu : environ <b>80 € / mois en outils</b> (ChatGPT Plus, Canva Pro, hébergement, Make). Pas de masse salariale au lancement. Statut <b>micro-entreprise</b> — création en 15 min en ligne. <b>Le modèle scale avec le cerveau, pas avec les coûts.</b></div>
+    <div class="q">Q. Quel investissement initial dans AI Need ?</div>
+    <div class="a">Environ <b>80 € / mois en outils</b> (ChatGPT Plus, Canva Pro, Make, hébergement). Pas de masse salariale au lancement. Statut <b>micro-entreprise</b>. <b>Le modèle scale avec le cerveau, pas avec les coûts.</b></div>
   </div>
 
   <div class="tip">
-    <b>★ Stratégie en cas de question piège</b> — Si une question te déstabilise : reformule-la à voix haute ("<em>Si je comprends bien, vous nous demandez…</em>") avant de répondre. Tu gagnes 4 secondes pour réfléchir, et tu montres au jury que tu écoutes vraiment.
+    <b style="color:var(--yellow)">★ Si une question te déstabilise</b> — Reformule-la à voix haute (<em>"Si je comprends bien, vous nous demandez…"</em>) avant de répondre. Tu gagnes 4 secondes pour réfléchir, et tu montres que tu écoutes vraiment.
   </div>
 
   <div class="page-tag">Q&A · PRÉPA</div>
   <div class="page-num">— 16 —</div>
 </div>
 
-<!-- ============= TIPS / DELIVERY ============= -->
+<!-- =========== TIPS J =========== -->
 <div class="page">
   <span class="eyebrow">★ DERNIÈRES NOTES</span>
   <h1>Le jour J.</h1>
 
+  <h3>★ La nouvelle règle d'or</h3>
+  <p style="font-size:11.5pt"><b>Les slides sont denses, lisibles pendant que tu parles.</b> Toi, tu <em>n'es pas obligé de lire le slide</em>. Tu ajoutes l'émotion, la story, le contexte qui n'y est pas. <b style="color:var(--red)">Moins tu en dis, plus le jury retient.</b></p>
+
   <h3>★ Avant d'entrer dans la salle</h3>
   <ul style="font-size:11pt;margin-left:6mm">
-    <li><b>Tenue :</b> smart casual cohérent avec le brand Street/Bold. <em>Polo ou chemise noire / navy, jean propre, sneakers blanches.</em> Pas costume strict, pas hoodie sale.</li>
-    <li><b>Hydratation :</b> une bouteille d'eau visible mais discrète. Tu peux boire sur les transitions d'acte.</li>
-    <li><b>Téléphone :</b> en mode avion. Si tu as une montre connectée, désactive les notifs.</li>
-    <li><b>2 minutes avant :</b> respiration 4-7-8 (inspire 4s, retient 7s, expire 8s). Trois cycles. Ça abaisse la voix d'un demi-ton et calme les tremblements.</li>
+    <li><b>Tenue :</b> smart casual cohérent avec le brand. Polo / chemise noire ou navy, jean propre, sneakers blanches.</li>
+    <li><b>Hydratation :</b> une bouteille d'eau visible mais discrète.</li>
+    <li><b>Téléphone :</b> en mode avion. Montre connectée : notifs off.</li>
+    <li><b>2 minutes avant :</b> respiration 4-7-8 (inspire 4s, retient 7s, expire 8s). Trois cycles.</li>
   </ul>
 
   <h3>★ Pendant le pitch — règles d'or</h3>
   <ul style="font-size:11pt;margin-left:6mm">
-    <li><b>Une voix par acte</b> si vous présentez à deux. L'autre est en posture d'écoute (pas de regard fuyant, mains posées).</li>
-    <li><b>Pas plus de 7 mots par slide visible.</b> Si tu lis l'écran, tu perds le jury.</li>
-    <li><b>Pauses comptées :</b> slide 06 après "supprimé" (1s), slide 12 avant le mic drop (2s), slide 13 entre chaque phrase (1s).</li>
-    <li><b>Posture :</b> pieds ancrés, légèrement écartés. Ne pas piétiner. Bouger seulement pour pointer un visuel.</li>
+    <li><b>Une voix par acte</b> si vous présentez à 2. L'autre est en posture d'écoute (mains posées, pas de regard fuyant).</li>
+    <li><b>Pause comptée :</b> slide 06 après "supprimé" (1s), slide 12 avant le mic drop (2s), slide 13 entre chaque phrase (1s).</li>
+    <li><b>Posture :</b> pieds ancrés, légèrement écartés. Bouger seulement pour pointer un visuel.</li>
     <li><b>Regard :</b> 3 points dans le jury en rotation. Pas un seul prof.</li>
+    <li><b>Pas de "du coup", "en fait", "voilà"</b>. Phrases courtes. Verbes d'action.</li>
   </ul>
 
   <h3>★ Si quelque chose dérape</h3>
   <ul style="font-size:11pt;margin-left:6mm">
-    <li><b>Trou de mémoire :</b> respire, regarde tes notes, dis "<em>je reprends</em>". Le jury préfère ça à un meublage.</li>
-    <li><b>Slide qui ne s'affiche pas :</b> continue à parler. Tu connais le slide, tu peux le décrire à l'oral.</li>
-    <li><b>Question agressive :</b> "<em>C'est une bonne remarque, voilà comment on l'analyse :</em>" — gagne du temps + désamorce.</li>
-    <li><b>Dépassement de temps :</b> au-delà de 10:30, coupe le slide en cours et passe directement au closing.</li>
+    <li><b>Trou de mémoire :</b> respire, regarde tes notes, dis "<em>je reprends</em>".</li>
+    <li><b>Slide ne s'affiche pas :</b> continue à parler. Tu connais le slide.</li>
+    <li><b>Question agressive :</b> "<em>C'est une bonne remarque, voilà comment on l'analyse :</em>"</li>
+    <li><b>Dépassement de temps :</b> au-delà de 10:30, coupe et passe au closing.</li>
   </ul>
 
   <div class="tip" style="margin-top:6mm">
