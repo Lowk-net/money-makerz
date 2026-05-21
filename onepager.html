@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Makerz — Tout en 1 page</title>
+<meta name="description" content="Money Makerz · YDays 2026 · Scannez pour accéder au pitch, au site, à l'ebook.">
+<meta property="og:title" content="Money Makerz — Tout en 1 page">
+<meta property="og:description" content="95% des business en ligne échouent. Nous, on a survécu — en tant que groupe.">
+<link rel="stylesheet" href="assets/fonts.css">
+<style>
+:root{
+  --navy-900:#0B2444;
+  --navy-800:#11315B;
+  --navy-700:#173E72;
+  --paper:#F4EFE2;
+  --paper-2:#EEE7D2;
+  --ink:#0A0A0A;
+  --white:#FFFFFF;
+  --red:#E63946;
+  --yellow:#FFD23F;
+  --green:#3BB273;
+  --font-display:'Anton',Impact,sans-serif;
+  --font-body:'Inter',Arial,sans-serif;
+  --font-hand:'Permanent Marker',cursive;
+  --font-mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:var(--font-body);line-height:1.5;color:var(--white);background:#222}
+@media screen{body{padding:24px 0;background:#222}}
+
+.page{
+  width:210mm;height:297mm;
+  margin:0 auto;
+  background:var(--navy-900);
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:8mm 8mm;
+  padding:14mm 14mm 12mm;
+  position:relative;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+  display:flex;flex-direction:column;
+}
+
+/* HEADER */
+.header{
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:2pt solid var(--yellow);padding-bottom:6mm;margin-bottom:6mm;
+}
+.brand-row{display:flex;align-items:center;gap:6mm}
+.mark{
+  width:18mm;height:18mm;border-radius:4mm;background:var(--white);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font-family:var(--font-display);font-size:8pt;line-height:.95;
+  box-shadow:2mm 2mm 0 var(--red);transform:rotate(-3deg);
+}
+.brand-text h1{
+  font-family:var(--font-display);font-size:22pt;letter-spacing:1pt;
+  color:var(--white);line-height:.95;margin-bottom:1mm;
+}
+.brand-text p{
+  font-family:var(--font-mono);font-size:8pt;letter-spacing:2pt;color:var(--yellow);
+}
+.edition{
+  font-family:var(--font-mono);font-size:8pt;letter-spacing:2pt;color:var(--yellow);
+  border:1pt solid var(--yellow);padding:2mm 4mm;
+  transform:rotate(2deg);
+}
+
+/* HERO STAT */
+.hero{
+  text-align:center;margin-bottom:6mm;
+  position:relative;
+}
+.hero h2{
+  font-family:var(--font-display);font-size:36pt;line-height:.95;letter-spacing:1pt;
+  color:var(--white);text-transform:uppercase;margin-bottom:3mm;
+}
+.hero h2 .yellow{color:var(--yellow)}
+.hero h2 .struck{position:relative;display:inline-block;color:rgba(255,255,255,.55)}
+.hero h2 .struck::after{
+  content:"";position:absolute;left:-2pt;right:-2pt;top:55%;height:4pt;
+  background:var(--red);transform:rotate(-2deg);
+}
+.hero p{
+  font-size:11pt;line-height:1.4;color:rgba(255,255,255,.9);max-width:160mm;margin:0 auto;
+}
+.hero .hand{
+  font-family:var(--font-hand);font-size:13pt;color:var(--yellow);
+  transform:rotate(-1deg);display:inline-block;margin-top:3mm;
+}
+
+/* STATS STRIP */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;
+  margin-bottom:6mm;
+}
+.stat{
+  background:var(--navy-800);border:1.5pt solid var(--white);
+  padding:3mm;text-align:center;
+  box-shadow:2mm 2mm 0 var(--red);border-radius:2mm;
+}
+.stat .num{
+  font-family:var(--font-display);font-size:22pt;color:var(--yellow);line-height:1;
+}
+.stat .lbl{
+  font-family:var(--font-mono);font-size:7pt;letter-spacing:1.5pt;color:var(--white);
+  margin-top:1.5mm;line-height:1.3;
+}
+
+/* CARDS GRID */
+.cards-title{
+  text-align:center;margin-bottom:4mm;
+}
+.cards-title .eyebrow{
+  font-family:var(--font-mono);font-size:9pt;letter-spacing:3pt;color:var(--red);
+}
+.cards-title h3{
+  font-family:var(--font-display);font-size:24pt;letter-spacing:1pt;
+  color:var(--white);text-transform:uppercase;margin-top:1mm;
+}
+.cards-title h3 .yellow{color:var(--yellow)}
+
+.cards{
+  display:grid;grid-template-columns:1fr 1fr;gap:5mm;
+  flex:1;
+}
+.card{
+  background:var(--paper);color:var(--ink);
+  border:2pt solid var(--ink);border-radius:3mm;
+  padding:5mm;position:relative;
+  display:flex;gap:4mm;align-items:center;
+  box-shadow:4mm 4mm 0 var(--red);
+}
+.card.yellow-shadow{box-shadow:4mm 4mm 0 var(--yellow)}
+.card.green-shadow{box-shadow:4mm 4mm 0 var(--green)}
+.card.navy-shadow{box-shadow:4mm 4mm 0 var(--navy-800)}
+
+.card .tape{
+  position:absolute;top:-3mm;left:50%;transform:translateX(-50%) rotate(-2deg);
+  background:var(--yellow);color:var(--ink);
+  font-family:var(--font-mono);font-size:7.5pt;letter-spacing:2pt;
+  padding:1.5mm 6mm;
+  box-shadow:1mm 1mm 0 rgba(0,0,0,.4);
+}
+.card.red-tape .tape{background:var(--red);color:var(--white)}
+.card.green-tape .tape{background:var(--green);color:var(--white)}
+.card.dark-tape .tape{background:var(--navy-900);color:var(--yellow)}
+
+.card .qr{
+  width:32mm;height:32mm;flex-shrink:0;
+  display:block;
+}
+
+.card .info{flex:1;min-width:0}
+.card .icon{font-size:18pt;line-height:1;margin-bottom:1mm}
+.card .info h4{
+  font-family:var(--font-display);font-size:14pt;letter-spacing:.5pt;
+  color:var(--navy-900);line-height:1;margin-bottom:2mm;
+}
+.card .info p{
+  font-size:9pt;line-height:1.4;color:var(--ink);margin-bottom:2mm;
+}
+.card .info .url{
+  font-family:var(--font-mono);font-size:7.5pt;letter-spacing:.5pt;
+  color:var(--red);font-weight:700;
+  word-break:break-all;
+}
+
+/* FOOTER */
+.foot{
+  margin-top:5mm;border-top:2pt solid rgba(255,255,255,.15);
+  padding-top:4mm;
+  display:grid;grid-template-columns:1.3fr 1fr;gap:6mm;
+  align-items:start;
+}
+.foot-left h5{
+  font-family:var(--font-mono);font-size:8pt;letter-spacing:2pt;color:var(--yellow);
+  margin-bottom:2mm;
+}
+.foot-left p{font-size:9pt;line-height:1.4;color:rgba(255,255,255,.85)}
+.foot-left .ventures{display:flex;gap:3mm;margin-top:3mm;flex-wrap:wrap}
+.venture{
+  background:var(--navy-800);color:var(--white);
+  padding:2mm 4mm;border-radius:2mm;font-size:9pt;
+  border:1pt solid var(--yellow);
+}
+.venture b{color:var(--yellow);font-family:var(--font-display);letter-spacing:1pt}
+
+.foot-right{text-align:right}
+.foot-right h5{
+  font-family:var(--font-mono);font-size:8pt;letter-spacing:2pt;color:var(--yellow);
+  margin-bottom:2mm;
+}
+.foot-right .team{
+  font-family:var(--font-display);font-size:10pt;letter-spacing:1pt;
+  color:var(--white);line-height:1.5;
+}
+
+.signoff{
+  position:absolute;bottom:6mm;left:14mm;right:14mm;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--font-mono);font-size:7pt;letter-spacing:2pt;
+  color:rgba(255,255,255,.5);
+}
+
+@media print{
+  @page{size:A4;margin:0}
+  body{background:#fff;padding:0}
+  .page{margin:0;box-shadow:none}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
+}
+</style>
+</head>
+<body>
+
+<div class="page">
+  <!-- HEADER -->
+  <div class="header">
+    <div class="brand-row">
+      <div class="mark">MONEY<br>MAKERZ</div>
+      <div class="brand-text">
+        <h1>MONEY MAKERZ</h1>
+        <p>★ YDAYS 2026 · TOUT EN 1 PAGE</p>
+      </div>
+    </div>
+    <div class="edition">★ SCANNEZ &amp; DÉCOUVREZ</div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h2><span class="yellow">95%</span> des business en ligne <span class="struck">échouent.</span></h2>
+    <p>7 étudiants ont voulu être les 5%. On s'est plantés. <b style="color:var(--yellow)">4 sur 7 sont aujourd'hui entrepreneurs</b> — 2 sur l'agence <b style="color:var(--yellow)">AI Need</b>, 2 sur <b style="color:var(--yellow)">FADY</b>, l'app pour réserver son coiffeur en 2 clics.</p>
+    <p class="hand">→ Voici tout, à portée de scan ↓</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><div class="num">7</div><div class="lbl">ÉTUDIANTS<br>AU DÉPART</div></div>
+    <div class="stat"><div class="num">91</div><div class="lbl">REELS<br>PUBLIÉS</div></div>
+    <div class="stat"><div class="num">2</div><div class="lbl">STARTUPS<br>NÉES DEPUIS</div></div>
+    <div class="stat"><div class="num">80</div><div class="lbl">PAGES<br>D'EBOOK</div></div>
+  </div>
+
+  <!-- CARDS TITLE -->
+  <div class="cards-title">
+    <span class="eyebrow">★ 4 RESSOURCES SCANNABLES</span>
+    <h3>Tout est <span class="yellow">en ligne.</span></h3>
+  </div>
+
+  <!-- CARDS GRID -->
+  <div class="cards">
+
+    <div class="card red-tape">
+      <span class="tape">★ LE PITCH · 10 MIN</span>
+      <img src="assets/qr-pitch.png" alt="QR code pitch" class="qr">
+      <div class="info">
+        <div class="icon">🎤</div>
+        <h4>LE PITCH<br>YDAYS</h4>
+        <p>13 slides interactives · timer 10 min intégré · notes du présentateur.</p>
+        <div class="url">money-makerz<br>.vercel.app/pitch</div>
+      </div>
+    </div>
+
+    <div class="card yellow-shadow">
+      <span class="tape">★ LE SITE</span>
+      <img src="assets/qr-site.png" alt="QR code site" class="qr">
+      <div class="info">
+        <div class="icon">🌐</div>
+        <h4>MONEY<br>MAKERZ</h4>
+        <p>La landing page du projet. Manifeste, 2 piliers, méthode, équipe.</p>
+        <div class="url">money-makerz<br>.vercel.app</div>
+      </div>
+    </div>
+
+    <div class="card green-shadow green-tape">
+      <span class="tape">★ L'EBOOK · 80 PAGES</span>
+      <img src="assets/qr-ebook.png" alt="QR code ebook" class="qr">
+      <div class="info">
+        <div class="icon">📕</div>
+        <h4>GUIDE<br>BUSINESS 01</h4>
+        <p>15 idées de business testées · 30 prompts IA · check juridique FR.</p>
+        <div class="url">money-makerz<br>.vercel.app/ebook.pdf</div>
+      </div>
+    </div>
+
+    <div class="card navy-shadow dark-tape">
+      <span class="tape">★ LE SCRIPT</span>
+      <img src="assets/qr-script.png" alt="QR code script" class="qr">
+      <div class="info">
+        <div class="icon">📋</div>
+        <h4>SCRIPT DU<br>PITCH</h4>
+        <p>Le texte exact du pitch · slide par slide · pour transparence totale.</p>
+        <div class="url">money-makerz<br>.vercel.app/pitch-script.pdf</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="foot">
+    <div class="foot-left">
+      <h5>★ CE QUE LE PROJET A ENGENDRÉ</h5>
+      <p>2 startups portées par 4 membres du groupe d'origine, propulsées par les 6 mois d'apprentissage commun.</p>
+      <div class="ventures">
+        <span class="venture">🤖 <b>AI NEED</b> · agence web IA</span>
+        <span class="venture">💈 <b>FADY</b> · réserver son coiffeur en 2 clics</span>
+      </div>
+    </div>
+    <div class="foot-right">
+      <h5>★ L'ÉQUIPE MONEY MAKERZ</h5>
+      <div class="team">
+        Loic · Louis · Fannie<br>
+        JB · Mahou · Enzo · Nathan
+      </div>
+    </div>
+  </div>
+
+  <div class="signoff">
+    <span>@MONEY.MAKERZ</span>
+    <span>DE L'IDÉE AUX REVENUS — AUTREMENT.</span>
+    <span>YDAYS · MAI 2026</span>
+  </div>
+</div>
+
+</body>
+</html>
