@@ -18,8 +18,7 @@
     }
   ],
   "redirects": [
-    { "source": "/pitch", "destination": "/pitch.html" },
-    { "source": "/script", "destination": "/pitch-script.html" },
-    { "source": "/ebook", "destination": "/ebook.html" }
+    { "source": "/script", "destination": "/pitch-script", "permanent": false },
+    { "source": "/deck", "destination": "/pitch", "permanent": false }
   ]
 }
