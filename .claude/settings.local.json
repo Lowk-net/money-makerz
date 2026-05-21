@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c \"import pdfplumber; print\\('OK'\\)\")",
+      "Bash(python -c ' *)",
+      "Bash(pip install *)",
+      "Bash(python -m playwright install chromium)",
+      "Bash(python -c \"from playwright.sync_api import sync_playwright; print\\('ok'\\)\")",
+      "PowerShell(Get-Content \"$env:TEMP\\\\claude\\\\C--Users-laure-OneDrive-Desktop-Money-Maker\\\\1f93c5c5-db8c-4edd-8ff7-941dea306a4a\\\\tasks\\\\bzob9kwyt.output\" -Tail 30 -ErrorAction SilentlyContinue)",
+      "PowerShell(winget install GitHub.cli --silent --accept-source-agreements --accept-package-agreements 2>&1)"
+    ]
+  }
+}

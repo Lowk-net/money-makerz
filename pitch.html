@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Makerz — Pitch YDays · 10 min</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy-900:#0B2444;
+  --navy-800:#11315B;
+  --navy-700:#173E72;
+  --paper:#F4EFE2;
+  --ink:#0A0A0A;
+  --white:#FFFFFF;
+  --red:#E63946;
+  --yellow:#FFD23F;
+  --green:#3BB273;
+  --font-display:'Anton',Impact,sans-serif;
+  --font-body:'Inter',Arial,sans-serif;
+  --font-hand:'Permanent Marker',cursive;
+  --font-mono:'JetBrains Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#000;color:var(--white);font-family:var(--font-body);overflow:hidden;height:100vh}
+
+/* DECK / SLIDE */
+.deck{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+.slide{
+  position:absolute;
+  width:min(95vw, calc(95vh * 16/9));
+  aspect-ratio:16/9;
+  background:var(--navy-900);
+  color:var(--white);
+  background-image:
+    linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+  background-size:32px 32px;
+  padding:54px 70px;
+  overflow:hidden;
+  display:none;
+  flex-direction:column;
+}
+.slide.active{display:flex;animation:fadeIn .4s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+.slide.paper{background:var(--paper);color:var(--ink);
+  background-image:
+    linear-gradient(rgba(11,36,68,.06) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(11,36,68,.06) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+.slide.red{background:var(--red);background-image:none;color:var(--white)}
+.slide.black{background:#000;background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+  background-size:32px 32px;
+}
+
+.slide-tag{
+  position:absolute;top:24px;left:70px;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:3px;
+  color:var(--yellow);opacity:.85;
+}
+.paper .slide-tag{color:var(--red)}
+.slide-num{
+  position:absolute;top:24px;right:70px;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:3px;
+  color:rgba(255,255,255,.5);
+}
+.paper .slide-num{color:rgba(11,36,68,.5)}
+.act-tag{
+  position:absolute;top:24px;left:50%;transform:translateX(-50%);
+  font-family:var(--font-mono);font-size:10px;letter-spacing:4px;
+  color:rgba(255,255,255,.35);text-transform:uppercase;
+}
+.paper .act-tag{color:rgba(11,36,68,.4)}
+
+.slide-foot{
+  position:absolute;bottom:20px;left:70px;right:70px;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--font-mono);font-size:10px;letter-spacing:2px;
+  color:rgba(255,255,255,.4);
+}
+.paper .slide-foot{color:rgba(11,36,68,.45)}
+.slide-foot .brand{display:flex;align-items:center;gap:10px}
+.foot-mark{
+  width:24px;height:24px;border-radius:5px;background:var(--white);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-display);font-size:6.5px;line-height:.9;text-align:center;
+}
+.paper .foot-mark{background:var(--navy-900);color:var(--white)}
+
+h1{font-family:var(--font-display);font-size:108px;line-height:.92;letter-spacing:1px;text-transform:uppercase}
+h2{font-family:var(--font-display);font-size:64px;line-height:.95;letter-spacing:.5px;text-transform:uppercase;margin-bottom:20px}
+h3{font-family:var(--font-display);font-size:36px;line-height:1;letter-spacing:.5px;text-transform:uppercase;margin-bottom:16px}
+h4{font-family:var(--font-display);font-size:18px;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);margin-bottom:8px}
+p{font-size:21px;line-height:1.45}
+.paper h1, .paper h2, .paper h3{color:var(--navy-900)}
+.paper h4{color:var(--red)}
+
+.yellow{color:var(--yellow)}
+.red-txt{color:var(--red)}
+.hand{font-family:var(--font-hand);transform:rotate(-1.5deg);display:inline-block;font-size:28px;color:var(--yellow)}
+.paper .hand{color:var(--red)}
+.struck{position:relative;display:inline-block;color:rgba(255,255,255,.6)}
+.struck::after{content:"";position:absolute;left:-4px;right:-4px;top:55%;height:8px;background:var(--red);transform:rotate(-2deg)}
+
+.pill{
+  display:inline-block;background:var(--navy-700);color:var(--white);
+  padding:6px 13px;border-radius:30px;font-family:var(--font-mono);font-size:12px;
+  letter-spacing:1.5px;margin:3px 4px 3px 0;
+  border:1px solid rgba(255,255,255,.2);
+}
+.pill.red{background:var(--red);border-color:var(--red)}
+.pill.yellow{background:var(--yellow);color:var(--ink);border-color:var(--yellow)}
+.pill.green{background:var(--green);border-color:var(--green)}
+.pill.outline{background:transparent;color:var(--white);border:1px solid var(--white)}
+.paper .pill.outline{color:var(--navy-900);border-color:var(--navy-900)}
+
+.callout{
+  background:var(--navy-800);border:2px solid var(--white);
+  padding:22px 26px;border-radius:8px;
+  box-shadow:8px 8px 0 var(--red);
+}
+.callout.yellow-shadow{box-shadow:8px 8px 0 var(--yellow)}
+.callout p{font-size:19px}
+.paper .callout{background:var(--white);border-color:var(--ink);color:var(--ink);box-shadow:8px 8px 0 var(--navy-900)}
+
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:14px 0}
+.kpi{
+  background:var(--white);color:var(--ink);
+  border:2px solid var(--ink);border-radius:6px;
+  padding:16px 12px;text-align:center;
+  box-shadow:4px 4px 0 var(--ink);
+}
+.kpi .num{font-family:var(--font-display);font-size:48px;color:var(--red);line-height:1}
+.kpi .num.green{color:var(--green)}
+.kpi .num.neg{color:var(--ink)}
+.kpi .lbl{font-family:var(--font-mono);font-size:9px;letter-spacing:1.5px;color:var(--navy-900);margin-top:6px;line-height:1.3}
+
+table.grid{
+  width:100%;border-collapse:collapse;font-size:17px;
+  background:var(--white);color:var(--ink);
+  border:2px solid var(--ink);box-shadow:6px 6px 0 rgba(0,0,0,.45);
+}
+table.grid th{
+  background:var(--navy-900);color:var(--white);
+  padding:11px 16px;text-align:left;
+  font-family:var(--font-display);font-size:16px;letter-spacing:1px;
+}
+table.grid td{padding:10px 16px;border-top:1px solid #ddd;font-size:16px;vertical-align:top}
+table.grid tr:nth-child(even) td{background:rgba(11,36,68,.04)}
+table.grid td.pos{color:var(--green);font-weight:800}
+table.grid td.neg{color:var(--red);font-weight:800}
+table.grid td b{color:var(--navy-900)}
+
+.progress{
+  position:fixed;top:0;left:0;right:0;height:4px;
+  background:rgba(255,255,255,.1);z-index:50;
+}
+.progress-bar{height:100%;background:var(--red);transition:width .3s}
+
+.hud{
+  position:fixed;bottom:14px;right:18px;z-index:50;
+  font-family:var(--font-mono);font-size:10px;letter-spacing:2px;
+  color:rgba(255,255,255,.5);
+  display:flex;gap:12px;align-items:center;
+  background:rgba(0,0,0,.4);padding:6px 12px;border-radius:30px;
+  backdrop-filter:blur(8px);
+}
+.hud kbd{
+  background:rgba(255,255,255,.1);padding:2px 6px;border-radius:4px;
+  font-family:var(--font-mono);font-size:9px;
+}
+.timer{
+  position:fixed;bottom:14px;left:18px;z-index:50;
+  font-family:var(--font-mono);font-size:11px;letter-spacing:2px;
+  color:rgba(255,255,255,.6);
+  background:rgba(0,0,0,.4);padding:6px 14px;border-radius:30px;
+  backdrop-filter:blur(8px);
+}
+.timer.over{color:var(--red)}
+
+.notes-panel{
+  position:fixed;right:0;top:0;bottom:0;width:400px;
+  background:rgba(0,0,0,.95);color:var(--white);
+  padding:50px 24px 24px;overflow-y:auto;z-index:60;
+  transform:translateX(100%);transition:transform .3s;
+  border-left:2px solid var(--yellow);
+}
+.notes-panel.open{transform:translateX(0)}
+.notes-panel h5{font-family:var(--font-display);color:var(--yellow);font-size:16px;letter-spacing:2px;margin-bottom:10px}
+.notes-panel .duration{font-family:var(--font-mono);font-size:10px;color:var(--red);letter-spacing:2px;margin-bottom:14px}
+.notes-panel .script{background:rgba(255,255,255,.05);padding:14px;border-radius:6px;border-left:3px solid var(--yellow);font-size:13px;line-height:1.6}
+.notes-panel .script p{font-size:13px;margin-bottom:10px;line-height:1.55}
+.notes-panel .script em{color:var(--yellow);font-style:normal;background:rgba(255,210,63,.15);padding:1px 4px;border-radius:3px}
+
+.center{flex:1;display:flex;flex-direction:column;justify-content:center}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;flex:1}
+
+.cover-mark{
+  width:90px;height:90px;border-radius:18px;background:var(--white);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  font-family:var(--font-display);font-size:18px;line-height:.95;
+  box-shadow:8px 8px 0 var(--red);transform:rotate(-3deg);
+  margin-bottom:30px;
+}
+
+.phone-sm{
+  width:180px;height:360px;background:#000;border-radius:24px;padding:6px;
+  box-shadow:0 20px 50px rgba(0,0,0,.6), inset 0 0 0 2px #333;
+  position:relative;
+}
+.phone-sm::before{content:"";position:absolute;top:12px;left:50%;transform:translateX(-50%);
+  width:60px;height:16px;background:#000;border-radius:10px;z-index:2;}
+.phone-sm-screen{
+  width:100%;height:100%;background:linear-gradient(160deg,#1A3552,#0B2444);
+  border-radius:20px;padding:30px 10px 10px;font-size:8px;
+  display:flex;flex-direction:column;gap:5px;
+}
+.phone-sm-row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.phone-sm-avatar{width:32px;height:32px;background:var(--white);color:#000;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:5px;line-height:.85;text-align:center;
+  border:2px solid var(--red);flex-shrink:0}
+.phone-sm-stats{display:flex;gap:4px;font-size:6px;text-align:center}
+.phone-sm-stats b{display:block;font-size:8px}
+
+.ebook-mini{
+  width:140px;height:200px;background:var(--navy-800);border:2px solid var(--white);
+  padding:12px;color:var(--white);
+  box-shadow:8px 8px 0 var(--red);transform:rotate(-3deg);
+  display:flex;flex-direction:column;
+}
+.ebook-mini .e-eyebrow{font-family:var(--font-mono);font-size:6px;letter-spacing:2px;color:var(--yellow);margin-bottom:6px}
+.ebook-mini h6{font-family:var(--font-display);font-size:20px;line-height:.9;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.ebook-mini .e-sub{font-size:7px;opacity:.8;margin-top:auto;line-height:1.3}
+
+.pillars-d{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch}
+.pillar-d{
+  background:var(--navy-800);border:2px solid var(--white);
+  padding:22px 20px;border-radius:8px;box-shadow:6px 6px 0 var(--red);
+}
+.pillar-d h5{font-family:var(--font-display);font-size:18px;color:var(--yellow);margin-bottom:10px;letter-spacing:1.5px}
+.pillar-d ul{list-style:none;margin:0}
+.pillar-d li{padding:5px 0 5px 18px;position:relative;font-size:15px}
+.pillar-d li::before{content:"▸";position:absolute;left:0;color:var(--red);font-weight:900}
+.pillar-link-d{align-self:center;font-size:40px;color:var(--yellow)}
+
+.tag-banner{
+  display:inline-block;background:var(--yellow);color:var(--ink);
+  padding:8px 16px;font-family:var(--font-display);font-size:14px;letter-spacing:2px;
+  transform:rotate(-2deg);box-shadow:3px 3px 0 var(--ink);margin-bottom:20px;
+}
+
+.spotlight{
+  background:linear-gradient(135deg,var(--red), #8B1E2A);
+  padding:34px 44px;border-radius:8px;
+  box-shadow:10px 10px 0 var(--ink);
+  border:3px solid var(--white);
+}
+.spotlight h2{color:var(--white);margin-bottom:16px;font-size:54px}
+.spotlight p{font-size:22px;line-height:1.4;color:var(--white)}
+
+ul.check{list-style:none;margin:6px 0}
+ul.check li{padding:5px 0 5px 28px;position:relative;font-size:16px;line-height:1.4}
+ul.check li::before{
+  content:"✓";position:absolute;left:0;top:5px;
+  width:18px;height:18px;background:var(--green);color:var(--white);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:900;
+}
+ul.cross{list-style:none;margin:6px 0}
+ul.cross li{padding:5px 0 5px 28px;position:relative;font-size:16px;line-height:1.4}
+ul.cross li::before{
+  content:"✕";position:absolute;left:0;top:5px;
+  width:18px;height:18px;background:var(--ink);color:var(--white);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:900;
+}
+
+/* Group avatars (pill style with full names) */
+.group-row{display:flex;gap:6px;justify-content:center;margin:12px 0;flex-wrap:wrap}
+.avatar{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:7px 14px;border-radius:30px;
+  background:var(--white);color:var(--navy-900);
+  font-family:var(--font-display);font-size:14px;font-weight:700;letter-spacing:1.5px;
+  border:2px solid var(--ink);box-shadow:2px 2px 0 var(--ink);
+  text-transform:uppercase;
+}
+.avatar.muted{background:rgba(255,255,255,.15);color:rgba(255,255,255,.65);border-color:rgba(255,255,255,.3);box-shadow:2px 2px 0 rgba(255,255,255,.2)}
+.avatar.agence{background:var(--yellow);color:var(--ink);border-color:var(--ink);box-shadow:2px 2px 0 var(--red)}
+.avatar.appli{background:var(--green);color:var(--white);border-color:var(--ink);box-shadow:2px 2px 0 var(--red)}
+
+/* 100-dots KPI grid */
+.dot-grid{
+  display:grid;grid-template-columns:repeat(10,1fr);gap:4px;
+  padding:14px;background:var(--navy-800);border:2px solid var(--white);
+  border-radius:8px;box-shadow:5px 5px 0 var(--red);
+  max-width:280px;
+}
+.dot{
+  aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.18);
+}
+.dot.success{background:var(--yellow);box-shadow:0 0 8px rgba(255,210,63,.6)}
+
+/* Hub-and-spoke for AI Need */
+.hub-layout{
+  position:relative;display:grid;
+  grid-template-columns:1fr 1fr 1fr;
+  gap:10px;margin-top:6px;
+}
+.hub-center{
+  grid-column:2;grid-row:2;
+  background:var(--yellow);color:var(--ink);
+  border:3px solid var(--ink);border-radius:50%;
+  width:170px;height:170px;
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;text-align:center;
+  font-family:var(--font-display);
+  padding:10px;margin:0 auto;
+  box-shadow:5px 5px 0 var(--red);
+  position:relative;z-index:2;
+}
+.hub-center .small{font-family:var(--font-mono);font-size:8px;letter-spacing:2px;color:var(--red);margin-bottom:2px}
+.hub-center .big{font-size:18px;line-height:.95;letter-spacing:1px}
+.hub-center .free{font-size:11px;color:var(--red);margin-top:4px;font-family:var(--font-display);letter-spacing:1.5px}
+.hub-spoke{
+  background:var(--navy-700);color:var(--white);
+  border:2px solid var(--white);border-radius:8px;
+  padding:8px 12px;text-align:center;
+  box-shadow:3px 3px 0 var(--red);
+  display:flex;flex-direction:column;justify-content:center;
+  min-height:62px;
+}
+.hub-spoke .icon{font-size:15px;margin-bottom:2px}
+.hub-spoke h6{font-family:var(--font-display);font-size:13px;letter-spacing:1px;margin-bottom:1px}
+.hub-spoke .desc{font-size:9px;opacity:.85;line-height:1.3}
+
+/* Payment models */
+.pay-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:10px}
+.pay-card{
+  border:2px solid var(--white);border-radius:8px;
+  padding:10px 14px;background:var(--navy-800);
+  box-shadow:4px 4px 0 var(--red);
+  display:flex;align-items:center;gap:10px;
+  position:relative;
+}
+.pay-card.green{background:var(--navy-800);box-shadow:4px 4px 0 var(--green);border-color:var(--green)}
+.pay-card .pay-icon{
+  width:36px;height:36px;border-radius:50%;background:var(--yellow);color:var(--ink);
+  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;
+}
+.pay-card.green .pay-icon{background:var(--green);color:var(--white)}
+.pay-card h6{font-family:var(--font-display);font-size:13px;letter-spacing:1px;margin-bottom:1px}
+.pay-card p{font-size:11px;opacity:.85;line-height:1.3}
+.pay-card .badge-innov{
+  position:absolute;top:-7px;right:8px;
+  background:var(--red);color:var(--white);padding:2px 7px;
+  font-family:var(--font-display);font-size:8px;letter-spacing:1.5px;border-radius:20px;
+}
+
+/* Scene caption boxes */
+.scene{
+  background:rgba(0,0,0,.4);border-left:4px solid var(--yellow);
+  padding:14px 18px;margin:8px 0;
+  font-family:var(--font-mono);font-size:14px;line-height:1.5;
+  color:rgba(255,255,255,.92);
+}
+.paper .scene{background:rgba(11,36,68,.05);color:var(--navy-900)}
+
+/* 2-col skills */
+.skills-2col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}
+.skills-col{
+  background:var(--navy-800);border:2px solid var(--white);
+  padding:18px 20px;border-radius:8px;box-shadow:6px 6px 0 var(--red);
+}
+.skills-col.human{box-shadow:6px 6px 0 var(--yellow);background:var(--navy-700)}
+.skills-col h5{font-family:var(--font-display);font-size:18px;letter-spacing:1.5px;margin-bottom:10px}
+.skills-col.human h5{color:var(--yellow)}
+.skills-col.tech h5{color:#9FBFE8}
+.skills-col ul{list-style:none;margin:0}
+.skills-col li{padding:4px 0 4px 18px;position:relative;font-size:14.5px;line-height:1.4}
+.skills-col li::before{content:"▸";position:absolute;left:0;color:var(--red);font-weight:900}
+.skills-col.human li::before{content:"♡";color:var(--yellow)}
+
+@media print{
+  @page{size:A4 landscape;margin:0}
+  html,body{background:#fff;overflow:visible;height:auto}
+  .deck{position:static;display:block}
+  .slide{display:flex !important;position:relative;width:100%;height:100vh;page-break-after:always;animation:none}
+  .progress,.hud,.timer,.notes-panel{display:none !important}
+}
+</style>
+</head>
+<body>
+
+<div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+
+<div class="deck">
+
+<!-- =================== SLIDE 1 — HOOK =================== -->
+<section class="slide active black" data-duration="0:15" data-script="
+[Lumière sur l'écran, logo plein cadre. Pause 1 seconde avant la première phrase.]
+
+7 étudiants ont voulu prouver qu'on pouvait apprendre à gagner sa vie en ligne.
+
+Voici ce qu'on en a *vraiment* appris.
+">
+  <span class="act-tag">ACTE I — LE RÊVE</span>
+  <span class="slide-tag">★ MONEY MAKERZ · YDAYS 2026</span>
+  <span class="slide-num">01 / 13</span>
+  <div class="center" style="align-items:center;text-align:center">
+    <div class="cover-mark">MONEY<br>MAKERZ</div>
+    <h1 style="font-size:84px"><span class="struck">Tout le monde</span><br>veut gagner<br>de l'argent<br><span class="yellow">en ligne.</span></h1>
+    <p style="margin-top:26px;font-size:22px;opacity:.85;max-width:780px"><b style="color:var(--yellow)">7 étudiants</b> · <b>0 abonnés au départ</b> · une histoire qui ne s'est pas finie comme prévu.</p>
+  </div>
+  <div class="slide-foot">
+    <span class="brand"><span class="foot-mark">MONEY<br>MAKERZ</span> @money.makerz</span>
+    <span>YDAYS · MAI 2026</span>
+  </div>
+</section>
+
+<!-- =================== SLIDE 2 — L'IDÉE D'ORIGINE =================== -->
+<section class="slide" data-duration="0:45" data-script="
+[Voix qui pose le décor. Calme, on raconte une genèse.]
+
+Au début, on était 7. Étudiants, même promo, même galère. Tous lassés du même truc : sur Instagram, on voyait défiler des comptes qui parlaient business en ligne, et personne ne montrait jamais *comment*, jamais les vrais chiffres, jamais les ratés.
+
+Notre idée a tenu en une phrase : *construire le compte qu'on aurait voulu suivre nous-mêmes*. Un média qui teste chaque jour une vraie idée de business. Et un labo qui documente ce qui se passe — temps passé, euros sortis, euros rentrés.
+
+Deux piliers : *média* pour acquérir l'audience, *labo* pour la convaincre. Et tout ça branché sur une seule promesse : *de l'idée aux revenus*.
+">
+  <span class="act-tag">ACTE I — LE RÊVE</span>
+  <span class="slide-tag">★ L'IDÉE DE DÉPART</span>
+  <span class="slide-num">02 / 13</span>
+  <div class="center">
+    <h2>Une idée<br>tenue en <span class="yellow">une phrase.</span></h2>
+    <p style="font-size:26px;max-width:1000px;margin:8px 0 24px"><b style="color:var(--yellow)">"Construire le compte qu'on aurait voulu suivre nous-mêmes."</b></p>
+    <div class="pillars-d">
+      <div class="pillar-d">
+        <h5>PILIER 01 — MÉDIA</h5>
+        <ul>
+          <li>1 idée business / jour</li>
+          <li>Reels courts, audience 18-30</li>
+          <li><b>Acquisition</b></li>
+        </ul>
+      </div>
+      <div class="pillar-link-d">⇄</div>
+      <div class="pillar-d" style="box-shadow:6px 6px 0 var(--yellow)">
+        <h5>PILIER 02 — LABO</h5>
+        <ul>
+          <li>Tests réels d'idées</li>
+          <li>Chiffres documentés, ratés inclus</li>
+          <li><b>Monétisation</b></li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:18px;font-family:var(--font-display);font-size:22px;letter-spacing:2px;text-align:center">PROMESSE : <span class="yellow">DE L'IDÉE — AUX REVENUS.</span></p>
+  </div>
+  <div class="slide-foot">
+    <span class="brand"><span class="foot-mark">MONEY<br>MAKERZ</span> Origine</span>
+    <span>0:45</span>
+  </div>
+</section>
+
+<!-- =================== SLIDE 3 — POURQUOI BONNE IDÉE =================== -->
+<section class="slide paper" data-duration="0:45" data-script="
+[Énumérer les 3 raisons en pointant chaque carte. Voix qui pose la logique business.]
+
+Trois raisons nous ont fait croire qu'on tenait quelque chose.
+
+Un — le marché est énorme et il ne se vide pas. Des dizaines de millions de jeunes en France et en Europe se posent la question 'comment je peux gagner ma vie autrement'. La demande est massive.
+
+Deux — l'angle était notre avantage. *Tester* au lieu de *promettre*. Là où les influenceurs racontent une vie qu'ils n'ont pas, nous, on aurait des screenshots, des chiffres, des échecs assumés.
+
+Trois — la double monétisation. L'audience payait via l'ebook et les templates. Et nos propres tests d'idées nous généraient déjà du revenu. Le projet pouvait s'auto-financer.
+
+Sur le papier, c'était solide.
+">
+  <span class="act-tag" style="color:rgba(11,36,68,.45)">ACTE I — LE RÊVE</span>
+  <span class="slide-tag">★ POURQUOI ÇA TENAIT LA ROUTE</span>
+  <span class="slide-num">03 / 13</span>
+  <div class="center">
+    <h2>Sur le papier,<br>c'était <span class="red-txt">solide.</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:14px">
+      <div class="callout"><h4>① UN MARCHÉ ÉNORME</h4><p style="font-size:17px;line-height:1.45;color:var(--ink)">Des dizaines de millions de jeunes cherchent une voie alternative au salariat classique.</p></div>
+      <div class="callout"><h4>② L'ANGLE DE LA PREUVE</h4><p style="font-size:17px;line-height:1.45;color:var(--ink)">Tester au lieu de promettre. Notre force vs influenceurs : on a les <b>vrais chiffres</b>.</p></div>
+      <div class="callout"><h4>③ DOUBLE MONÉTISATION</h4><p style="font-size:17px;line-height:1.45;color:var(--ink)">Audience monétisée (ebooks) + idées testées qui génèrent du cash. Le projet s'auto-finance.</p></div>
+    </div>
+    <p style="margin-top:24px;text-align:center;font-size:20px"><span class="hand">→ on s'est lancés à 7, convaincus.</span></p>
+  </div>
+  <div class="slide-foot">
+    <span class="brand"><span class="foot-mark">MONEY<br>MAKERZ</span> Hypothèse</span>
+    <span>0:45</span>
+  </div>
+</section>
+
+<!-- =================== SLIDE 4 — CE QU'ON A CONSTRUIT =================== -->
+<section class="slide" data-duration="0:45" data-script="
+[Présenter les livrables visuellement. Voix qui appuie la fierté collective sur la dernière phrase.]
+
+En quelques semaines, on a sorti une identité de marque complète : logo, charte, ligne édito autour de trois mots — *Impactant, Street, Bold*. On voulait une marque qu'on reconnaisse en une demi-seconde dans le scroll.
+
+On a lancé le compte Instagram. Et on a tenu une cadence intense : 91 reels publiés en 5 mois, à tour de rôle. Quasiment un par jour, week-ends compris.
+
+Mais au-delà des livrables, à ce moment-là, *on n'était plus 7 colocataires d'un projet*. On était une équipe. Et ça, c'était notre vrai premier livrable.
+
+[Transition vers Acte II — Pause d'1 seconde, regard au jury.]
+
+Et puis on a touché du doigt la vraie réalité du jeu.
+">
+  <span class="act-tag">ACTE I — LE RÊVE</span>
+  <span class="slide-tag">★ CE QU'ON A CONSTRUIT</span>
+  <span class="slide-num">04 / 13</span>
+  <div class="center">
+    <h2>Ce qu'on a posé<br>sur la table.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:8px;align-items:end">
+      <div style="text-align:center">
+        <div class="cover-mark" style="margin:0 auto 14px">MONEY<br>MAKERZ</div>
+        <h4 style="color:var(--yellow)">① IDENTITÉ</h4>
+        <p style="font-size:14px;opacity:.85">IMPACTANT — STREET — BOLD<br>Logo · charte · ligne édito</p>
+      </div>
+      <div style="text-align:center">
+        <div class="phone-sm" style="margin:0 auto">
+          <div class="phone-sm-screen">
+            <div class="phone-sm-row"><span>14:57</span><span>5G</span></div>
+            <div class="phone-sm-row">
+              <div class="phone-sm-avatar">MONEY<br>MAKERZ</div>
+              <div class="phone-sm-stats"><div><b>91</b>posts</div><div><b>8.2k</b>abos</div><div><b>312</b>suivis</div></div>
+            </div>
+            <div style="font-size:8px"><b>money.makerz</b><br>De l'idée aux revenus 💸</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-top:auto">
+              <div style="aspect-ratio:1;background:linear-gradient(135deg,#E63946,#8B1E2A)"></div>
+              <div style="aspect-ratio:1;background:linear-gradient(135deg,#FFD23F,#C19A20)"></div>
+              <div style="aspect-ratio:1;background:linear-gradient(135deg,#0B2444,#000)"></div>
+            </div>
+          </div>
+        </div>
+        <h4 style="margin-top:12px;color:var(--yellow)">② COMPTE INSTA</h4>
+        <p style="font-size:14px;opacity:.85">91 reels publiés · cadence quasi-quotidienne</p>
+      </div>
+      <div style="text-align:center">
+        <div class="group-row" style="margin-bottom:14px;gap:5px">
+          <div class="avatar">Loic</div><div class="avatar">Louis</div><div class="avatar">Fannie</div><div class="avatar">JB</div>
+        </div>
+        <div class="group-row" style="margin-bottom:14px;gap:5px">
+          <div class="avatar">Mahou</div><div class="avatar">Enzo</div><div class="avatar">Nathan</div>
+        </div>
+        <h4 style="color:var(--yellow)">③ UNE ÉQUIPE</h4>
+        <p style="font-size:14px;opacity:.85"><b>7 personnes</b> qui sont devenues<br>une vraie équipe — pas 7 stagiaires.</p>
+      </div>
+    </div>
+    <p style="margin-top:30px;text-align:center;font-size:22px"><span class="hand">→ Et puis on a touché du doigt la vraie réalité.</span></p>
+  </div>
+  <div class="slide-foot">
+    <span class="brand"><span class="foot-mark">MONEY<br>MAKERZ</span> Livrables</span>
+    <span>0:45 · Transition Acte II</span>
+  </div>
+</section>
+
+<!-- =================== SLIDE 5 — LA MONTÉE (chiffres honnêtes) =================== -->
+<section class="slide" data-duration="0:45" data-script="
+[Énergie qui remonte mais reste humble. Voix qui sourit légèrement — on raconte un effort, pas un triomphe.]
+
+Pendant 5 mois, on a poussé fort. De zéro à 8 236 abonnés. 91 reels publiés — quasiment un par jour, sept jours sur sept.
+
+Les vues, par contre, n'ont jamais vraiment explosé. Moins de 50 000 cumulées sur tout le compte. Pas de viralité. On gagnait des followers à la main, un par un, par le bouche-à-oreille de notre cercle élargi.
+
+Mais le WhatsApp du groupe explosait dès qu'un reel passait les 1 000 vues. On célébrait des victoires modestes, mais elles étaient à nous. On adaptait la stratégie le dimanche soir, en visio.
+
+C'était la première fois que la plupart d'entre nous voyaient un truc qu'on avait construit ensemble exister vraiment pour des inconnus. On se disait qu'on tenait quelque chose. On avait raison. *Mais pas pour les bonnes raisons.*
+">
+  <span class="act-tag">ACTE II — LA RÉALITÉ</span>
+  <span class="slide-tag">★ LA MONTÉE</span>
+  <span class="slide-num">05 / 13</span>
+  <div class="center">
+    <h2>5 mois,<br><span class="yellow">on a poussé fort.</span></h2>
+    <div class="kpi-row">
+      <div class="kpi"><div class="num green">8 236</div><div class="lbl">ABONNÉS GAGNÉS<br>(82% DE L'OBJ. 10K)</div></div>
+      <div class="kpi"><div class="num green">91</div><div class="lbl">REELS PUBLIÉS<br>(91% DE L'OBJ. 100)</div></div>
+      <div class="kpi"><div class="num green">5 mois</div><div class="lbl">CADENCE<br>QUASI-QUOTIDIENNE</div></div>
+      <div class="kpi"><div class="num green">100%</div><div class="lbl">IDENTITÉ DE MARQUE<br>LIVRÉE</div></div>
+    </div>
+    <div class="callout" style="margin-top:14px;background:var(--navy-800);padding:14px 20px">
+      <p style="font-size:16px;color:#fff"><b style="color:var(--yellow)">★ Le revers honnête :</b> moins de <b>50 000 vues cumulées</b> sur tout le compte. Pas de viralité. On gagnait des followers <em>à la main</em>, un par un, par le bouche-à-oreille de notre cercle élargi.</p>
+    </div>
+    <div class="scene" style="margin-top:10px">
+      <b style="color:var(--yellow)">★ Côté équipe :</b> WhatsApp en feu dès qu'un reel passait les <b>1 000 vues</b>. Victoires modestes, mais à nous. <b style="color:var(--yellow)">Le compte montait — pas vite, mais ensemble.</b>
+    </div>
+    <p style="margin-top:10px;text-align:center;font-size:17px;opacity:.85"><span class="hand">on tenait quelque chose. mais pas pour les raisons qu'on croyait.</span></p>
+  </div>
+  <div class="slide-foot">
+    <span class="brand"><span class="foot-mark">MONEY<br>MAKERZ</span> Croissance</span>
+    <span>0:45</span>
+  </div>
+</section>
+
+<!-- =================== SLIDE 6 — LE BAN (JE) =================== -->
+<section class="slide red" data-duration="1:00" data-script="
+[Voix change : un seul des fondateurs parle, en 'je'. Calme, lent, presque chuchoté au début. Pause d'une seconde après 'supprimé'.]
+
+C'était un mardi matin. J'ouvre l'app pour checker les stats du reel de la veille.
+
+Le compte n'existe plus.
+
+*[pause d'une seconde]*
+
+Pas suspendu. *Supprimé.* 8 236 abonnés évaporés. 91 reels invisibles. Cinq mois de travail. Disparus.
+
+En deux heures, le WhatsApp du groupe a explosé. Certains essayaient de comprendre. D'autres voulaient tout arrêter. Un autre encore est resté silencieux toute la journée — c'était sa façon à lui d'encaisser.
+
+[Voix reprend de la consistance.]
+
+L'erreur technique, on l'a comprise après. On scrapait des reels concurrents pour analyse — depuis le même compte qui publiait. Instagram l'a vu comme un comportement automatisé. Couperet immédiat.
+
+Le soir même, on s'est mis en visio. Tous les 7. On n'a pas parlé technique. On s'est juste dit *comment on vivait ça*. Et à la fin de la visio, personne n'avait quitté la conversation.
+
+[Pause. Regard franc au jury.]
+
+*C'est cette soirée-là qu'on a appris ce qu'aucun cours ne nous apprendra jamais : tenir ensemble, quand tout s'écroule.*
+">
+  <span class="act-tag" style="color:rgba(255,255,255,.5)">ACTE II — LA RÉALITÉ</span>
+  <span class="slide-tag" style="color:#fff;opacity:.9">★ LE MUR</span>
+  <span class="slide-num" style="color:rgba(255,255,255,.7)">06 / 13</span>
+  <div class="center">
+    <h2 style="color:#fff;font-size:64px">On a perdu<br><span style="color:var(--yellow)">8 236 abonnés</span><br>en une nuit.</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:16px">
+      <div>
+        <div class="scene" style="background:rgba(0,0,0,.45);border-left-color:var(--yellow)">
+          <b style="color:var(--yellow)">06:42 · Un mardi matin</b><br>
+          <span style="color:#fff">J'ouvre l'app. Le compte n'existe plus. <b style="color:var(--yellow)">Pas suspendu. Supprimé.</b></span>
+        </div>
+        <div class="scene" style="background:rgba(0,0,0,.45);border-left-color:var(--yellow);margin-top:10px">
+          <b style="color:var(--yellow)">+ 2h · WhatsApp en feu</b><br>
+          <span style="color:#fff">Certains veulent comprendre. D'autres veulent arrêter. Un autre reste silencieux.</span>
+        </div>
+        <div class="scene" style="background:rgba(0,0,0,.45);border-left-color:var(--yellow);margin-top:10px">
+          <b style="color:var(--yellow)">21:00 · Visio à 7</b><br>
+          <span style="color:#fff">On parle pas technique. On dit <b style="color:var(--yellow)">comment on le vit</b>. À la fin, personne n'a quitté.</span>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center">
+        <h4 style="color:var(--yellow)">★ CE QU'ON A APPRIS CE SOIR-LÀ</h4>
+        <p style="color:#fff;font-size:21px;line-height:1.4;margin-top:8px">
+          Tenir <b style="color:var(--yellow)">ensemble</b><br>
+          quand tout s'écroule.<br><br>
+          <span style="font-size:16px;opacity:.9">Pas la leçon qu'on cherchait.<br>La plus précieuse qu'on a eue.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-foot" style="color:rgba(255,255,255,.7)">
+    <span class="brand"><span class="foot-mark" style="background:#fff;color:#000">MONEY<br>MAKERZ</span> Le mur</span>
+    <span>1:00 · racontée en "je"</span>
+  </div>
+</section>
+
+<!-- =================== SLIDE 7 — TIKTOK IA =================== -->
+<section class="slide" data-duration="1:00" data-script="
+[Retour à un "on" collectif. Voix qui pose une décision difficile, pas une excuse.]
+
+On n'a pas baissé les bras. Quelques jours après, on a tenté un plan B : pivoter sur TikTok, avec du contenu généré par IA. Voix off synthétique, montages CapCut, niches motivation et side hustles. L'objectif : atteindre le seuil de monétisation du programme créateur.
+
+Pendant trois semaines, on a posté tous les jours. Et on a regardé ce qu'on était en train de produire.
+
+C'était propre. C'était calibré. *Et c'était vide.* Aucune voix dedans. On générait du contenu qui aurait pu être fait par n'importe quel autre compte sur la planète.
+
+On s'est posé une vraie question, en groupe. *Est-ce que c'est ça qu'on veut signer ?* La réponse a été non, à l'unanimité.
+
+[Voix qui appuie la phrase suivante.]
+
+On a coupé. Volontairement. Pas parce que ça ne marchait pas — parce que ça ne nous ressemblait plus. Et avec le recul, c'est peut-être la décision la plus mature qu'on ait prise.
+">
+  <span class="act-tag">ACTE II — LA RÉALITÉ</span>
+  <span class="slide-tag">★ PLAN B — TIKTOK IA</span>
+  <span class="slide-num">07 / 13</span>
+  <div class="center">
+    <h2>On a essayé.<br>Puis on a <span class="red-txt">choisi d'arrêter.</span></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:18px">
+      <div>
+        <h4>★ CE QU'ON A FAIT</h4>
+        <ul class="check" style="margin-top:8px">
+          <li>Pivot sur TikTok avec contenu IA</li>
+          <li>Voix off ElevenLabs · montages CapCut</li>
+          <li>Niches motivation / side hustles</li>
+          <li>3 semaines de posts quotidiens</li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:var(--red)">★ POURQUOI ON A COUPÉ</h4>
+        <div class="scene" style="margin-top:8px">
+          <span style="color:#fff">"C'était propre. C'était calibré. Et c'était <b style="color:var(--yellow)">vide</b>. On générait du contenu qui aurait pu être fait par n'importe quel autre compte."</span>
+        </div>
+        <p style="margin-top:10px;font-size:16px;opacity:.9">On s'est posé la question, en groupe : <b>est-ce qu'on veut signer ça ?</b><br>Réponse : non. À l'unanimité.</p>
+      </div>
+    </div>
+    <div class="callout yellow-shadow" style="margin-top:18px;padding:16px 22px">
+      <p style="font-size:19px;color:#fff"><b style="color:var(--yellow)">★ La leçon :</b> L'IA, seule, ne crée pas de valeur. <b>Elle accélère. Elle ne remplace pas la voix.</b> Sans humain derrière, l'algorithme finit toujours par s'en apercevoir.</p>
+    </div>
+  </div>
+  <div class="slide-foot">
+    <span class="brand"><span class="foot-mark">MONEY<br>MAKERZ</span> Choix éthique</span>
+    <span>1:00</span>
+  </div>
+</section>
+
+<!-- =================== SLIDE 8 — CE QU'ON A VÉCU =================== -->
+<section class="slide paper" data-duration="0:45" data-script="
+[Voix mesurée. On présente un bilan honnête mais structuré. Pas dramatique.]
+
+On a compilé honnêtement ce qu'on a vécu, et surtout, ce qu'on en a fait *collectivement*. Trois événements. Trois réactions de groupe.
+
+Le ban Instagram : on s'est parlé sans se blâmer. Personne n'a tenu personne pour responsable. Décision collective : on continue.
+
+Le contenu IA TikTok : on a posé une limite éthique commune. Décision collective : on coupe.
+
+La dispersion d'équipe : à 7, c'est compliqué de tout pousser à fond. Au lieu d'enterrer le projet, on a redécoupé les rôles selon les *vraies* envies de chacun. Décision collective : on se spécialise.
+
+À chaque fois, ce n'est pas la décision qui compte. C'est qu'elle ait été *prise à 7*.
+">
+  <span class="act-tag" style="color:rgba(11,36,68,.45)">ACTE II — LA RÉALITÉ</span>
+  <span class="slide-tag">★ CE QU'ON A APPRIS DANS LA DOULEUR</span>
+  <span class="slide-num">08 / 13</span>
+  <div class="center">
+    <h2>3 événements.<br>3 réactions <span class="red-txt">collectives.</span></h2>
+    <table class="grid" style="margin-top:14px">
+      <tr><th style="width:200px">L'événement</th><th style="width:320px">Ce qu'on a fait techniquement</th><th>Ce qu'on en a fait, à 7</th></tr>
+      <tr>
+        <td class="neg">Ban Instagram<br><span style="font-weight:400;color:#000;font-size:14px">–8 236 abos · –91 reels<br>en 1 nuit</span></td>
+        <td>Reset complet du compte. Analyse technique de la cause.</td>
+        <td><b>On s'est parlé sans se blâmer.</b><br>Personne n'a tenu personne responsable.</td>
+      </tr>
+      <tr>
+        <td class="neg">TikTok IA<br><span style="font-weight:400;color:#000;font-size:14px">0 € · 3 semaines</span></td>
+        <td>Arrêt complet de la production IA générique.</td>
+        <td><b>On a posé une limite éthique commune.</b><br>Pas vendre ce qu'on ne signerait pas.</td>
+      </tr>
+      <tr>
+        <td class="neg">Dispersion à 7<br><span style="font-weight:400;color:#000;font-size:14px">3 canaux en parallèle</span></td>
+        <td>Re-priorisation des canaux. Focus single-channel.</td>
+        <td><b>On a redécoupé les rôles</b> selon les <em>vraies</em> envies de chacun, pas selon les compétences supposées.</td>
+      </tr>
+    </table>
+    <p style="margin-top:14px;text-align:center;font-size:19px;color:var(--navy-900)">Ce qui compte, ce n'est pas la décision. C'est qu'<b>elle ait été prise à 7</b>.</p>
+  </div>
+  <div class="slide-foot">
+    <span class="brand"><span class="foot-mark">MONEY<br>MAKERZ</span> Bilan honnête</span>
+    <span>0:45</span>
+  </div>
+</section>
+
+<!-- =================== SLIDE 9 — COMPÉTENCES (HUMAIN + TECH) =================== -->
+<section class="slide" data-duration="1:00" data-script="
+[Slide-clé. Pointer la colonne de gauche en premier. Voix qui appuie 'humain' avec lenteur.]
+
+Et c'est ici que les choses deviennent intéressantes. Quand on regarde ce qu'on a vraiment appris sur six mois, il y a deux colonnes.
+
+À droite, des compétences techniques. Production de contenu, design système, copywriting, automatisation no-code, prompt engineering, gestion d'audience. Toutes utiles. Toutes monnayables.
+
+[Pause courte. Pointer la gauche.]
+
+Mais à gauche, il y a une colonne qu'aucun cours en école ne nous aurait apprise. Se parler honnêtement quand tout casse. Reconnaître ses limites individuelles sans se cacher derrière le groupe. Distribuer des rôles selon les vraies envies, pas les CV. Décider à 7 quand il faut couper. Garder le lien quand le projet vacille. Et transformer un échec en école commune.
+
+Et c'est cette colonne de gauche qui rend la colonne de droite *vendable*. Sans elle, on serait juste 7 personnes avec des compétences. *Avec elle*, on est un collectif qui sait travailler ensemble même quand c'est dur.
+">
+  <span class="act-tag">ACTE II — LA RÉALITÉ</span>
+  <span class="slide-tag">★ CE QU'ON A VRAIMENT APPRIS</span>
+  <span class="slide-num">09 / 13</span>
+  <div class="center">
+    <h2>Deux colonnes,<br><span class="yellow">une seule importe vraiment.</span></h2>
+    <div class="skills-2col" style="margin-top:14px">
+      <div class="skills-col human">
+        <h5>♡ COMPÉTENCES HUMAINES & DE GROUPE</h5>
+        <ul>
+          <li><b>Se parler honnêtement</b> quand tout casse</li>
+          <li><b>Reconnaître ses limites</b> individuelles</li>
+          <li><b>Distribuer les rôles</b> selon les vraies envies, pas les CV</li>
+          <li><b>Décider à 7</b> quand il faut couper une voie</li>
+          <li><b>Garder le lien</b> quand le projet vacille</li>
+          <li><b>Transformer un échec</b> en école commune</li>
+        </ul>
+      </div>
+      <div class="skills-col tech">
+        <h5>▸ COMPÉTENCES TECHNIQUES</h5>
+        <ul>
+          <li>Production de contenu vidéo court</li>
+          <li>Design système &amp; branding</li>
+          <li>Copywriting &amp; ligne édito</li>
+          <li>Automatisation no-code (Make, Zapier)</li>
+          <li>Prompt engineering — comme <em>outil</em>, pas magie</li>
+          <li>Gestion d'audience &amp; analytics</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:14px;text-align:center;font-size:19px"><span class="hand">→ la colonne de gauche rend la colonne de droite vendable.</span></p>
+  </div>
+  <div class="slide-foot">
+    <span class="brand"><span class="foot-mark">MONEY<br>MAKERZ</span> Vraies compétences</span>
+    <span>1:00 · slide pivot</span>
+  </div>
+</section>
+
+<!-- =================== SLIDE 10 — LE DÉCLIC + 5% KPI =================== -->
+<section class="slide" data-duration="0:45" data-script="
+[Énergie qui se transforme. On entre dans l'acte III. Voix calme mais qui retourne la perception.]
+
+On a longtemps cru qu'on avait échoué. Et puis on a regardé les chiffres du marché.
+
+*95% des projets de business en ligne échouent dans leur première année.* Seulement 5% survivent. C'est le benchmark.
+
+Nous, on a lancé un projet. Aujourd'hui, sur les 7 du groupe, *4 sont entrepreneurs*. Deux ont fondé une agence — Loic et Louis. Deux autres ont lancé une appli — Nathan et Enzo. Fannie, JB et Mahou ont choisi d'autres voies, mais on garde tous le fil.
+
+*Mathématiquement, on est très au-dessus du marché.*
+
+Et entre les deux, il y a eu un soir, à deux, dans un café à Paris. On a posé la question franchement : *on continue ensemble, ou on s'arrête là ?*
+
+On a continué.
+">
+  <span class="act-tag">ACTE III — LE PIVOT</span>
+  <span class="slide-tag">★ LE DÉCLIC · KPI MARCHÉ</span>
+  <span class="slide-num">10 / 13</span>
+  <div class="center">
+    <h2>95% échouent.<br><span class="yellow">Nous, 4 sur 7<br>sont entrepreneurs.</span></h2>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:34px;margin-top:14px;align-items:center">
+      <div>
+        <h4 style="color:var(--yellow);text-align:center;margin-bottom:8px">★ LE BENCHMARK MARCHÉ</h4>
+        <div class="dot-grid">
+          <!-- 100 dots, 5 colored as success -->
+          <span class="dot success"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot success"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot success"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot success"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot success"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+        <p style="text-align:center;margin-top:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:1.5px;color:var(--yellow)">5% RÉUSSISSENT · 95% ÉCHOUENT</p>
+      </div>
+      <div>
+        <h4 style="color:var(--yellow)">★ NOTRE GROUPE</h4>
+        <div class="group-row" style="justify-content:flex-start;margin-top:6px;gap:5px">
+          <div class="avatar agence">Loic</div><div class="avatar agence">Louis</div><div class="avatar appli">Nathan</div><div class="avatar appli">Enzo</div>
+          <div class="avatar muted">Fannie</div><div class="avatar muted">JB</div><div class="avatar muted">Mahou</div>
+        </div>
+        <p style="margin-top:14px;font-size:21px;line-height:1.35">
+          <b style="color:var(--yellow);font-size:30px">4 / 7</b> sont aujourd'hui entrepreneurs.<br>
+          <span style="font-size:16px;opacity:.85">2 → l'agence <b style="color:var(--yellow)">AI Need</b> · 2 → appli coiffeurs · 3 → autres voies (tous liés)</span>
+        </p>
+        <div class="callout yellow-shadow" style="margin-top:14px;padding:12px 16px">
+          <p style="font-size:17px"><b style="color:var(--yellow)">57%</b> de notre groupe est entrepreneur · contre <b style="color:var(--yellow)">5%</b> du marché.</p>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:14px;text-align:center;font-size:18px"><span class="hand">"on continue ensemble, ou on s'arrête là ?"</span> — un soir, dans un café à Paris.</p>
+  </div>
+  <div class="slide-foot">
+    <span class="brand"><span class="foot-mark">MONEY<br>MAKERZ</span> Le déclic · KPI marché</span>
+    <span>0:45 · Acte III</span>
+  </div>
+</section>
+
+<!-- =================== SLIDE 11 — AI NEED · LE HUB =================== -->
+<section class="slide" data-duration="0:45" data-script="
+[Slide business pure. Voix qui prend du coffre, présente clairement le modèle. Pointer le centre, puis les services, puis les 2 paiements.]
+
+Notre agence s'appelle *AI Need*. Une agence digitale propulsée — pas remplacée — par l'IA.
+
+Notre modèle tient en une logique simple. Au centre : un *audit stratégique offert* à chaque prospect. Pas un appel commercial déguisé. Un vrai audit livrable, en 7 jours. C'est notre porte d'entrée. C'est ce qui nous distingue.
+
+Autour, cinq services qui se déclenchent selon le besoin identifié : la création de site web, le SEO, les ads Meta et Google, le contenu boosté à l'IA, et les automatisations.
+
+Et surtout, deux modèles de paiement au choix du client : *au projet*, en forfait classique. Ou — et c'est notre vraie innovation — *au pourcentage des leads apportés*. On prend le risque avec nos clients, parce que si on ne livre pas, on ne gagne pas.
+
+C'est ça AI Need. Une agence qui parie sur ses propres résultats.
+">
+  <span class="act-tag">ACTE III — LE PIVOT</span>
+  <span class="slide-tag">★ AI NEED · LE MODÈLE</span>
+  <span class="slide-num">11 / 13</span>
+  <div class="center" style="padding-top:6px">
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:10px">
+      <h2 style="margin-bottom:0;font-size:54px"><span class="yellow">AI Need</span> — l'agence.</h2>
+      <span class="pill yellow" style="font-size:11px">★ AGENCE DIGITALE IA-PROPULSÉE</span>
+    </div>
+    <p style="font-size:17px;opacity:.85;margin-bottom:6px;max-width:1000px">Une agence de marketing digital qui aide les marques à exister en ligne. <b style="color:var(--yellow)">L'IA accélère. Nous portons la voix.</b></p>
+
+    <!-- HUB LAYOUT -->
+    <div class="hub-layout">
+      <div class="hub-spoke" style="grid-column:1;grid-row:1">
+        <span class="icon">🌐</span><h6>SITE WEB</h6><span class="desc">Création · refonte · landing</span>
+      </div>
+      <div class="hub-spoke" style="grid-column:2;grid-row:1">
+        <span class="icon">🔍</span><h6>SEO</h6><span class="desc">Référencement organique</span>
+      </div>
+      <div class="hub-spoke" style="grid-column:3;grid-row:1">
+        <span class="icon">📣</span><h6>ADS</h6><span class="desc">Meta · Google · TikTok</span>
+      </div>
+
+      <div class="hub-center">
+        <span class="small">★ PORTE D'ENTRÉE</span>
+        <span class="big">AUDIT<br>STRATÉGIQUE</span>
+        <span class="free">100% OFFERT</span>
+      </div>
+
+      <div class="hub-spoke" style="grid-column:1;grid-row:3">
+        <span class="icon">✍</span><h6>CONTENU IA</h6><span class="desc">Reels · posts · ebooks</span>
+      </div>
+      <div class="hub-spoke" style="grid-column:2;grid-row:3">
+        <span class="icon">⚡</span><h6>AUTOMATISATIONS</h6><span class="desc">Make · n8n · workflows</span>
+      </div>
+      <div class="hub-spoke" style="grid-column:3;grid-row:3">
+        <span class="icon">✉</span><h6>NEWSLETTER</h6><span class="desc">Lead nurturing &amp; CRM</span>
+      </div>
+    </div>
+
+    <!-- PAYMENT MODELS -->
+    <div class="pay-row">
+      <div class="pay-card">
+        <div class="pay-icon">💼</div>
+        <div><h6 style="color:#fff">AU PROJET</h6><p style="color:#fff">Forfait fixe par livrable · facturation classique</p></div>
+      </div>
+      <div class="pay-card green" style="position:relative">
+        <span class="badge-innov">★ INNOVATION</span>
+        <div class="pay-icon">📈</div>
+        <div><h6 style="color:#fff">% SUR LES LEADS APPORTÉS</h6><p style="color:#fff">Performance · on ne gagne que si vous gagnez</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-foot">
+    <span class="brand"><span class="foot-mark">MONEY<br>MAKERZ</span> AI Need · modèle</span>
+    <span>0:45 · slide business</span>
+  </div>
+</section>
+
+<!-- =================== SLIDE 12 — LA PREUVE + 1ER CLIENT =================== -->
+<section class="slide black" data-duration="0:45" data-script="
+[Pause de 2 secondes. Voix posée, presque chuchotée pour la première phrase.]
+
+Et le site Money Makerz, l'ebook de 80 pages que vous avez vus au tout début de cette présentation ?
+
+[Pause d'une seconde.]
+
+On les a refaits, à deux, en une seule journée.
+
+[Pause.]
+
+Pas parce qu'on a une IA. *Parce qu'on a passé 6 mois à 7 à apprendre à designer, à écrire, à structurer une marque.* L'IA nous a fait gagner peut-être 4 heures. Les 5 autres mois d'apprentissage à 7 — c'est ce qui a fait la vraie différence.
+
+Et la meilleure preuve qu'on a aujourd'hui : on a déjà *signé notre premier client*. Avec le même process. Audit offert, brief précis, livrable rapide.
+
+C'est ça qu'on vend aux marques. Pas un service IA. *Une équipe qui sait penser ensemble*, et qui utilise l'IA comme outil, parmi d'autres.
+">
+  <span class="act-tag" style="color:rgba(255,255,255,.4)">ACTE III — LE PIVOT</span>
+  <span class="slide-tag">★ LA PREUVE + 1ER CLIENT</span>
+  <span class="slide-num">12 / 13</span>
+  <div class="center" style="align-items:center;justify-content:center;text-align:center">
+    <div class="spotlight" style="max-width:1050px">
+      <h2>Ce site, cet ebook…<br><span style="color:var(--yellow)">on les a refaits à 2,<br>en 1 journée.</span></h2>
+      <p style="font-size:20px;line-height:1.4">
+        Pas grâce à l'IA. <b style="color:var(--yellow)">Grâce à 6 mois à 7 d'apprentissage.</b><br>
+        L'IA nous a fait gagner 4 heures. Le groupe nous a fait gagner 6 mois.
+      </p>
+    </div>
+    <div class="callout yellow-shadow" style="margin-top:22px;max-width:880px;background:var(--navy-800);padding:18px 24px">
+      <div style="display:flex;align-items:center;gap:18px;justify-content:center">
+        <span style="font-size:34px">✅</span>
+        <p style="font-size:20px;color:#fff;text-align:left"><b style="color:var(--yellow)">1<sup>er</sup> client AI Need déjà signé.</b><br><span style="font-size:15px;opacity:.85">Audit offert → brief précis → livrable. Le modèle fonctionne avant même la sortie des YDays.</span></p>
+      </div>
+    </div>
+    <p style="margin-top:18px;font-size:18px;opacity:.85;max-width:900px">Ce qu'on vend, c'est pas un service IA — <b style="color:var(--yellow)">une équipe qui sait penser ensemble</b>.</p>
+  </div>
+  <div class="slide-foot">
+    <span class="brand"><span class="foot-mark">MONEY<br>MAKERZ</span> Preuve · 1er client</span>
+    <span>0:45 · mic drop</span>
+  </div>
+</section>
+
+<!-- =================== SLIDE 13 — CLOSING =================== -->
+<section class="slide" data-duration="0:30" data-script="
+[Closing. Posture droite, regard direct sur le jury. Voix calme, assumée. Pause après chaque phrase.]
+
+95% des projets en ligne échouent.
+
+Nous, on a *survécu* — pas en tant que projet, en tant que groupe.
+
+Et c'est ça qu'on vend maintenant aux marques. *Une équipe qui a appris à rester soudée quand tout s'écroule.*
+
+[Pause.]
+
+De l'idée aux revenus — *autrement.*
+
+Merci. On est prêts à répondre à vos questions.
+">
+  <span class="act-tag">ACTE III — LE PIVOT</span>
+  <span class="slide-tag">★ CLOSING</span>
+  <span class="slide-num">13 / 13</span>
+  <div class="center" style="align-items:center;text-align:center">
+    <div class="cover-mark" style="margin-bottom:24px">MONEY<br>MAKERZ</div>
+    <h1 style="font-size:56px"><span class="yellow">95%</span> <span class="struck">échouent.</span></h1>
+    <h1 style="font-size:56px;color:var(--yellow);margin-top:8px">Nous, on a survécu —<br>en tant que <span style="color:var(--white)">groupe</span>.</h1>
+    <p style="margin-top:24px;font-size:20px;max-width:900px;opacity:.9">C'est ça qu'on vend aux marques. Pas un service IA — <b style="color:var(--yellow)">une équipe qui sait rester soudée</b> quand tout s'écroule.</p>
+    <p style="margin-top:22px;font-family:var(--font-display);font-size:24px;letter-spacing:2px">DE L'IDÉE AUX REVENUS — <span class="red-txt">AUTREMENT.</span></p>
+    <p style="margin-top:18px;font-size:14px;opacity:.75;font-family:var(--font-mono);letter-spacing:2px">AI NEED · @MONEY.MAKERZ · MERCI · Q&amp;A OUVERT</p>
+  </div>
+  <div class="slide-foot">
+    <span class="brand"><span class="foot-mark">MONEY<br>MAKERZ</span> Merci.</span>
+    <span>YDAYS · 2026</span>
+  </div>
+</section>
+
+</div>
+
+<div class="timer" id="timer">⏱ 00:00 / 10:00</div>
+
+<div class="hud">
+  <span><kbd>→</kbd> suivant</span>
+  <span><kbd>←</kbd> retour</span>
+  <span><kbd>N</kbd> notes</span>
+  <span><kbd>F</kbd> plein écran</span>
+  <span><kbd>R</kbd> timer</span>
+</div>
+
+<aside class="notes-panel" id="notesPanel">
+  <h5 id="notesTitle">— Notes du présentateur —</h5>
+  <div class="duration" id="notesDuration">DURÉE : —</div>
+  <div class="script" id="notesScript"><p>Sélectionner une slide avec ← / →</p></div>
+</aside>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const progressBar = document.getElementById('progressBar');
+const notesPanel = document.getElementById('notesPanel');
+const notesScript = document.getElementById('notesScript');
+const notesTitle = document.getElementById('notesTitle');
+const notesDuration = document.getElementById('notesDuration');
+const timerEl = document.getElementById('timer');
+let current = 0;
+let timerStart = null, timerRunning = false, timerInterval;
+
+function fmtScript(s){
+  return s.trim()
+    .split('\n\n').map(p => '<p>' + p
+      .replace(/\n/g,'<br>')
+      .replace(/\[(.*?)\]/g,'<em>[$1]</em>')
+      .replace(/\*(.*?)\*/g,'<em>$1</em>')
+    + '</p>').join('');
+}
+function showSlide(i){
+  current = Math.max(0, Math.min(slides.length-1, i));
+  slides.forEach((s,k)=>s.classList.toggle('active', k===current));
+  progressBar.style.width = (((current+1)/slides.length)*100)+'%';
+  const s = slides[current];
+  notesTitle.textContent = '— ' + (s.querySelector('.slide-tag')?.textContent || '') + ' —';
+  notesDuration.textContent = 'DURÉE : ' + (s.dataset.duration || '?');
+  notesScript.innerHTML = fmtScript(s.dataset.script || '');
+}
+function fmtTime(s){
+  const m = Math.floor(s/60), ss = s%60;
+  return String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0');
+}
+function startTimer(){
+  timerStart = Date.now(); timerRunning = true;
+  clearInterval(timerInterval);
+  timerInterval = setInterval(()=>{
+    const s = Math.floor((Date.now()-timerStart)/1000);
+    timerEl.textContent = '⏱ ' + fmtTime(s) + ' / 10:00';
+    timerEl.classList.toggle('over', s > 600);
+  }, 250);
+}
+function resetTimer(){
+  timerRunning = false; clearInterval(timerInterval);
+  timerEl.textContent = '⏱ 00:00 / 10:00';
+  timerEl.classList.remove('over');
+}
+
+document.addEventListener('keydown', e=>{
+  if(e.key==='ArrowRight' || e.key===' ' || e.key==='PageDown'){showSlide(current+1); if(!timerRunning && current>0)startTimer();}
+  else if(e.key==='ArrowLeft' || e.key==='PageUp') showSlide(current-1);
+  else if(e.key==='Home') showSlide(0);
+  else if(e.key==='End') showSlide(slides.length-1);
+  else if(e.key==='n' || e.key==='N') notesPanel.classList.toggle('open');
+  else if(e.key==='f' || e.key==='F'){
+    if(!document.fullscreenElement) document.documentElement.requestFullscreen();
+    else document.exitFullscreen();
+  }
+  else if(e.key==='r' || e.key==='R'){ timerRunning ? resetTimer() : startTimer(); }
+});
+
+document.addEventListener('click', e=>{
+  if(e.target.closest('.notes-panel') || e.target.closest('.hud')) return;
+  showSlide(current+1);
+  if(!timerRunning && current>0) startTimer();
+});
+
+showSlide(0);
+</script>
+
+</body>
+</html>

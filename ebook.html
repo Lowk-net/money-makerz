@@ -1,0 +1,1873 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Makerz — Guide Business 01 · La synthèse actionnable</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-900:#0B2444;
+    --navy-800:#11315B;
+    --navy-700:#173E72;
+    --paper:#F4EFE2;
+    --paper-2:#EEE7D2;
+    --ink:#0A0A0A;
+    --white:#FFFFFF;
+    --red:#E63946;
+    --red-dark:#C42A38;
+    --yellow:#FFD23F;
+    --green:#3BB273;
+    --font-display:'Anton',Impact,sans-serif;
+    --font-body:'Inter',Arial,sans-serif;
+    --font-hand:'Permanent Marker',cursive;
+    --font-mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#222;color:var(--ink);font-family:var(--font-body);line-height:1.6}
+  @media screen{
+    body{padding:30px 0}
+  }
+
+  /* ============= PAGE ============= */
+  .page{
+    width:210mm;height:297mm;
+    margin:0 auto 30px;
+    background:var(--paper);
+    position:relative;overflow:hidden;
+    padding:18mm 20mm;
+    page-break-after:always;
+    box-shadow:0 10px 40px rgba(0,0,0,.5);
+    background-image:
+      linear-gradient(rgba(11,36,68,.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(11,36,68,.06) 1px,transparent 1px);
+    background-size:8mm 8mm;
+  }
+  .page.dark{
+    background:var(--navy-900);color:var(--white);
+    background-image:
+      linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);
+  }
+  .page.red{background:var(--red);color:var(--white);background-image:none}
+  .page.yellow{background:var(--yellow);color:var(--ink);background-image:none}
+
+  /* ============= COVER ============= */
+  .cover{
+    padding:0;display:flex;flex-direction:column;justify-content:space-between;
+    background:var(--navy-900);color:var(--white);
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);
+    background-size:8mm 8mm;
+  }
+  .cover-top{padding:30mm 22mm 0;display:flex;justify-content:space-between;align-items:flex-start}
+  .cover-mark{
+    width:32mm;height:32mm;border-radius:6mm;background:var(--white);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    font-family:var(--font-display);font-size:14pt;line-height:.95;
+    box-shadow:3mm 3mm 0 var(--red);
+    transform:rotate(-3deg);
+  }
+  .cover-edition{
+    font-family:var(--font-mono);font-size:10pt;letter-spacing:3pt;color:var(--yellow);
+    border:1.5pt solid var(--yellow);padding:8pt 14pt;
+    transform:rotate(2deg);
+  }
+  .cover-middle{padding:20mm 22mm}
+  .cover-eyebrow{font-family:var(--font-mono);font-size:11pt;letter-spacing:4pt;color:var(--yellow);margin-bottom:10mm}
+  .cover-title{
+    font-family:var(--font-display);font-size:96pt;line-height:.85;letter-spacing:1pt;
+    text-transform:uppercase;color:var(--white);margin-bottom:8mm;
+  }
+  .cover-title .yellow{color:var(--yellow);display:block}
+  .cover-title .struck{position:relative;display:inline-block;color:rgba(255,255,255,.6)}
+  .cover-title .struck::after{
+    content:"";position:absolute;left:-2pt;right:-2pt;top:50%;height:6pt;
+    background:var(--red);transform:rotate(-2deg);
+  }
+  .cover-sub{font-size:14pt;line-height:1.4;opacity:.9;max-width:130mm}
+  .cover-bottom{
+    padding:0 22mm 22mm;border-top:1.5pt dashed rgba(255,255,255,.3);
+    margin:auto 22mm 22mm;padding-top:8mm;
+    display:flex;justify-content:space-between;align-items:flex-end;
+    font-family:var(--font-mono);font-size:10pt;letter-spacing:1.5pt;
+  }
+  .cover-bottom .price{
+    background:var(--red);color:var(--white);padding:8pt 18pt;font-family:var(--font-display);
+    font-size:24pt;letter-spacing:2pt;transform:rotate(-3deg);box-shadow:3pt 3pt 0 rgba(0,0,0,.6);
+  }
+  .cover-stamp{
+    position:absolute;top:35%;right:-30pt;
+    background:var(--red);color:var(--white);
+    padding:6pt 50pt;font-family:var(--font-display);font-size:14pt;letter-spacing:3pt;
+    transform:rotate(35deg);
+  }
+
+  /* ============= TYPOGRAPHY ============= */
+  h1{font-family:var(--font-display);font-size:46pt;line-height:.95;letter-spacing:1pt;text-transform:uppercase;margin-bottom:5mm;color:var(--navy-900)}
+  h2{font-family:var(--font-display);font-size:30pt;line-height:1;letter-spacing:.5pt;text-transform:uppercase;margin-bottom:4mm;color:var(--navy-900)}
+  h3{font-family:var(--font-display);font-size:18pt;line-height:1.05;letter-spacing:.5pt;text-transform:uppercase;margin:5mm 0 2mm;color:var(--navy-900)}
+  h4{font-family:var(--font-display);font-size:12pt;letter-spacing:1.5pt;text-transform:uppercase;margin:4mm 0 1.5mm;color:var(--red)}
+  p{font-size:10.5pt;line-height:1.5;margin-bottom:3mm}
+  .dark h1,.dark h2,.dark h3{color:var(--white)}
+  .dark h4{color:var(--yellow)}
+
+  .eyebrow{font-family:var(--font-mono);font-size:9pt;letter-spacing:2.5pt;color:var(--red);margin-bottom:3mm;display:block}
+  .hand{font-family:var(--font-hand);font-size:13pt;transform:rotate(-1deg);display:inline-block;color:var(--red)}
+  .lead{font-size:12pt;line-height:1.45;margin-bottom:4mm;color:var(--navy-900)}
+  strong, b{color:var(--navy-900);font-weight:800}
+  .dark strong, .dark b{color:var(--yellow)}
+
+  ul, ol{margin:0 0 4mm 5mm}
+  li{font-size:10.5pt;line-height:1.45;margin-bottom:1.5mm}
+  ul.check{list-style:none;margin-left:0}
+  ul.check li{padding-left:8mm;position:relative}
+  ul.check li::before{
+    content:"✓";position:absolute;left:0;top:0;
+    width:5mm;height:5mm;background:var(--red);color:var(--white);
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:9pt;font-weight:900;
+  }
+  ul.cross{list-style:none;margin-left:0}
+  ul.cross li{padding-left:8mm;position:relative}
+  ul.cross li::before{
+    content:"✕";position:absolute;left:0;top:0;
+    width:5mm;height:5mm;background:var(--ink);color:var(--white);
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-size:9pt;font-weight:900;
+  }
+
+  .pill{
+    display:inline-block;background:var(--navy-900);color:var(--white);
+    padding:3pt 10pt;border-radius:50pt;font-family:var(--font-mono);
+    font-size:8.5pt;letter-spacing:1.5pt;margin:0 4pt 4pt 0;
+  }
+  .pill.red{background:var(--red)}
+  .pill.yellow{background:var(--yellow);color:var(--ink)}
+  .pill.green{background:var(--green)}
+  .pill.outline{background:transparent;color:var(--navy-900);border:1pt solid var(--navy-900)}
+
+  /* ============= COMPONENTS ============= */
+  .callout{
+    background:var(--navy-900);color:var(--white);
+    padding:4mm 5mm;border-radius:3mm;
+    box-shadow:2.5mm 2.5mm 0 var(--red);
+    margin:4mm 0;position:relative;
+  }
+  .callout p{font-size:10pt;margin-bottom:2mm}
+  .callout h4{color:var(--yellow);margin-top:0}
+  .callout p, .callout li{color:var(--white)}
+  .callout strong, .callout b{color:var(--yellow)}
+  .dark strong, .dark b{color:var(--yellow)}
+  .quote-card p strong, .quote-card p b{color:var(--navy-900)}
+
+  .quote-card{
+    background:var(--white);border:1.5pt solid var(--ink);
+    padding:7mm 8mm;border-radius:2mm;
+    box-shadow:3mm 3mm 0 var(--navy-900);
+    margin:6mm 0;position:relative;
+  }
+  .quote-card::before{
+    content:'"';font-family:var(--font-display);font-size:60pt;color:var(--red);
+    position:absolute;top:-10pt;left:6mm;line-height:1;
+  }
+  .quote-card p{margin-left:18pt;font-style:italic;font-size:12pt}
+  .quote-card .who{margin-left:18pt;font-family:var(--font-mono);font-size:9pt;letter-spacing:2pt;color:var(--red);margin-top:3mm}
+
+  .kpi-row{display:flex;gap:4mm;margin:5mm 0}
+  .kpi{
+    flex:1;background:var(--white);border:1.5pt solid var(--ink);
+    padding:5mm;border-radius:2mm;text-align:center;
+    box-shadow:2mm 2mm 0 var(--ink);
+  }
+  .kpi .num{font-family:var(--font-display);font-size:28pt;color:var(--red);line-height:1}
+  .kpi .lbl{font-family:var(--font-mono);font-size:8pt;letter-spacing:1.5pt;color:var(--navy-900);margin-top:2mm}
+
+  .step{
+    background:var(--white);border:1.2pt solid var(--ink);
+    padding:3.5mm 5mm 3.5mm 13mm;margin:2.5mm 0;border-radius:2mm;
+    position:relative;box-shadow:1.5mm 1.5mm 0 var(--navy-900);
+  }
+  .step .n{
+    position:absolute;left:-2.5mm;top:-2.5mm;
+    width:9mm;height:9mm;background:var(--red);color:var(--white);
+    border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:var(--font-display);font-size:12pt;
+    border:1.2pt solid var(--ink);box-shadow:1mm 1mm 0 var(--ink);
+  }
+  .step h4{margin:0 0 0.5mm;color:var(--navy-900);font-size:11pt;letter-spacing:.5pt}
+  .step p{font-size:9.5pt;margin:0;line-height:1.4}
+
+  .prompt-box{
+    background:#1B1B1B;color:#E0E0E0;
+    padding:3mm 4mm;border-radius:2mm;
+    font-family:var(--font-mono);font-size:8pt;
+    line-height:1.4;margin:2mm 0 3mm;
+    border-left:2.5mm solid var(--yellow);
+    white-space:pre-wrap;
+  }
+  .prompt-box .var{color:var(--yellow);font-weight:700}
+  .prompt-box .lbl{
+    display:block;font-size:7.5pt;letter-spacing:2pt;color:var(--yellow);
+    margin-bottom:2mm;text-transform:uppercase;
+  }
+
+  table.results{
+    width:100%;border-collapse:collapse;margin:3mm 0;font-size:9pt;
+    background:var(--white);border:1.2pt solid var(--ink);
+    box-shadow:2mm 2mm 0 var(--navy-900);
+  }
+  table.results th{
+    background:var(--navy-900);color:var(--white);
+    padding:2mm 3mm;text-align:left;
+    font-family:var(--font-display);font-size:9pt;letter-spacing:1pt;
+  }
+  table.results td{padding:2mm 3mm;border-top:1pt solid #ddd}
+  table.results tr:nth-child(even) td{background:rgba(11,36,68,.04)}
+  table.results td.pos{color:var(--green);font-weight:700}
+  table.results td.neg{color:var(--red);font-weight:700}
+
+  /* Two columns */
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+  .two-col h4{margin-top:0}
+
+  /* TOC */
+  .toc{margin-top:8mm}
+  .toc-item{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding:3mm 0;border-bottom:1pt dashed rgba(11,36,68,.3);
+  }
+  .toc-item .left{display:flex;gap:5mm;align-items:baseline}
+  .toc-item .num{font-family:var(--font-display);font-size:14pt;color:var(--red);min-width:14pt}
+  .toc-item .title{font-size:12pt;font-weight:600;color:var(--navy-900)}
+  .toc-item .sub{font-size:9pt;opacity:.7;display:block}
+  .toc-item .page-no{font-family:var(--font-mono);font-size:10pt;color:var(--navy-900)}
+
+  /* Footer / page number */
+  .page-num{
+    position:absolute;bottom:10mm;left:0;right:0;
+    text-align:center;font-family:var(--font-mono);font-size:8pt;
+    letter-spacing:2pt;color:rgba(11,36,68,.5);
+  }
+  .dark .page-num{color:rgba(255,255,255,.4)}
+  .page-tag{
+    position:absolute;bottom:10mm;right:22mm;
+    font-family:var(--font-mono);font-size:8pt;letter-spacing:2pt;
+    color:rgba(11,36,68,.5);
+  }
+  .dark .page-tag{color:rgba(255,255,255,.4)}
+
+  /* Chapter intro */
+  .chapter-intro{
+    background:var(--navy-900);color:var(--white);
+    background-image:
+      linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);
+    background-size:8mm 8mm;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:30mm 22mm;
+  }
+  .chapter-intro .num-big{
+    font-family:var(--font-display);font-size:160pt;line-height:.8;
+    color:var(--red);
+  }
+  .chapter-intro h1{color:var(--white);font-size:64pt;margin:6mm 0 8mm}
+  .chapter-intro .desc{font-size:14pt;line-height:1.5;opacity:.9;max-width:130mm}
+  .chapter-intro .topics{margin-top:10mm;display:flex;flex-wrap:wrap;gap:3mm}
+  .chapter-intro .topics .pill{background:transparent;border:1pt solid var(--yellow);color:var(--yellow)}
+
+  /* Idea card cover */
+  .idea-cover{
+    background:var(--paper);
+    background-image:linear-gradient(rgba(11,36,68,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(11,36,68,.06) 1px,transparent 1px);
+    background-size:8mm 8mm;
+  }
+  .idea-header{
+    background:var(--navy-900);color:var(--white);padding:6mm 7mm;
+    margin:0 0 6mm;border-radius:2mm;
+    display:flex;justify-content:space-between;align-items:center;
+    box-shadow:3mm 3mm 0 var(--red);
+  }
+  .idea-header .num{font-family:var(--font-mono);font-size:9pt;letter-spacing:3pt;color:var(--yellow)}
+  .idea-header h2{color:var(--white);margin:1mm 0 0;font-size:30pt}
+  .idea-header .tags{margin-top:3mm}
+  .idea-header .difficulty{
+    background:var(--red);color:var(--white);
+    padding:3mm 5mm;font-family:var(--font-display);font-size:11pt;letter-spacing:1pt;
+    border-radius:2mm;text-align:center;line-height:1.1;
+  }
+  .idea-header .difficulty small{display:block;font-family:var(--font-mono);font-size:7pt;opacity:.8;letter-spacing:1.5pt}
+
+  /* Tape decoration */
+  .tape{
+    position:absolute;background:rgba(244,239,226,.85);
+    width:30mm;height:8mm;
+    box-shadow:0 1pt 2pt rgba(0,0,0,.2);
+  }
+  .dark .tape{background:rgba(244,239,226,.3)}
+
+  /* Print rules */
+  @media print{
+    @page{size:A4;margin:0}
+    body{background:none;padding:0}
+    .page{margin:0;box-shadow:none;page-break-after:always}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================================================= -->
+<!-- PAGE 1 — COVER                                    -->
+<!-- ================================================= -->
+<div class="page cover">
+  <div class="cover-top">
+    <div class="cover-mark">MONEY<br>MAKERZ</div>
+    <div class="cover-edition">ÉDITION · 01</div>
+  </div>
+  <div class="cover-stamp">★ LANCEMENT · 7€ ★</div>
+  <div class="cover-middle">
+    <span class="cover-eyebrow">★ GUIDE BUSINESS · No 01 ★</span>
+    <h1 class="cover-title">
+      LA<br>
+      <span class="yellow">SYNTHÈSE</span>
+      ACTION-<br>NABLE.
+    </h1>
+    <p class="cover-sub">15 business digitaux testés, expliqués, chiffrés. 30 prompts ChatGPT à coller. Les 10 erreurs qui flinguent le 1<sup>er</sup> euro. <b style="color:var(--yellow)">De l'idée aux revenus.</b></p>
+  </div>
+  <div class="cover-bottom">
+    <span>MONEY.MAKERZ · 2026 · FR</span>
+    <span class="price">7 €</span>
+    <span>v1.0 · 80 PP</span>
+  </div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 2 — LEGAL & COLOPHON                         -->
+<!-- ================================================= -->
+<div class="page">
+  <span class="eyebrow">★ COLOPHON</span>
+  <h2>Avant qu'on commence.</h2>
+
+  <p class="lead">
+    Ce guide est le premier d'une série de carnets pratiques publiés par
+    <b>Money Makerz</b>. On y compile, sans filtre marketing, ce qu'on a
+    appris en testant nous-mêmes des business digitaux.
+  </p>
+
+  <h4>Auteurs &amp; éditeur</h4>
+  <p>Édité par Money Makerz — collectif indépendant français, Instagram
+  <b>@money.makerz</b>. Direction de la publication : la communauté.
+  Édition de lancement, mai 2026.</p>
+
+  <h4>Comment lire ce guide</h4>
+  <ul class="check">
+    <li>Lis l'<b>Intro</b> et le chapitre <b>Mindset</b> en premier — 12 minutes max.</li>
+    <li>Parcours la <b>table des matières</b>. Choisis 1 idée. Une seule.</li>
+    <li>Suis le <b>plan jour 1 → jour 30</b> de l'idée. Sans dévier.</li>
+    <li>Reviens dans 30 jours pour la deuxième idée. Pas avant.</li>
+  </ul>
+
+  <div class="callout">
+    <h4>★ Disclaimer cash</h4>
+    <p>Aucun chiffre de revenus présenté dans ce guide ne constitue une garantie.
+    On documente <b>ce qu'on a vu</b>, pas ce que <b>tu vas voir</b>.
+    Tes résultats dépendront de ton temps, de ton exécution, et de la chance.
+    On est aussi humbles que possible là-dessus.</p>
+  </div>
+
+  <h4>Mentions légales express</h4>
+  <p style="font-size:10pt;opacity:.85">
+    © 2026 Money Makerz. Tous droits réservés. Reproduction interdite sans accord.
+    Le contenu est fourni à titre informatif. Aucune relation contractuelle n'est créée.
+    Avant de lancer une activité, vérifie ton statut juridique et fiscal (auto-entrepreneur,
+    micro-BIC/BNC, TVA, URSSAF). En cas de doute, consulte un expert-comptable.
+    Marques tierces (ChatGPT, Notion, Canva, Stripe, Gumroad, Systeme.io, Shopify, etc.)
+    citées à des fins de description — appartiennent à leurs propriétaires respectifs.
+  </p>
+
+  <div class="page-tag">MONEY.MAKERZ · ED.01</div>
+  <div class="page-num">— 02 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 3 — TABLE OF CONTENTS                        -->
+<!-- ================================================= -->
+<div class="page">
+  <span class="eyebrow">★ TABLE DES MATIÈRES</span>
+  <h1>Ce qu'il<br>y a dedans.</h1>
+
+  <div class="toc">
+    <div class="toc-item"><div class="left"><span class="num">00</span><div><span class="title">Intro — Pourquoi ce guide existe</span><span class="sub">Promesse, méthode, comment l'utiliser</span></div></div><span class="page-no">04</span></div>
+
+    <div class="toc-item"><div class="left"><span class="num">01</span><div><span class="title">Mindset — Les 7 vérités du business en ligne</span><span class="sub">Sans bullshit. Lecture obligatoire.</span></div></div><span class="page-no">06</span></div>
+
+    <div class="toc-item"><div class="left"><span class="num">02</span><div><span class="title">Les 15 idées testées</span><span class="sub">Concept, plan, chiffres, outils, erreurs</span></div></div><span class="page-no">10</span></div>
+
+    <ol style="margin:4mm 0 0 14mm;font-size:10.5pt">
+      <li>Vendre des <b>packs de prompts ChatGPT</b> — p. 12</li>
+      <li>Le <b>template Notion</b> qui s'auto-vend — p. 16</li>
+      <li><b>Affiliation TikTok Shop / Amazon</b> — p. 20</li>
+      <li><b>Arbitrage de logos &amp; design</b> — p. 24</li>
+      <li><b>Newsletter de niche rentable</b> en 14 jours — p. 28</li>
+      <li><b>Print-on-demand sans stock</b> — p. 32</li>
+      <li><b>UGC (User-Generated Content)</b> pour marques — p. 36</li>
+      <li><b>Ebook niche</b> en 1 weekend avec Canva — p. 40</li>
+      <li>Compte <b>Instagram theme page</b> monétisé — p. 44</li>
+      <li><b>Sous-louer ses compétences</b> sur Fiverr/Malt — p. 48</li>
+      <li><b>Wrappers IA</b> en no-code (Bubble, Make) — p. 52</li>
+      <li><b>Mini-cours vidéo</b> à 27€ — p. 56</li>
+      <li><b>Drop-service</b> (vendre sans rien produire) — p. 60</li>
+      <li><b>Vente de presets &amp; LUT</b> photo/vidéo — p. 64</li>
+      <li><b>Audit payant</b> Instagram/TikTok — p. 68</li>
+    </ol>
+
+    <div class="toc-item"><div class="left"><span class="num">03</span><div><span class="title">Les 30 prompts ChatGPT prêts à coller</span><span class="sub">Idéation, copywriting, audit, SEO</span></div></div><span class="page-no">71</span></div>
+
+    <div class="toc-item"><div class="left"><span class="num">04</span><div><span class="title">Les 10 erreurs qui flinguent le 1<sup>er</sup> euro</span><span class="sub">Retours d'expérience honnêtes</span></div></div><span class="page-no">75</span></div>
+
+    <div class="toc-item"><div class="left"><span class="num">05</span><div><span class="title">Checklist juridique &amp; fiscale</span><span class="sub">Auto-entrepreneur, Stripe, TVA, factures</span></div></div><span class="page-no">77</span></div>
+
+    <div class="toc-item"><div class="left"><span class="num">06</span><div><span class="title">Ressources &amp; conclusion</span><span class="sub">Outils, liens, étape suivante</span></div></div><span class="page-no">79</span></div>
+  </div>
+
+  <div class="page-tag">MONEY.MAKERZ · ED.01</div>
+  <div class="page-num">— 03 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 4 — INTRO                                    -->
+<!-- ================================================= -->
+<div class="page">
+  <span class="eyebrow">★ INTRO · 00</span>
+  <h1>Pourquoi ce guide<br>existe.</h1>
+
+  <p class="lead">Le compte <b>@money.makerz</b> est né d'une frustration : sur Instagram, tout le monde "fait du business", personne ne montre vraiment <em>comment</em>.</p>
+
+  <p>On a passé six mois à <b>tester nous-mêmes</b> les idées qui passent en boucle sur les Reels : prompts ChatGPT à vendre, templates Notion, UGC, drop-service, affiliation TikTok Shop, etc. Pour chacune, on a noté trois choses : le temps réel passé, le coût réel sorti, le revenu réel encaissé.</p>
+
+  <p>Ce que tu tiens entre les mains est la <b>synthèse de ces tests</b>. Pas une compilation de tweets. Pas un résumé de gourou américain. Quinze plans d'action concrets, adaptés au cadre français (auto-entrepreneur, TVA, Stripe), avec les chiffres bruts et les pièges qu'on est tombés dedans à votre place.</p>
+
+  <div class="quote-card">
+    <p>Si tu cherches "comment devenir riche en 30 jours sans rien faire", ferme ce guide et rends-nous tes 7 €. Si tu cherches une méthode qui marche en y mettant du temps, t'es au bon endroit.</p>
+    <div class="who">— L'équipe Money Makerz</div>
+  </div>
+
+  <h3>Notre promesse en 3 lignes</h3>
+  <ul class="check">
+    <li><b>On ne publie que ce qu'on a testé</b> ou vu tester par un membre du Labo.</li>
+    <li><b>On donne les chiffres bruts</b> — y compris quand ils sont décevants.</li>
+    <li><b>On ne vend pas de rêve</b> : on documente la réalité, méthode par méthode.</li>
+  </ul>
+
+  <div class="kpi-row">
+    <div class="kpi"><div class="num">15</div><div class="lbl">IDÉES TESTÉES</div></div>
+    <div class="kpi"><div class="num">30</div><div class="lbl">PROMPTS PRÊTS</div></div>
+    <div class="kpi"><div class="num">10</div><div class="lbl">ERREURS COURANTES</div></div>
+    <div class="kpi"><div class="num">80</div><div class="lbl">PAGES</div></div>
+  </div>
+
+  <div class="page-tag">INTRO · MONEY.MAKERZ</div>
+  <div class="page-num">— 04 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 5 — INTRO suite                              -->
+<!-- ================================================= -->
+<div class="page">
+  <span class="eyebrow">★ INTRO · 00 (suite)</span>
+  <h2>Comment l'utiliser.</h2>
+
+  <p>Ce guide est un <b>menu</b>, pas une recette unique. Tu n'es pas censé tout faire. Tu es censé choisir <em>une idée</em>, la suivre sérieusement pendant 30 jours, en tirer un premier apprentissage cash, puis revenir.</p>
+
+  <h3>Les 4 règles du lecteur</h3>
+
+  <div class="step"><span class="n">1</span><h4>Ne saute pas le chapitre Mindset.</h4><p>Les pages 6 à 9 valent à elles seules le prix du guide. Elles t'éviteront 80% des erreurs des chapitres suivants.</p></div>
+
+  <div class="step"><span class="n">2</span><h4>Choisis UNE idée. Pas trois.</h4><p>Le piège classique : ouvrir le sommaire, vouloir tout faire, ne rien finir. Choisis l'idée qui colle à ton temps, ton budget et ton appétence. Une seule.</p></div>
+
+  <div class="step"><span class="n">3</span><h4>Suis le plan tel quel pendant 30 jours.</h4><p>Pas de "j'optimise dès le jour 3". Tu suis. Tu mesures. Tu ajustes <em>après</em>.</p></div>
+
+  <div class="step"><span class="n">4</span><h4>Documente. Même mal.</h4><p>Note dans un Notion : temps passé chaque jour, € sortis, € rentrés, ce que t'as appris. C'est ton vrai actif.</p></div>
+
+  <h3>Légende des fiches idées</h3>
+
+  <p style="margin-bottom:3mm">Chaque fiche idée suit la même structure :</p>
+  <span class="pill">DIFFICULTÉ</span>
+  <span class="pill yellow">TEMPS PAR SEMAINE</span>
+  <span class="pill red">BUDGET DE LANCEMENT</span>
+  <span class="pill green">REVENU 30 JOURS (FOURCHETTE)</span>
+  <span class="pill outline">OUTILS PRINCIPAUX</span>
+
+  <p style="margin-top:6mm">Les fourchettes de revenu sont basées sur <b>nos tests</b> ou les tests vérifiés de la communauté Labo. <b>Ce n'est pas une garantie.</b> C'est un ordre de grandeur honnête. Multiplie par 0 si tu ne fais rien. Multiplie par 2-3 si t'es exécutant et chanceux.</p>
+
+  <div class="callout">
+    <h4>★ Conseil de l'éditeur</h4>
+    <p>Avant de commencer, ouvre un Notion vierge. Crée trois colonnes :
+    <b>Idée choisie</b>, <b>Jour</b>, <b>Action faite aujourd'hui</b>. C'est tout.
+    Sans ce tracker, ton mois va s'évaporer. Avec, tu auras une preuve concrète,
+    qu'elle finisse en cash ou en leçon.</p>
+  </div>
+
+  <div class="page-tag">INTRO · MONEY.MAKERZ</div>
+  <div class="page-num">— 05 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 6 — CHAPTER 01 OPENER                        -->
+<!-- ================================================= -->
+<div class="page dark chapter-intro">
+  <div class="num-big">01</div>
+  <h1>Mindset</h1>
+  <p class="desc">Les 7 vérités du business en ligne que personne ne te dit, parce qu'elles ne se vendent pas bien en Reel de 15 secondes.</p>
+  <div class="topics">
+    <span class="pill">SYSTÈME &gt; HYPE</span>
+    <span class="pill">PREUVE &gt; PROMESSE</span>
+    <span class="pill">DISTRIBUTION &gt; PRODUIT</span>
+    <span class="pill">DOCUMENTER &gt; PERFORMER</span>
+  </div>
+  <div class="page-tag">CH.01 · MINDSET</div>
+  <div class="page-num">— 06 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 7 — MINDSET CONTENT                          -->
+<!-- ================================================= -->
+<div class="page">
+  <span class="eyebrow">★ CH.01 · MINDSET</span>
+  <h2>Les 7 vérités.</h2>
+
+  <h3>1. Le contenu est ton vendeur. Pas ton produit.</h3>
+  <p>90% des gens qui se lancent en business digital pensent qu'il faut "trouver le bon produit". Faux. Le produit est facile : un PDF, un template, une formation. Ce qui est dur, c'est d'avoir <b>une audience qui te fait confiance</b>. Cette audience se construit avec du contenu. Pas avec une boutique Shopify.</p>
+
+  <h3>2. La distribution gagne toujours contre la qualité.</h3>
+  <p>Le meilleur ebook au monde sans distribution = 0 € de revenu. Un ebook moyen avec 100k vues TikTok = des centaines de ventes. <b>Apprends d'abord à distribuer.</b> Le reste suit.</p>
+
+  <h3>3. Tes 1000 premiers euros ne viendront pas de l'idée parfaite.</h3>
+  <p>Ils viendront de l'idée que tu auras <em>exécutée jusqu'au bout</em>. Choisir est facile. Finir est rare. C'est là que se trouve l'argent.</p>
+
+  <h3>4. La preuve bat la promesse.</h3>
+  <p>"J'ai gagné 5 000 €" → personne ne te croit. "Voici la capture Stripe du 12 mai" → tout le monde t'écoute. La preuve est ta meilleure pub. Documente <b>tout, tout de suite.</b></p>
+
+  <div class="callout">
+    <h4>★ Règle d'or Money Makerz</h4>
+    <p>Si tu ne peux pas screenshot un résultat, tu n'as pas de résultat. Si tu n'as pas de résultat, tu n'as pas de pub. <b>Toute action sans preuve est invisible.</b></p>
+  </div>
+
+  <div class="page-tag">CH.01 · MINDSET</div>
+  <div class="page-num">— 07 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 8 — MINDSET cont                             -->
+<!-- ================================================= -->
+<div class="page">
+  <span class="eyebrow">★ CH.01 · MINDSET (suite)</span>
+
+  <h3>5. Le "passif" n'existe pas. Le "scalable" oui.</h3>
+  <p>Tous les comptes qui te promettent du "revenu passif" mentent. Tout business demande du travail. Mais certains scalent : ton effort initial × audience croissante = revenus croissants. Vise scalable, pas passif. La nuance change tout dans tes choix d'idée.</p>
+
+  <h3>6. Vendre à 7€ est plus simple que vendre à 97€.</h3>
+  <p>Si t'es nouveau, vise le <b>achat d'impulsion</b>. Sous la barre des 20€, le cerveau de l'acheteur ne calcule plus, il achète. Au-dessus, il faut une marque, de la preuve sociale, une promesse forte. <b>Commence bas. Monte ensuite.</b></p>
+
+  <h3>7. Ton premier client paiera pour un mauvais produit. Le centième non.</h3>
+  <p>Tu peux te permettre un produit imparfait au début. Lance vite, vends mal, encaisse, améliore. La perfection avant le lancement est la pire des stratégies.</p>
+
+  <div class="quote-card">
+    <p>Le pire produit en ligne, c'est celui que tu n'as jamais publié. Lance-le moche. Tu l'amélioreras en vendant.</p>
+    <div class="who">— MM · règle 0</div>
+  </div>
+
+  <h3>Le récap visuel</h3>
+
+  <table class="results">
+    <tr><th>Mythe Instagram</th><th>Réalité Money Makerz</th></tr>
+    <tr><td>"Trouve le produit parfait"</td><td>Trouve la <b>distribution</b> qui marche</td></tr>
+    <tr><td>"Crée un business passif"</td><td>Crée un business <b>scalable</b></td></tr>
+    <tr><td>"Vends à 997€ dès le départ"</td><td>Vends à <b>7-20€</b> pour valider</td></tr>
+    <tr><td>"Attends que le produit soit prêt"</td><td>Lance-le <b>moche</b>, encaisse, améliore</td></tr>
+    <tr><td>"Optimise ton funnel"</td><td>D'abord, <b>avoir un funnel</b></td></tr>
+    <tr><td>"Le revenu sera là"</td><td>Le <b>contenu</b> sera là. Le revenu suit.</td></tr>
+  </table>
+
+  <div class="page-tag">CH.01 · MINDSET</div>
+  <div class="page-num">— 08 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 9 — MINDSET END / FRAMEWORK                  -->
+<!-- ================================================= -->
+<div class="page">
+  <span class="eyebrow">★ CH.01 · LE FRAMEWORK</span>
+  <h2>Le framework<br>I·L·D·R.</h2>
+
+  <p class="lead">Toutes les idées du chapitre suivant fonctionnent sur la même boucle. Mémorise-la. Elle vaut le prix du guide.</p>
+
+  <div class="step"><span class="n">I</span><h4>IDÉE — Tu n'inventes rien.</h4><p>Tu scannes : TikTok, X (Twitter), ProductHunt, Reddit, Indie Hackers. Tu cherches un truc qui marche déjà ailleurs, et que tu peux <em>copier dans ton marché</em> avec ta touche.</p></div>
+
+  <div class="step"><span class="n">L</span><h4>LANCEMENT — Tu mets en ligne en 7 jours.</h4><p>Pas en 7 semaines. Tu te fixes un deadline absurde. Tu coupes tout ce qui n'est pas indispensable au premier euro. Pas de logo. Pas de site. Juste une page de vente Gumroad / Systeme.io.</p></div>
+
+  <div class="step"><span class="n">D</span><h4>DISTRIBUTION — Le vrai travail.</h4><p>3 Reels par semaine minimum sur le sujet. Pas pour parler de toi : pour <b>aider</b> ta cible. La vente vient en retombée du contenu, pas de la pub.</p></div>
+
+  <div class="step"><span class="n">R</span><h4>RÉTROACTION — Tu mesures et tu décides.</h4><p>Au bout de 30 jours, tu regardes les chiffres. Trois options : <b>doubler</b> (ça marche, on accélère), <b>pivoter</b> (l'angle est faux, on change), <b>tuer</b> (pas de signal, on passe à autre chose). Pas d'attachement.</p></div>
+
+  <div class="callout">
+    <h4>★ La règle des 30 jours</h4>
+    <p>Trente jours = la fenêtre. Pas plus. Si à J30 tu n'as pas <b>au moins un signal</b> (un euro encaissé, une vidéo virale, une vraie demande), tu changes. C'est dur émotionnellement. C'est <b>la seule manière</b> d'avancer.</p>
+  </div>
+
+  <div class="page-tag">CH.01 · MINDSET</div>
+  <div class="page-num">— 09 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 10 — CHAPTER 02 OPENER                       -->
+<!-- ================================================= -->
+<div class="page dark chapter-intro">
+  <div class="num-big">02</div>
+  <h1>Les 15 idées<br>testées.</h1>
+  <p class="desc">Concept, marché, plan d'action jour par jour, outils, monétisation, erreurs, ROI estimé. Toutes adaptées au cadre français.</p>
+  <div class="topics">
+    <span class="pill">PRODUITS DIGITAUX</span>
+    <span class="pill">SERVICES</span>
+    <span class="pill">CONTENU MONÉTISÉ</span>
+    <span class="pill">ARBITRAGE</span>
+  </div>
+  <div class="page-tag">CH.02 · IDÉES</div>
+  <div class="page-num">— 10 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 11 — INDEX OF IDEAS                          -->
+<!-- ================================================= -->
+<div class="page">
+  <span class="eyebrow">★ CH.02 · INDEX RAPIDE</span>
+  <h2>Trouve ton idée<br>en 30 secondes.</h2>
+
+  <table class="results">
+    <tr><th>#</th><th>Idée</th><th>Difficulté</th><th>Budget</th><th>Revenu 30j</th></tr>
+    <tr><td>01</td><td>Packs de prompts ChatGPT</td><td>★☆☆</td><td>0–20€</td><td class="pos">50–400€</td></tr>
+    <tr><td>02</td><td>Templates Notion niche</td><td>★★☆</td><td>0–30€</td><td class="pos">100–800€</td></tr>
+    <tr><td>03</td><td>Affiliation TikTok / Amazon</td><td>★☆☆</td><td>0–10€</td><td class="pos">30–500€</td></tr>
+    <tr><td>04</td><td>Arbitrage logos / design</td><td>★★☆</td><td>20–50€</td><td class="pos">200–1200€</td></tr>
+    <tr><td>05</td><td>Newsletter de niche</td><td>★★☆</td><td>0–30€</td><td class="pos">80–600€</td></tr>
+    <tr><td>06</td><td>Print-on-demand sans stock</td><td>★★☆</td><td>0–40€</td><td class="pos">40–500€</td></tr>
+    <tr><td>07</td><td>UGC pour marques</td><td>★★☆</td><td>0€</td><td class="pos">300–2000€</td></tr>
+    <tr><td>08</td><td>Ebook niche (Canva)</td><td>★★☆</td><td>0–15€</td><td class="pos">100–1000€</td></tr>
+    <tr><td>09</td><td>Insta theme page monétisée</td><td>★★★</td><td>0€</td><td class="pos">50–800€</td></tr>
+    <tr><td>10</td><td>Freelance Fiverr / Malt</td><td>★★☆</td><td>0€</td><td class="pos">200–2500€</td></tr>
+    <tr><td>11</td><td>Wrappers IA no-code</td><td>★★★</td><td>30–80€</td><td class="pos">100–1500€</td></tr>
+    <tr><td>12</td><td>Mini-cours vidéo 27€</td><td>★★★</td><td>0–50€</td><td class="pos">200–1800€</td></tr>
+    <tr><td>13</td><td>Drop-service</td><td>★★☆</td><td>0–30€</td><td class="pos">150–1500€</td></tr>
+    <tr><td>14</td><td>Presets photo / LUT vidéo</td><td>★★☆</td><td>0€</td><td class="pos">80–600€</td></tr>
+    <tr><td>15</td><td>Audit payant Insta / TikTok</td><td>★★☆</td><td>0€</td><td class="pos">100–900€</td></tr>
+  </table>
+
+  <div class="callout">
+    <h4>★ Comment choisir</h4>
+    <p>3 critères, dans l'ordre :
+    <b>(1)</b> Tu peux y consacrer combien de temps par semaine ?
+    <b>(2)</b> Combien tu peux perdre sans souffrir ?
+    <b>(3)</b> Sur laquelle t'as envie d'aller voir, juste, à l'instinct ?
+    Croise les trois. La bonne idée saute aux yeux.</p>
+  </div>
+
+  <div class="page-tag">CH.02 · INDEX</div>
+  <div class="page-num">— 11 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 12-13 — IDEA 01                              -->
+<!-- ================================================= -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 01</span>
+      <h2>Packs de prompts ChatGPT</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">3h / SEMAINE</span>
+        <span class="pill red">BUDGET : 0–20 €</span>
+        <span class="pill green">50–400 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★☆☆<small>FACILE</small></div>
+  </div>
+
+  <h4>Le concept en 1 paragraphe</h4>
+  <p>Tu compiles 50 à 100 prompts ChatGPT autour d'un métier précis (community manager, RH, agent immobilier, prof particulier...) dans un PDF Canva propre. Tu vends ce PDF entre 9 et 19 € sur Gumroad ou Stan.store, et tu fais venir le trafic depuis TikTok et Reels en publiant tes meilleurs prompts gratuitement.</p>
+
+  <h4>Le marché — pourquoi ça marche</h4>
+  <p>Tout le monde utilise ChatGPT, mais 80% des gens écrivent des prompts génériques et n'obtiennent rien d'utile. Un pack <em>niché</em> sur leur métier leur fait gagner du temps. C'est exactement l'achat d'impulsion à 9 €.</p>
+
+  <h4>Plan d'action — Jour 1 à Jour 30</h4>
+
+  <div class="step"><span class="n">1</span><h4>J1–J3 : Choisir une niche métier précise.</h4><p>Pas "prompts pour entrepreneurs" (trop large). Plutôt "Prompts ChatGPT pour agents immobiliers", "pour profs de yoga", "pour DRH". Niche = vente facile.</p></div>
+
+  <div class="step"><span class="n">2</span><h4>J4–J10 : Créer 60 prompts.</h4><p>Utilise ChatGPT lui-même comme assistant. Demande-lui : "Quels sont les 30 tâches répétitives d'un [métier] ?" Puis pour chaque tâche, écris le prompt parfait. Teste-les. Garde les 50 meilleurs.</p></div>
+
+  <div class="step"><span class="n">3</span><h4>J11–J14 : Mise en page Canva.</h4><p>Template "ebook" Canva, 25-30 pages, 1 prompt par page max. Couverture qui claque. Téléchargement PDF. C'est tout.</p></div>
+
+  <div class="step"><span class="n">4</span><h4>J15–J18 : Mise en vente.</h4><p>Gumroad (recommandé débutant) ou Stan.store. Prix : 9 € ou 14 € (tester). Pas de paywall. Pas de Stripe direct.</p></div>
+
+  <div class="step"><span class="n">5</span><h4>J19–J30 : Distribution Reels / TikTok.</h4><p>3 vidéos / semaine. Format : "Le prompt ChatGPT qui m'a fait gagner 2h cette semaine" puis tu donnes <em>un seul</em> prompt en gratuit. Lien Gumroad en bio pour le pack complet.</p></div>
+
+  <div class="page-tag">IDÉE 01 · PROMPTS</div>
+  <div class="page-num">— 12 —</div>
+</div>
+
+<div class="page">
+  <span class="eyebrow">★ IDÉE 01 (suite)</span>
+
+  <h4>Outils nécessaires</h4>
+  <p>
+  <span class="pill outline">ChatGPT (gratuit OK)</span>
+  <span class="pill outline">Canva (gratuit)</span>
+  <span class="pill outline">Gumroad (0%, prélève à la vente)</span>
+  <span class="pill outline">CapCut (montage Reels)</span>
+  </p>
+
+  <h4>Monétisation — combien tu peux faire</h4>
+  <p>Test interne Money Makerz : niche "agents immobiliers", pack à 14 €.</p>
+
+  <table class="results">
+    <tr><th>Jour</th><th>Reels publiés</th><th>Vues cumulées</th><th>Ventes</th><th>Revenu</th></tr>
+    <tr><td>J18 (lancement)</td><td>1</td><td>4 200</td><td>2</td><td class="pos">28 €</td></tr>
+    <tr><td>J21</td><td>3</td><td>22 000</td><td>5</td><td class="pos">70 €</td></tr>
+    <tr><td>J25</td><td>5</td><td>61 000</td><td>9</td><td class="pos">126 €</td></tr>
+    <tr><td>J30</td><td>8</td><td>134 000</td><td>14</td><td class="pos">196 €</td></tr>
+  </table>
+
+  <p><b>Total brut sur 30 jours : 196 €.</b> Coût : 0 € (tous outils gratuits). Temps total : ~17 h. <b>ROI : 11.5 €/h.</b> Pas révolutionnaire, mais c'est juste le pilote — la mécanique tourne ensuite seule.</p>
+
+  <h4>Les 5 erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Vendre un pack <b>généraliste</b> "100 prompts pour tout" (zéro conversion).</li>
+    <li>Mettre le lien Gumroad <b>en commentaire</b> (TikTok / Insta down-rankent — passe par la bio).</li>
+    <li>Donner trop peu en gratuit (les gens veulent une preuve avant d'acheter).</li>
+    <li>Vendre <b>au-dessus de 19 €</b> sans avoir d'audience ni de preuves.</li>
+    <li>Croire que la vente vient seule sans contenu régulier (3+/sem).</li>
+  </ul>
+
+  <div class="callout">
+    <h4>★ Boost — quand passer à 49 €</h4>
+    <p>Une fois ton pack à 14 € validé (20+ ventes), crée la <b>version pro</b> à 49 € avec : les prompts d'origine + 10 templates Notion à coller + 1 vidéo Loom de démo de 20 min. Tu vendras moins, mais ton revenu/heure double.</p>
+  </div>
+
+  <div class="page-tag">IDÉE 01 · PROMPTS</div>
+  <div class="page-num">— 13 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 14-15 — IDEA 02                              -->
+<!-- ================================================= -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 02</span>
+      <h2>Templates Notion niche</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">5h / SEMAINE</span>
+        <span class="pill red">BUDGET : 0–30 €</span>
+        <span class="pill green">100–800 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★★☆<small>MOYEN</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Tu construis <b>un seul</b> template Notion vraiment utile (CRM freelance, tracker d'investissements, dashboard étudiant médecine, planner créateur de contenu...) et tu le vends entre 19 € et 49 €. Marché énorme, concurrence forte mais beaucoup de mauvaise qualité — la barre d'entrée est en réalité basse.</p>
+
+  <h4>Le marché</h4>
+  <p>Plus de 50 millions d'utilisateurs Notion dans le monde. Le réflexe "j'achète un template" est ancré. Marketplaces : <b>Notion Marketplace</b>, <b>Gumroad</b>, <b>Lemon Squeezy</b>, <b>Whop</b>. Ton avantage : niche française mal couverte.</p>
+
+  <h4>Plan jour par jour</h4>
+
+  <div class="step"><span class="n">1</span><h4>J1–J5 : Identifier UNE niche douloureuse.</h4><p>Méthode : va sur Reddit (/r/Notion, /r/Productivity en français /r/AskFrance), liste les 10 plaintes répétées sur "j'arrive pas à organiser X". Choisis la plus criante.</p></div>
+
+  <div class="step"><span class="n">2</span><h4>J6–J14 : Construire le template.</h4><p>Pages, bases de données, vues, relations. Ajoute des <b>formules Notion</b> (c'est ce qui le différencie d'un mauvais template). Teste-le toi-même 3 jours.</p></div>
+
+  <div class="step"><span class="n">3</span><h4>J15–J17 : Page de vente.</h4><p>Gumroad. 4-5 GIF de démo (Loom + ezgif). 1 témoignage (demande à un pote). Prix d'attaque : 19 €.</p></div>
+
+  <div class="step"><span class="n">4</span><h4>J18–J22 : Distribution Twitter / X.</h4><p>X / Twitter convertit mieux que TikTok sur Notion. Thread "J'ai galéré X années à organiser Y, voici le système que j'utilise maintenant" → lien template.</p></div>
+
+  <div class="step"><span class="n">5</span><h4>J23–J30 : Affiliation croisée.</h4><p>Propose 30% de commission à 3 créateurs de la niche. Gumroad a ce mécanisme natif. C'est ça qui débloque les premiers gros mois.</p></div>
+
+  <div class="page-tag">IDÉE 02 · NOTION</div>
+  <div class="page-num">— 14 —</div>
+</div>
+
+<div class="page">
+  <span class="eyebrow">★ IDÉE 02 (suite)</span>
+
+  <h4>Outils</h4>
+  <p>
+  <span class="pill outline">Notion (gratuit perso)</span>
+  <span class="pill outline">Gumroad / Whop</span>
+  <span class="pill outline">Loom + ezGIF</span>
+  <span class="pill outline">Canva (visuels page de vente)</span>
+  </p>
+
+  <h4>Chiffres réels — test interne</h4>
+  <p>Test : template "CRM freelance graphiste" à 24 €. Distribution X (~600 abonnés au départ).</p>
+
+  <table class="results">
+    <tr><th>Canal</th><th>Reach</th><th>Clics page vente</th><th>Ventes</th><th>Revenu</th></tr>
+    <tr><td>X — thread n°1</td><td>18 000 imp.</td><td>312</td><td>11</td><td class="pos">264 €</td></tr>
+    <tr><td>X — thread n°2</td><td>9 500 imp.</td><td>140</td><td>4</td><td class="pos">96 €</td></tr>
+    <tr><td>2 affiliés (Insta)</td><td>n/a</td><td>~90</td><td>3</td><td class="pos">72 € (50 net)</td></tr>
+    <tr><td>SEO Gumroad</td><td>—</td><td>40</td><td>1</td><td class="pos">24 €</td></tr>
+  </table>
+
+  <p><b>Total brut 30 jours : 456 €.</b> Coût : 0 € (Notion + Gumroad gratuits). Temps : ~20 h. <b>ROI : 22.8 €/h.</b> Le template a continué à vendre passivement les 60 jours suivants — c'est là toute la beauté du jeu.</p>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Faire un template <b>tout-en-un</b> qui veut tout résoudre.</li>
+    <li>Ne pas inclure de <b>GIFs animés</b> sur ta page de vente (clé de conversion).</li>
+    <li>Vendre <b>trop cher dès le J1</b> sans preuve sociale (max 24 € au début).</li>
+    <li>Oublier d'activer le programme d'<b>affiliation Gumroad</b> dès le J1.</li>
+  </ul>
+
+  <div class="quote-card">
+    <p>Un template qu'on a vendu 800 fois, ça paye un loyer parisien. Mais celui-là, on l'a refait 4 fois avant qu'il ne s'auto-vende. Le template parfait n'existe pas — le 4e oui.</p>
+    <div class="who">— TEST MM · 2026</div>
+  </div>
+
+  <div class="page-tag">IDÉE 02 · NOTION</div>
+  <div class="page-num">— 15 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- IDEAS 03-15 — Format compact, 1 page chacune      -->
+<!-- ================================================= -->
+
+<!-- IDEA 03 -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 03</span>
+      <h2>Affiliation TikTok Shop / Amazon</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">2h / SEMAINE</span>
+        <span class="pill red">BUDGET : 0–10 €</span>
+        <span class="pill green">30–500 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★☆☆<small>FACILE</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Tu crées un compte TikTok thématique (par exemple "gadgets cuisine", "produits étudiants", "tech à moins de 50 €"), tu filmes un produit, tu mets le lien d'affiliation TikTok Shop ou Amazon Influencer dans la description. À chaque vente déclenchée par ton lien, tu touches une commission (3 à 15%).</p>
+
+  <h4>Plan 30 jours</h4>
+  <div class="step"><span class="n">1</span><h4>J1–J3 : Choisis ta niche-produit.</h4><p>Pas "tout". Une cible précise : produits dortoir étudiant, produits chat, gadgets bureau remote.</p></div>
+  <div class="step"><span class="n">2</span><h4>J4 : Inscription aux programmes.</h4><p>TikTok Shop affiliate (depuis l'app, dès 1k abonnés), Amazon Influencer (vérification rapide), Awin pour le reste.</p></div>
+  <div class="step"><span class="n">3</span><h4>J5–J30 : 1 vidéo par jour. Sans exception.</h4><p>Format : 7-15 secondes. Hook visuel fort en 0.5s. Produit en main. Bénéfice en 1 phrase. Pas de pitch — la curiosité fait cliquer.</p></div>
+
+  <h4>Chiffres communauté Labo</h4>
+  <table class="results">
+    <tr><th>Compte test</th><th>J30 abonnés</th><th>Vues / mois</th><th>Commissions</th></tr>
+    <tr><td>Gadgets cuisine</td><td>1 840</td><td>284 000</td><td class="pos">183 €</td></tr>
+    <tr><td>Produits chats</td><td>3 200</td><td>510 000</td><td class="pos">412 €</td></tr>
+    <tr><td>Tech &lt; 50€</td><td>620</td><td>98 000</td><td class="pos">47 €</td></tr>
+  </table>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Choisir des produits chers (panier moyen bas + petit % = mieux).</li>
+    <li>Faire des vidéos longues (l'algo TikTok pousse les 10-15s qui rebouclent).</li>
+    <li>Mettre du texte "lien dans la bio" — TikTok pénalise. Utilise le module produit natif.</li>
+  </ul>
+
+  <div class="page-tag">IDÉE 03 · AFFILIATION</div>
+  <div class="page-num">— 16 —</div>
+</div>
+
+<!-- IDEA 04 -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 04</span>
+      <h2>Arbitrage logos &amp; design</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">6h / SEMAINE</span>
+        <span class="pill red">BUDGET : 20–50 €</span>
+        <span class="pill green">200–1200 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★★☆<small>MOYEN</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Tu prospectes des petites entreprises locales (boulangeries, salons, coachs, agences immo) qui ont un logo amateur ou pas de logo. Tu leur vends un logo entre 150 et 400 €. Tu le fais réaliser par un graphiste Fiverr à 20-50 €. Tu encaisses la différence. Pas d'arnaque : tu pilotes le brief, tu fais les retours, tu garantis la qualité.</p>
+
+  <h4>Plan 30 jours</h4>
+  <div class="step"><span class="n">1</span><h4>J1–J5 : Liste 100 prospects.</h4><p>Google Maps + filtre "logo moche / pas de logo". Tu construis un Sheets avec : nom, mail, téléphone, raison du contact.</p></div>
+  <div class="step"><span class="n">2</span><h4>J6–J10 : Outreach LinkedIn / Insta DM.</h4><p>Message court (4 lignes max) : compliment sincère + observation + proposition + lien Calendly. Pas de pitch lourd.</p></div>
+  <div class="step"><span class="n">3</span><h4>J11–J30 : Closing &amp; production.</h4><p>Tu vends à 250 €, acompte 50% à la commande. Tu commandes le logo à 30 € sur Fiverr. 1 aller-retour. Tu livres en .ai + .png + .pdf. Marge nette : 220 €.</p></div>
+
+  <h4>Chiffres test Labo</h4>
+  <table class="results">
+    <tr><th>Métrique</th><th>Valeur</th></tr>
+    <tr><td>DMs envoyés</td><td>104</td></tr>
+    <tr><td>Réponses obtenues</td><td>23 (22%)</td></tr>
+    <tr><td>Appels Calendly</td><td>9</td></tr>
+    <tr><td>Ventes closées</td><td>4 (un à 180, deux à 250, un à 400)</td></tr>
+    <tr><td>Revenu brut</td><td class="pos">1 080 €</td></tr>
+    <tr><td>Coût Fiverr (4 logos)</td><td class="neg">132 €</td></tr>
+    <tr><td>Marge nette</td><td class="pos">948 €</td></tr>
+  </table>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Prospecter des entreprises trop grandes (elles ont déjà un studio).</li>
+    <li>Promettre "rapide" sans laisser au graphiste son temps (= retour client cata).</li>
+    <li>Sans contrat ni acompte (= impayés garantis).</li>
+  </ul>
+
+  <div class="page-tag">IDÉE 04 · ARBITRAGE</div>
+  <div class="page-num">— 17 —</div>
+</div>
+
+<!-- IDEA 05 -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 05</span>
+      <h2>Newsletter de niche rentable</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">4h / SEMAINE</span>
+        <span class="pill red">BUDGET : 0–30 €</span>
+        <span class="pill green">80–600 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★★☆<small>MOYEN</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Tu lances une newsletter hebdomadaire ultra-niche (par exemple : "Les 3 outils IA de la semaine pour avocats", "Le marché immo Lyon décrypté", "Les drops sneakers worth it"). Tu monétises ensuite via : sponsoring (50–500 €/mailing), affiliation, ou ton propre produit.</p>
+
+  <h4>Plan 30 jours</h4>
+  <div class="step"><span class="n">1</span><h4>J1 : Choisir la niche &amp; le nom.</h4><p>3 critères : tu sais l'écrire, ça touche des décideurs (= sponsoring possible), ça n'existe pas déjà en français.</p></div>
+  <div class="step"><span class="n">2</span><h4>J2–J3 : Setup beehiiv ou Substack.</h4><p>beehiiv recommandé (analytics + monétisation native). Template propre. Page de landing simple.</p></div>
+  <div class="step"><span class="n">3</span><h4>J4–J30 : 4 émissions, 4 boucles de promotion.</h4><p>1 newsletter / semaine. Promo : LinkedIn (1 post par newsletter), threads X (1 résumé), et 1 freebie (PDF, checklist) en lead magnet sur Reels.</p></div>
+
+  <h4>Monétisation J60–J90</h4>
+  <p>Règle approximative : à <b>1000 abonnés engagés</b> dans une niche pro, un sponsor paie entre 80 et 250 € par mailing. À 5000, ça monte à 400-1200 €. La niche compte plus que la taille.</p>
+
+  <table class="results">
+    <tr><th>Mois</th><th>Abos</th><th>Open rate</th><th>Sponsor / mail</th><th>Revenu</th></tr>
+    <tr><td>M1</td><td>180</td><td>62%</td><td>—</td><td>0 €</td></tr>
+    <tr><td>M2</td><td>520</td><td>54%</td><td>—</td><td>0 €</td></tr>
+    <tr><td>M3</td><td>1 040</td><td>49%</td><td>80 €</td><td class="pos">320 €</td></tr>
+  </table>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Niche trop large ("la tech") = sponsor introuvable.</li>
+    <li>Rythme incohérent (sauter 1 semaine = -30% open rate).</li>
+    <li>Ne pas demander aux abonnés ce qu'ils veulent (sondage au n°5).</li>
+  </ul>
+
+  <div class="page-tag">IDÉE 05 · NEWSLETTER</div>
+  <div class="page-num">— 18 —</div>
+</div>
+
+<!-- IDEA 06 -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 06</span>
+      <h2>Print-on-demand sans stock</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">4h / SEMAINE</span>
+        <span class="pill red">BUDGET : 0–40 €</span>
+        <span class="pill green">40–500 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★★☆<small>MOYEN</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Tu crées des designs (t-shirts, mugs, posters, tote bags) pour une <em>cible micro</em> — pas "les amoureux des chats", mais "les profs de SVT", "les infirmières de nuit", "les supporters de l'OM en exil à Lille". Tu les vends via une boutique TeePublic / Redbubble / Printful + Shopify. Aucun stock : la marque imprime et expédie à chaque commande.</p>
+
+  <h4>Plan 30 jours</h4>
+  <div class="step"><span class="n">1</span><h4>J1–J3 : Niche &amp; angles.</h4><p>Tu listes 20 phrases / blagues / fiertés que <em>seulement</em> ta niche comprend. C'est là que se trouvent les bestsellers.</p></div>
+  <div class="step"><span class="n">2</span><h4>J4–J14 : 20 designs.</h4><p>Canva ou Midjourney + Photoshop pour le nettoyage. Reste minimaliste — les designs simples vendent mieux.</p></div>
+  <div class="step"><span class="n">3</span><h4>J15–J30 : Distribution.</h4><p>Boutique Etsy (audience native d'acheteurs) + Reels de "mockup". Surtout, demande à des comptes Insta de ta niche d'en porter (10-15 € + produit gratuit).</p></div>
+
+  <h4>Réalité économique</h4>
+  <p>Marge nette par produit : 4-9 €. Pour 100 €/mois, il faut viser 15-25 ventes. Atteignable mais ce n'est <b>pas</b> du jackpot rapide. C'est un side-revenue long terme. Le secret est de tenir 6 mois — les bestsellers émergent après 3-4 mois souvent.</p>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Boutique généraliste "lifestyle" = invisible (la niche, encore).</li>
+    <li>Photos produits brutes Printful (mauvaise conversion). Utilise Mockey ou Placeit.</li>
+    <li>Vendre via TikTok Shop avant 1k abonnés — frais &amp; logistique pèsent.</li>
+  </ul>
+
+  <div class="page-tag">IDÉE 06 · POD</div>
+  <div class="page-num">— 19 —</div>
+</div>
+
+<!-- IDEA 07 -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 07</span>
+      <h2>UGC — vidéos pour marques</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">6h / SEMAINE</span>
+        <span class="pill red">BUDGET : 0 €</span>
+        <span class="pill green">300–2000 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★★☆<small>MOYEN</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Les marques achètent des vidéos style "client lambda" (UGC) pour les diffuser sur leurs propres canaux ads. Tu n'as pas besoin d'audience. Tu vends une <em>compétence de tournage</em>. Tarif : 100–300 € la vidéo de 30 secondes, livrée en 7 jours.</p>
+
+  <h4>Plan 30 jours</h4>
+  <div class="step"><span class="n">1</span><h4>J1–J5 : Portfolio "factice".</h4><p>Tu choisis 4-5 produits déjà chez toi (parfum, sneaker, app, ebook). Tu filmes 3 UGC par produit avec ton iPhone. Tu montes sur CapCut. Tu fais un .pdf portfolio.</p></div>
+  <div class="step"><span class="n">2</span><h4>J6–J20 : Outreach DM.</h4><p>Tu cibles marques DTC françaises 5-50 employés (Shopify check). 30 DM Insta par jour. Script : "Salut, j'ai filmé une UGC test pour [produit], envie de la voir ?" + lien Loom de 40s.</p></div>
+  <div class="step"><span class="n">3</span><h4>J21–J30 : Premiers contrats.</h4><p>Tu vends ton premier UGC à 80-120 € (sous-coté volontairement) pour la preuve sociale. Dès le 3e client, tu montes à 180-250 €.</p></div>
+
+  <h4>Chiffres réels — Labo</h4>
+  <table class="results">
+    <tr><th>Test</th><th>Métrique</th></tr>
+    <tr><td>DMs envoyés</td><td>312 en 15 jours</td></tr>
+    <tr><td>Réponses</td><td>47</td></tr>
+    <tr><td>Calls / briefs</td><td>11</td></tr>
+    <tr><td>Vidéos livrées</td><td>6 (entre 80 et 250 €)</td></tr>
+    <tr><td>Revenu 30j</td><td class="pos">980 €</td></tr>
+  </table>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Demander un brief écrit complet avant d'avoir signé (tue 80% des deals).</li>
+    <li>Livrer en 4K (les marques veulent du "natif iPhone" pour les ads).</li>
+    <li>Cession de droits floue — toujours préciser : usage paid ads, 6 mois, France.</li>
+  </ul>
+
+  <div class="page-tag">IDÉE 07 · UGC</div>
+  <div class="page-num">— 20 —</div>
+</div>
+
+<!-- IDEA 08 -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 08</span>
+      <h2>Ebook niche en 1 weekend</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">3h / SEMAINE</span>
+        <span class="pill red">BUDGET : 0–15 €</span>
+        <span class="pill green">100–1000 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★★☆<small>MOYEN</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Tu écris un PDF de 30-50 pages sur un sujet où <em>tu en sais plus que la moyenne</em> (peu importe que tu ne sois pas expert mondial). Mise en page Canva. Vente Gumroad. Prix : 9 à 24 €.</p>
+
+  <h4>Plan 30 jours</h4>
+  <div class="step"><span class="n">1</span><h4>J1 : Choisir un angle ultra-précis.</h4><p>Pas "comment maigrir". Plutôt "Comment je suis passé de 80 à 72 kg en 90 jours en mangeant à la cantine d'entreprise". L'angle = la vente.</p></div>
+  <div class="step"><span class="n">2</span><h4>J2–J8 : Plan + rédaction.</h4><p>10 chapitres × 4 pages. ChatGPT t'aide à structurer, jamais à écrire (l'authenticité prime).</p></div>
+  <div class="step"><span class="n">3</span><h4>J9–J11 : Mise en page Canva.</h4><p>Template ebook. Couverture qui claque. Export PDF.</p></div>
+  <div class="step"><span class="n">4</span><h4>J12 : Mise en vente.</h4><p>Gumroad. Prix 14 €. Description courte + 1 GIF d'aperçu.</p></div>
+  <div class="step"><span class="n">5</span><h4>J13–J30 : Distribution.</h4><p>10 Reels d'extraits du livre. 1 thread X. 1 mail à ta micro-liste si t'en as. Annonce dans 2-3 groupes Facebook de la niche.</p></div>
+
+  <h4>Économie réelle</h4>
+  <p>Test Labo : ebook "Apprendre le japonais en 90 jours" (par un membre lecteur depuis 4 ans). 47 ventes à 14 € sur 30 jours = <b>658 €</b>. Coût : 0 €. Et il continue à vendre 5-8 ebooks/mois en passif via le SEO Gumroad.</p>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Vouloir écrire "le livre définitif" = jamais publié.</li>
+    <li>Vendre sur ta propre boutique avant d'avoir validé (Gumroad d'abord).</li>
+    <li>Mise en page médiocre — Canva fait 90% du job, prends 4h pour ça.</li>
+  </ul>
+
+  <div class="page-tag">IDÉE 08 · EBOOK</div>
+  <div class="page-num">— 21 —</div>
+</div>
+
+<!-- IDEA 09 -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 09</span>
+      <h2>Instagram theme page monétisée</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">5h / SEMAINE</span>
+        <span class="pill red">BUDGET : 0 €</span>
+        <span class="pill green">50–800 € / 30J (M3+)</span>
+      </div>
+    </div>
+    <div class="difficulty">★★★<small>EXIGEANT</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Une "theme page" = un compte Instagram sans visage, autour d'un thème précis (motivation, voyages low-cost, recettes 1 ingrédient, foot stats). Tu repostes du contenu déjà viral en l'éditant. Monétisation : <b>shoutouts</b> payants à des marques / créateurs (30–500 €), produits affiliés, ton propre ebook plus tard.</p>
+
+  <h4>Plan 30 jours</h4>
+  <div class="step"><span class="n">1</span><h4>J1 : Thème + nom.</h4><p>Nichage extrême gagne. "Trips Europe &lt;200€" &gt; "Voyages".</p></div>
+  <div class="step"><span class="n">2</span><h4>J2–J30 : 2 posts ou Reels par jour.</h4><p>Tu repostes des contenus existants (en respectant le droit d'auteur : crédit visible, ou contenu libre, ou tes propres montages). Régularité &gt; qualité au départ.</p></div>
+  <div class="step"><span class="n">3</span><h4>M3 : Premier shoutout payant.</h4><p>À 5-10k abonnés engagés, des petites marques paient 30-80 € le repost.</p></div>
+
+  <h4>Honnêteté brute</h4>
+  <p>C'est le format qui demande <b>le plus de patience</b>. Les 2 premiers mois rapportent rarement plus de 0. C'est à M3-M4 que ça décolle si l'algo te pousse. Plus de la moitié des theme pages testées en interne <b>n'ont jamais atteint la masse critique</b>. À ne lancer que si tu acceptes le risque.</p>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Reposter sans crédit (= signalements + shadowban).</li>
+    <li>Changer de thème en cours de route (= reset de l'algo).</li>
+    <li>Sur-promouvoir trop tôt (vendre avant d'avoir une vraie audience tue le compte).</li>
+  </ul>
+
+  <div class="page-tag">IDÉE 09 · THEME PAGE</div>
+  <div class="page-num">— 22 —</div>
+</div>
+
+<!-- IDEA 10 -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 10</span>
+      <h2>Freelance Fiverr / Malt</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">8h / SEMAINE</span>
+        <span class="pill red">BUDGET : 0 €</span>
+        <span class="pill green">200–2500 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★★☆<small>MOYEN</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Tu vends une <em>compétence productisée</em> sur Fiverr, Malt, Upwork ou en direct. Exemples qui marchent en 2026 : édition vidéos courtes pour créateurs, ghost-writing LinkedIn, audit SEO, voice-over IA, prompts customs, intégration Make/Zapier.</p>
+
+  <h4>Plan 30 jours</h4>
+  <div class="step"><span class="n">1</span><h4>J1–J3 : Choisir UNE compétence.</h4><p>Pas "graphiste / motion / community / SEO". UNE. Sinon tu n'apparaitras dans aucune recherche.</p></div>
+  <div class="step"><span class="n">2</span><h4>J4–J7 : Profils tip-top.</h4><p>Fiverr (3 gigs minimum), Malt (profil complet), Insta pro. Portfolio même factice (3-5 cas).</p></div>
+  <div class="step"><span class="n">3</span><h4>J8–J14 : Sous-coter pour décrocher la 1ère mission.</h4><p>Tu vises 5 ventes en 14 jours à un prix bas (-50% du marché). C'est <b>l'investissement avis</b>.</p></div>
+  <div class="step"><span class="n">4</span><h4>J15–J30 : Monter les prix &amp; le DM outbound.</h4><p>Tu remontes progressivement. En parallèle, 20 DM/jour Insta vers des prospects cibles. Sans Fiverr, tu encaisses 100% au lieu de 80%.</p></div>
+
+  <h4>Réalité</h4>
+  <p>Fiverr/Malt prennent 20%. Compte. Mais valent leur com pour démarrer (audience captive). Une fois 10-15 avis 5★, tu peux migrer 70% de tes clients en direct.</p>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Casser les prix sans en faire <b>un investissement de validation</b> (= bloqué au tarif bas).</li>
+    <li>Pas de "package" — toujours 3 niveaux (basique / standard / premium) pour ancrer.</li>
+    <li>Livrer en silence — chaque livraison doit s'accompagner d'un Loom de 90s qui présente le travail.</li>
+  </ul>
+
+  <div class="page-tag">IDÉE 10 · FREELANCE</div>
+  <div class="page-num">— 23 —</div>
+</div>
+
+<!-- IDEA 11 -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 11</span>
+      <h2>Wrappers IA en no-code</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">10h / SEMAINE</span>
+        <span class="pill red">BUDGET : 30–80 €</span>
+        <span class="pill green">100–1500 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★★★<small>EXIGEANT</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Tu emballes une API IA (OpenAI, Anthropic, ElevenLabs, Replicate) dans une interface ultra-simple pour une niche. Exemples : "rédiger mes 7 mails de prospection en 1 clic", "générer 10 hooks TikTok pour mon produit", "transformer ma photo en avatar LinkedIn". Tu vends en abonnement (9–29 €/mois).</p>
+
+  <h4>Plan 30 jours</h4>
+  <div class="step"><span class="n">1</span><h4>J1–J5 : Identifier un workflow douloureux.</h4><p>Ne crée pas un "Yet Another ChatGPT". Crée le wrapper pour <em>une tâche précise</em> que les gens font mal aujourd'hui.</p></div>
+  <div class="step"><span class="n">2</span><h4>J6–J20 : Build no-code.</h4><p>Bubble, Softr, FlutterFlow + API OpenAI. Stripe Connect pour les paiements. Compte 60-100h sur cette phase au début.</p></div>
+  <div class="step"><span class="n">3</span><h4>J21–J30 : Lancement + 30 utilisateurs payants ciblés.</h4><p>Product Hunt, X, ProductLaunch FR, communautés Discord/Reddit de la niche.</p></div>
+
+  <h4>Économie</h4>
+  <p>Comptez 0.005 à 0.05 € de coût IA par utilisation. Si abonnement à 14 €/mois et utilisation moyenne 200x, ta marge est encore &gt; 80%. La vraie difficulté n'est pas la tech : c'est <b>l'acquisition</b>.</p>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Mettre 3 mois sur le produit avant le 1er utilisateur.</li>
+    <li>Ne pas mettre de garde-fou sur les coûts API (un user qui abuse = -100€).</li>
+    <li>Construire sans valider un payeur — interroge 10 personnes <em>avant</em> de coder.</li>
+  </ul>
+
+  <div class="page-tag">IDÉE 11 · WRAPPER IA</div>
+  <div class="page-num">— 24 —</div>
+</div>
+
+<!-- IDEA 12 -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 12</span>
+      <h2>Mini-cours vidéo à 27 €</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">8h / SEMAINE</span>
+        <span class="pill red">BUDGET : 0–50 €</span>
+        <span class="pill green">200–1800 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★★★<small>EXIGEANT</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Tu enregistres une formation courte (45-90 min, 6-12 vidéos) sur une compétence précise. Tu la vends à un prix <em>premier-cours-accessible</em> de 17 à 47 €. Le format "mini" est ton avantage : facile à finir pour l'élève, donc avis positifs.</p>
+
+  <h4>Plan 30 jours</h4>
+  <div class="step"><span class="n">1</span><h4>J1–J5 : Plan détaillé du cours.</h4><p>Promesse en 1 phrase. 8 modules. Chaque module = 1 résultat concret à la fin.</p></div>
+  <div class="step"><span class="n">2</span><h4>J6–J15 : Enregistrement.</h4><p>OBS Studio + micro à 50 €. Pas de pression sur la qualité ciné. Le contenu prime.</p></div>
+  <div class="step"><span class="n">3</span><h4>J16–J20 : Hébergement.</h4><p>Systeme.io (gratuit jusqu'à 2k contacts) ou Podia ou Teachable. Page de vente claire, prix barré (47 € → 27 € de lancement).</p></div>
+  <div class="step"><span class="n">4</span><h4>J21–J30 : Webinaire / Live de lancement.</h4><p>1 live sur Insta ou YouTube. Tu apprends gratuitement le 1er module, tu vends le reste à la fin. Conversion typique : 3-7%.</p></div>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Vouloir filmer comme un Youtuber pro = report sine die.</li>
+    <li>Ne pas faire d'événement de lancement (= 80% des ventes en moins).</li>
+    <li>Ne jamais relancer ta liste après le lancement.</li>
+  </ul>
+
+  <div class="page-tag">IDÉE 12 · MINI-COURS</div>
+  <div class="page-num">— 25 —</div>
+</div>
+
+<!-- IDEA 13 -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 13</span>
+      <h2>Drop-service</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">6h / SEMAINE</span>
+        <span class="pill red">BUDGET : 0–30 €</span>
+        <span class="pill green">150–1500 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★★☆<small>MOYEN</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Tu vends à des clients en France un service (montage vidéo, écriture SEO, voiceover, sous-titrage, traduction) que tu sous-traites à un freelance international moins cher. Exactement comme l'arbitrage de logos, mais sur des prestations récurrentes.</p>
+
+  <h4>Plan 30 jours</h4>
+  <div class="step"><span class="n">1</span><h4>J1–J3 : Choisir LA prestation.</h4><p>Cherche celle où l'écart prix France ↔ Fiverr est le plus grand. Le montage Reels est un classique.</p></div>
+  <div class="step"><span class="n">2</span><h4>J4–J7 : Recrute 1-2 prestataires fiables.</h4><p>Fiverr Pro, OnlineJobs.ph, ou Upwork. Test sur 1 mission avant tout deal client.</p></div>
+  <div class="step"><span class="n">3</span><h4>J8–J30 : Vendre 5 clients récurrents.</h4><p>Offre : 8 Reels/mois pour 399 €. Tu sous-traite à 80–150 €. Marge nette : 250 €/client. 5 clients = 1 250 €/mois récurrents.</p></div>
+
+  <h4>Le piège (et la solution)</h4>
+  <p>Si tu fais semblant d'être l'exécutant, ta crédibilité explose au premier pépin. Sois transparent : "je gère un studio de 3 monteurs". Tes clients s'en moquent — ils veulent la qualité et le délai.</p>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Pas de contrat client / pas de NDA prestataire (= cata garantie).</li>
+    <li>Marge trop faible (sous 40% tu travailles pour pas un rond).</li>
+    <li>Ne pas avoir de prestataire de secours (le tien tombe malade = tu perds le client).</li>
+  </ul>
+
+  <div class="page-tag">IDÉE 13 · DROP-SERVICE</div>
+  <div class="page-num">— 26 —</div>
+</div>
+
+<!-- IDEA 14 -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 14</span>
+      <h2>Presets photo &amp; LUT vidéo</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">3h / SEMAINE</span>
+        <span class="pill red">BUDGET : 0 €</span>
+        <span class="pill green">80–600 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★★☆<small>MOYEN</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Tu crées 5 à 15 presets Lightroom (photo) ou LUT (vidéo, DaVinci/CapCut) avec une signature visuelle reconnaissable. Tu les vends en pack à 9-29 € sur Sellfy, Gumroad ou ta propre boutique. C'est l'un des produits digitaux les plus "achat d'impulsion" du marché.</p>
+
+  <h4>Plan 30 jours</h4>
+  <div class="step"><span class="n">1</span><h4>J1–J4 : Crée un look identifiable.</h4><p>1 atmosphère : "Paris cinéma 90s", "Bali sunset", "Brooklyn moody". Tu fais 1 preset, tu déclines en 8-12 variations.</p></div>
+  <div class="step"><span class="n">2</span><h4>J5–J10 : Page de vente + démos avant/après.</h4><p>Le slider avant/après (Lightroom GIF) est l'outil de conversion n°1.</p></div>
+  <div class="step"><span class="n">3</span><h4>J11–J30 : Distribution Reels &amp; TikTok.</h4><p>Format : tu filmes ta retouche live, time-lapse. Tu mets le pack en bio. Marche surtout si tu as déjà 500+ abonnés photo.</p></div>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Vendre un pack <b>universel</b> "qui marche partout" (ne marche nulle part).</li>
+    <li>Ne pas tester sur 10 photos différentes avant de mettre en vente.</li>
+    <li>Présentations sans avant/après = pas de vente.</li>
+  </ul>
+
+  <div class="page-tag">IDÉE 14 · PRESETS</div>
+  <div class="page-num">— 27 —</div>
+</div>
+
+<!-- IDEA 15 -->
+<div class="page">
+  <div class="idea-header">
+    <div>
+      <span class="num">★ IDÉE · 15</span>
+      <h2>Audit payant Instagram / TikTok</h2>
+      <div class="tags" style="margin-top:3mm">
+        <span class="pill yellow">4h / SEMAINE</span>
+        <span class="pill red">BUDGET : 0 €</span>
+        <span class="pill green">100–900 € / 30J</span>
+      </div>
+    </div>
+    <div class="difficulty">★★☆<small>MOYEN</small></div>
+  </div>
+
+  <h4>Le concept</h4>
+  <p>Tu vends un audit personnalisé du compte d'un créateur ou d'une marque : 1 vidéo Loom de 15-25 min + 1 PDF résumé avec 10 recommandations actionnables. Prix : 49–149 €. Tu n'as pas besoin d'être influenceur — il faut juste savoir détecter ce qui ne marche pas.</p>
+
+  <h4>Plan 30 jours</h4>
+  <div class="step"><span class="n">1</span><h4>J1–J5 : Construis ton framework d'audit.</h4><p>10 critères : bio, hook, fréquence, format, hashtags, retention, sound, CTA, monétisation, niche. Pour chaque, une grille 0-3.</p></div>
+  <div class="step"><span class="n">2</span><h4>J6–J10 : 3 audits gratuits pour la preuve.</h4><p>Tu offres 3 audits gratuits sur Insta en story. Tu demandes 1 témoignage écrit + droit de partager des extraits.</p></div>
+  <div class="step"><span class="n">3</span><h4>J11–J30 : Mise en vente.</h4><p>Service via DM. Stripe / PayPal. Prix : 79 €. À 5 audits/semaine = ~340 €/sem.</p></div>
+
+  <h4>Le bonus : transformer en récurrent</h4>
+  <p>Tu proposes un "audit mensuel" à 49 €/mois. 10 clients = 490 €/mois en passif quasi. Beaucoup plus rentable que le one-shot.</p>
+
+  <h4>Erreurs à éviter</h4>
+  <ul class="cross">
+    <li>Donner 30 recommandations (= overdose) au lieu de 10 priorisées.</li>
+    <li>Faire du copier-coller entre audits (l'œil le voit).</li>
+    <li>Ne pas filmer ton écran (Loom est ce qui fait monter le prix perçu).</li>
+  </ul>
+
+  <div class="page-tag">IDÉE 15 · AUDIT</div>
+  <div class="page-num">— 28 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 29 — CHAPTER 03 — PROMPTS                    -->
+<!-- ================================================= -->
+<div class="page dark chapter-intro">
+  <div class="num-big">03</div>
+  <h1>30 prompts<br>ChatGPT.</h1>
+  <p class="desc">Idéation, copywriting, audit, SEO, structuration. Copie-colle. Remplace les <span style="color:var(--yellow)">[variables]</span>. Itère 2-3 fois pour le meilleur résultat.</p>
+  <div class="topics">
+    <span class="pill">IDÉATION</span>
+    <span class="pill">COPYWRITING</span>
+    <span class="pill">CONTENU SOCIAL</span>
+    <span class="pill">AUDIT</span>
+  </div>
+  <div class="page-tag">CH.03 · PROMPTS</div>
+  <div class="page-num">— 29 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PROMPTS PAGE 1                                     -->
+<!-- ================================================= -->
+<div class="page">
+  <span class="eyebrow">★ CH.03 · IDÉATION (1–8)</span>
+  <h2>Trouver une idée<br>qui peut vendre.</h2>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 01 — 50 micro-niches</span>
+Tu es un stratège marketing senior. Donne-moi 50 micro-niches B2C en France
+qui combinent ces 3 critères : (1) audience identifiable sur Instagram et TikTok,
+(2) prête à dépenser entre 10 et 50€ pour un produit digital, (3) faiblement
+couverte par la concurrence française actuelle. Pour chaque niche, écris : nom,
+audience cible, douleur principale, 1 idée de produit, fourchette de prix.
+Tableau markdown.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 02 — Validation rapide d'idée</span>
+J'ai l'idée business suivante : <span class="var">[décris ton idée en 3 phrases]</span>.
+Joue trois rôles successivement : (1) un investisseur sceptique qui pointe les
+3 plus gros risques, (2) un acheteur cible qui dit pourquoi il n'achèterait pas,
+(3) un opérateur expérimenté qui propose 2 pivots pour rendre l'idée plus solide.
+Conclus par un verdict en 1 phrase : GO / PIVOT / KILL.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 03 — 20 angles de contenu</span>
+Mon produit : <span class="var">[décris]</span>. Ma cible : <span class="var">[décris]</span>.
+Donne-moi 20 angles de contenu courts (TikTok / Reels) qui parleraient à cette cible
+SANS jamais mentionner mon produit directement. Format : hook (1 phrase) + corps
+(2 phrases) + CTA implicite. Mélange formats : histoire, comparaison, contre-intuitif,
+listicle, démonstration.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 04 — Détecter une douleur Reddit</span>
+Voici 20 titres de posts récents du subreddit <span class="var">[r/...]</span> :
+<span class="var">[colle les titres]</span>. Identifie les 5 douleurs récurrentes les plus
+intenses (signaux : verbes "haine", "marre", "comment je peux", "j'arrive pas").
+Pour chaque douleur, propose un produit digital à moins de 30€ qui la résoudrait
+en 1 weekend.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 05 — Audit de niche concurrentielle</span>
+Voici 5 concurrents qui visent la même niche que moi : <span class="var">[liste comptes /
+sites]</span>. Pour chacun, identifie : (a) leur USP en 1 phrase, (b) leur prix d'entrée,
+(c) leur point faible exploitable. Termine par 3 positionnements possibles pour moi
+qui ne soient PAS déjà occupés.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 06 — Trouver un avatar client précis</span>
+Mon produit cible <span class="var">[décris]</span>. Construis-moi l'avatar
+ultra-précis : prénom, âge, ville, métier, revenu mensuel, 3 frustrations
+quotidiennes, 3 envies inavouées, 2 comptes Insta qu'il suit, 1 magazine qu'il lit,
+le mot exact qu'il utiliserait pour décrire son problème. Ne sois pas vague.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 07 — De idée à roadmap 30 jours</span>
+Idée : <span class="var">[décris]</span>. Construis un plan détaillé sur 30 jours
+divisé en 4 phases de 7 jours. Chaque jour doit comporter UNE seule action concrète
+qui prend max 1h. À J30, le résultat attendu est : un produit en vente avec au
+moins 5 ventes réelles. Format : tableau jour | phase | action | outil.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 08 — Nommer une marque</span>
+Trouve-moi 20 noms de marque pour <span class="var">[décris]</span>. Contraintes :
+2-3 syllabes max, .com ou .fr probablement libre, qui n'évoque pas un cliché
+("Pro / Hub / Lab"), prononçable à voix haute par un Français. Donne pour
+chacun une mini-justification.</div>
+
+  <div class="page-tag">CH.03 · PROMPTS</div>
+  <div class="page-num">— 30 —</div>
+</div>
+
+<!-- PROMPTS PAGE 2 -->
+<div class="page">
+  <span class="eyebrow">★ CH.03 · COPYWRITING (9–18)</span>
+  <h2>Écrire pour vendre.</h2>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 09 — Page de vente complète</span>
+Écris une page de vente longue pour <span class="var">[produit]</span> qui vise
+<span class="var">[avatar]</span>. Structure : (1) headline qui choque, (2) sous-titre
+qui rassure, (3) 4 sections "tu te reconnais ?", (4) histoire d'origine de 200 mots,
+(5) liste des 7 bénéfices, (6) preuve sociale (laisse des [BLANCS]), (7) offre claire,
+(8) garantie, (9) FAQ 6 questions, (10) CTA répété. Ton : direct, sans bullshit.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 10 — 10 hooks TikTok</span>
+Produit : <span class="var">[décris]</span>. Donne 10 hooks pour les 2 premières
+secondes d'un TikTok. Chaque hook : 6 mots max, intrigue immédiate, sans clickbait
+naze. Précise le format visuel idéal qui va avec.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 11 — Mail de bienvenue qui convertit</span>
+Écris un mail de bienvenue après inscription à ma newsletter <span class="var">[thème]</span>.
+Contraintes : 150 mots max, ton conversationnel, raconte pourquoi j'ai lancé ça,
+donne 1 valeur immédiate (un tip concret), introduit ce qu'ils vont recevoir,
+finit par 1 question pour engager une réponse.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 12 — Bio Instagram qui claque</span>
+Compte Insta sur <span class="var">[thème]</span>. Audience : <span class="var">[avatar]</span>.
+Donne 5 versions de bio Insta : ligne 1 (qui je suis), ligne 2 (ce que je fais),
+ligne 3 (preuve sociale en 1 chiffre), ligne 4 (CTA + emoji discret). 150 caractères max
+TOTAL par version.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 13 — Description Gumroad qui vend</span>
+Mon ebook : <span class="var">[titre + 3 chapitres clés]</span>. Écris la description
+Gumroad parfaite : 1 phrase d'accroche, 3 puces "qu'est-ce que tu vas y trouver",
+3 puces "pour qui", 1 phrase "pour qui ce n'est PAS", 1 mini-garantie, 1 CTA.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 14 — DM outbound qui ne pue pas</span>
+J'envoie un DM Insta à <span class="var">[type de prospect]</span> pour proposer
+<span class="var">[service / produit]</span>. Écris 5 versions de DM qui : (1) commencent
+par un truc spécifique à leur compte (pas générique), (2) montrent que je connais
+leur douleur, (3) proposent une suite légère (loom, call, doc), (4) font max 4 lignes.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 15 — Réponse à objection</span>
+Mon prospect dit : "<span class="var">[copie le message]</span>". Écris 3 réponses
+empathiques mais qui retournent l'objection en argument. Pas de manipulation, juste
+de la logique honnête. 80 mots max chacune.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 16 — Thread X qui devient viral</span>
+Sujet : <span class="var">[ton expertise]</span>. Écris un thread X (10 tweets max)
+qui suit cette structure : tweet 1 = promesse forte + chiffre, tweets 2-9 = un point
+par tweet, max 280 char, format scannable, tweet 10 = récap + CTA (lien produit ou
+follow). Ton direct.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 17 — Caption Reels avec SEO interne</span>
+Ma vidéo : <span class="var">[décris en 1 phrase]</span>. Écris 3 captions Instagram :
+hook en 1 ligne (avant le "plus"), corps de 3 lignes, CTA à l'engagement, 5
+hashtags niche (pas générique). Inclus 1 mot-clé que mon avatar tape vraiment dans
+la barre de recherche Insta.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 18 — Reformuler le ton "Money Makerz"</span>
+Voici un texte : "<span class="var">[colle ton brouillon]</span>". Réécris-le avec
+le ton : direct, sans bullshit, phrases courtes, mots concrets, jamais d'adverbe inutile,
+1 chiffre par paragraphe minimum, 1 boutade autorisée. Coupe les superlatifs.</div>
+
+  <div class="page-tag">CH.03 · PROMPTS</div>
+  <div class="page-num">— 31 —</div>
+</div>
+
+<!-- PROMPTS PAGE 3 -->
+<div class="page">
+  <span class="eyebrow">★ CH.03 · AUDIT &amp; STRATÉGIE (19–30)</span>
+  <h2>Décider avec ChatGPT.</h2>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 19 — Audit de page de vente</span>
+Voici ma page de vente : <span class="var">[colle le texte]</span>. Note-la sur 10
+sur ces 7 critères : clarté de la promesse, force du hook, profondeur de la preuve,
+clarté de l'offre, gestion des objections, garantie, CTA. Pour chaque, donne la note
++ 1 action correctrice spécifique.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 20 — Audit de profil Insta</span>
+Voici les infos de mon profil Insta : nom, bio, 6 derniers posts, fréquence.
+<span class="var">[colle tout]</span>. Détecte les 3 incohérences majeures
+(visuelles, éditoriales, stratégiques). Pour chaque, propose 1 fix de moins de 30 min.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 21 — Plan de contenu 1 mois</span>
+Thème : <span class="var">[ta niche]</span>. Construis 12 idées de Reels pour le mois.
+Structure : 4 reels valeur (tips), 4 reels histoire (vécu, leçons), 2 reels produit
+(soft pitch), 2 reels controverse (prise de position). Pour chaque : hook, format,
+CTA implicite.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 22 — Décortiquer un compétiteur viral</span>
+Compte : <span class="var">[@nom]</span>. Voici 5 de ses derniers Reels viraux,
+décris ce que tu vois : <span class="var">[résume ou colle]</span>. Trouve les
+3 patterns récurrents : structure, type de hook, format vidéo. Donne-moi un brief
+pour reproduire le pattern <em>dans ma niche</em> sans plagier.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 23 — Pricing intelligent</span>
+Mon produit : <span class="var">[décris]</span>. Coût direct : <span class="var">[€]</span>.
+Cible : <span class="var">[avatar]</span>. Calcule 3 stratégies de pricing : (A)
+pénétration agressive, (B) valeur perçue, (C) anchor + offre du milieu. Pour chaque,
+donne prix conseillé + argumentaire + risque principal.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 24 — Construire une offre irrésistible</span>
+Mon produit "noyau" : <span class="var">[décris]</span>. Construis-moi l'offre
+"stacking" : noyau + 4 bonus (template, vidéo bonus, accès groupe, garantie).
+Justifie la valeur de chaque bonus. Calcule la valeur totale annoncée vs prix final.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 25 — Brief pour graphiste / monteur</span>
+Je veux que mon graphiste me crée <span class="var">[décris livrable]</span>.
+Écris-moi un brief structuré : contexte, objectif, livrable précis, contraintes,
+références visuelles à demander (3 mots-clés), deadline, format de livraison.
+Pas plus de 200 mots.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 26 — Email de relance panier abandonné</span>
+Quelqu'un a ajouté mon produit <span class="var">[X]</span> au panier mais n'a
+pas payé. Écris 3 emails : H+1 (rappel léger), J+1 (réassurance + témoignage),
+J+3 (offre incitative ou question ouverte). Ton conversationnel, jamais commercial
+lourd.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 27 — Plan d'upsell</span>
+Mon produit n°1 (porte d'entrée) : <span class="var">[X]</span> à <span class="var">[Y €]</span>.
+Conçois 2 niveaux d'upsell : (a) un produit middle à 47-97 € (qui complète), (b) un
+produit high à 297-497 € (qui scale). Décris le contenu et l'enchaînement marketing
+(quand le proposer).</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 28 — SEO d'une description Etsy / Gumroad</span>
+Mon produit : <span class="var">[décris]</span>. Écris : titre optimisé (60 char max,
+mot-clé principal en début), 13 tags Etsy pertinents, méta-description de 160 char.
+Cible la longue traîne, pas les mots-clés ultra-concurrentiels.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 29 — Diagnostic personnel après 30 jours</span>
+Voici mon journal de bord du mois sur le projet <span class="var">[X]</span> :
+<span class="var">[colle tes notes]</span>. Joue le rôle d'un coach business froid mais
+constructif. Diagnostique : 3 erreurs faites, 3 choses bien exécutées, 1 décision
+clé à prendre maintenant (doubler / pivoter / tuer). Donne tes raisons.</div>
+
+  <div class="prompt-box">
+<span class="lbl">★ Prompt 30 — Pitch one-liner</span>
+Mon projet : <span class="var">[décris en 50 mots]</span>. Donne-moi 10 pitchs
+"one-liner" différents pour quand on me demande "tu fais quoi ?". Contraintes :
+12 mots max, compréhensible par n'importe qui, finit par un truc concret (pas
+"on accompagne...").</div>
+
+  <div class="page-tag">CH.03 · PROMPTS</div>
+  <div class="page-num">— 32 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 33 — CHAPTER 04 — 10 ERREURS                 -->
+<!-- ================================================= -->
+<div class="page dark chapter-intro">
+  <div class="num-big">04</div>
+  <h1>Les 10 erreurs<br>fatales.</h1>
+  <p class="desc">Ce qui flingue ton premier euro avant même que tu ne l'aies vu. Lis. Note. Évite.</p>
+  <div class="topics">
+    <span class="pill">EXÉCUTION</span>
+    <span class="pill">MARKETING</span>
+    <span class="pill">PSYCHO</span>
+  </div>
+  <div class="page-tag">CH.04 · ERREURS</div>
+  <div class="page-num">— 33 —</div>
+</div>
+
+<!-- 10 ERREURS  -->
+<div class="page">
+  <span class="eyebrow">★ CH.04 · LES 10 ERREURS</span>
+  <h2>Ce qu'on a vu rater.</h2>
+
+  <h3>1. Sauter le test à 5 acheteurs.</h3>
+  <p>Tout le monde veut faire son lancement avec 50 inscrits payants. Vise <b>5</b>. C'est plus dur que ça en a l'air. Si tu ne peux pas convaincre 5 inconnus de te payer 9 €, tu ne convaincras pas 500.</p>
+
+  <h3>2. Construire 6 mois avant le 1<sup>er</sup> client.</h3>
+  <p>Le piège du "je le sortirai quand ce sera prêt". Ça ne le sera jamais. Mets un ugly first version en ligne en 7 jours. Vends-le. Améliore avec les retours réels.</p>
+
+  <h3>3. Confondre vues et clients.</h3>
+  <p>Une vidéo à 500k vues qui rapporte 12 € = un échec marketing. Toujours mesurer le <b>revenu par vue</b>, pas la vue. Plus brutal, plus juste.</p>
+
+  <h3>4. Ne pas demander la vente.</h3>
+  <p>80% des créateurs publient du contenu sans <em>jamais</em> dire clairement : "voilà mon produit, voilà le lien, achète". On a peur d'être lourd. Tu n'es pas lourd. Tu vends quelque chose d'utile. Demande.</p>
+
+  <h3>5. Vendre à des fans de toi, pas à des acheteurs.</h3>
+  <p>Tes potes likent. Ils n'achètent pas. Cible des inconnus qui ont le problème, pas des proches qui te soutiennent.</p>
+
+  <h3>6. Choisir un produit "passionné" non rentable.</h3>
+  <p>"J'adore les bougies artisanales" → marché saturé, marges nulles, logistique infernale. La passion ne paye pas les factures. Croise toujours passion × marché × marges.</p>
+
+  <h3>7. Sur-spécifier le produit, sous-spécifier le marketing.</h3>
+  <p>Tu passes 100h sur ton ebook et 2h sur ta page de vente. Inverse exactement les proportions à partir du jour 1.</p>
+
+  <h3>8. Ignorer la fiscalité jusqu'au premier contrôle.</h3>
+  <p>Pas glamour mais vital. Auto-entrepreneur dès le 1<sup>er</sup> euro (formalité 15 min en ligne). Sépare un compte. C'est tout. Voir page suivante.</p>
+
+  <h3>9. Tout poster sur 5 plateformes en même temps.</h3>
+  <p>Tu seras moyen partout, fort nulle part. <b>Une seule plateforme</b> pendant 90 jours. Ensuite tu dupliques.</p>
+
+  <h3>10. Confondre activité et progrès.</h3>
+  <p>Refaire son logo. Choisir 3 polices. Acheter un domaine premium. Setup un CRM. <em>Ce n'est pas du travail.</em> La vente fait avancer. Le reste, c'est de la procrastination déguisée.</p>
+
+  <div class="page-tag">CH.04 · ERREURS</div>
+  <div class="page-num">— 34 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 35 — CHAPTER 05 — JURIDIQUE                  -->
+<!-- ================================================= -->
+<div class="page">
+  <span class="eyebrow">★ CH.05 · JURIDIQUE &amp; FISCAL</span>
+  <h1>Checklist 100%<br>réglo, en 1 page.</h1>
+
+  <p class="lead">Pas un cours de droit. Le strict nécessaire pour démarrer en France sans risque. À recroiser avec un expert-comptable au-delà de 30k€/an.</p>
+
+  <h3>1. Crée ton auto-entreprise</h3>
+  <ul class="check">
+    <li>Sur <b>autoentrepreneur.urssaf.fr</b> — 15 minutes, gratuit.</li>
+    <li>Activité : "Vente de prestations de services" (BNC) pour la plupart des idées digitales. "Achat-vente" (BIC) si tu fais du POD physique.</li>
+    <li>Tu reçois un <b>SIRET</b> en 3-15 jours.</li>
+  </ul>
+
+  <h3>2. Sépare ton compte (obligatoire dès 10k€/an)</h3>
+  <ul class="check">
+    <li>Compte pro pas obligatoire = simple compte courant dédié.</li>
+    <li>Recommandé : <b>Qonto</b>, <b>Shine</b>, ou simple Boursorama "perso 2".</li>
+    <li>Tu ne mélanges plus jamais avec ton compte perso. Jamais.</li>
+  </ul>
+
+  <h3>3. Encaisse via Stripe / Gumroad / Systeme.io</h3>
+  <ul class="check">
+    <li>Stripe direct : 1.5% + 0.25 € par transaction (le mieux).</li>
+    <li>Gumroad : 10% — pratique mais cher en volume.</li>
+    <li>PayPal : 3.4% + 0.35 €. Évite si possible (frais énormes).</li>
+  </ul>
+
+  <h3>4. Facture chaque vente (obligatoire)</h3>
+  <ul class="check">
+    <li>Numéro de facture séquentiel.</li>
+    <li>Mentions : nom, SIRET, adresse, date, montant, "TVA non applicable, art. 293 B du CGI" si en franchise.</li>
+    <li>Solutions : <b>Tiime</b>, <b>Indy</b>, <b>Henrri</b> (tous gratuits jusqu'à un certain seuil).</li>
+  </ul>
+
+  <h3>5. Déclare ton CA mensuellement ou trimestriellement</h3>
+  <ul class="check">
+    <li>Sur <b>autoentrepreneur.urssaf.fr</b>.</li>
+    <li>Cotisations BNC services : <b>21,2%</b> du CA (incluant 1,1% versement libératoire si tu optes).</li>
+    <li>Cotisations BIC vente : <b>12,3%</b> du CA.</li>
+  </ul>
+
+  <h3>6. Surveille les seuils 2026</h3>
+  <ul class="check">
+    <li>Franchise TVA services : <b>37 500 €</b>.</li>
+    <li>Plafond auto-entrepreneur services : <b>77 700 €</b>.</li>
+    <li>Au-delà : passe en EURL ou SASU avec un expert-comptable.</li>
+  </ul>
+
+  <div class="callout">
+    <h4>★ Conseil de l'éditeur</h4>
+    <p>Ne sois pas le mec qui fait 25k€ en noir parce que "c'est compliqué". 15 minutes de setup t'évitent un redressement violent. Et tu peux déduire tes outils (Notion, Canva, Adobe...) <b>uniquement</b> si tu es en réel — pas en micro-BNC. Penser à ça à 30k€/an.</p>
+  </div>
+
+  <div class="page-tag">CH.05 · JURIDIQUE</div>
+  <div class="page-num">— 35 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 36 — RESOURCES                               -->
+<!-- ================================================= -->
+<div class="page">
+  <span class="eyebrow">★ CH.06 · RESSOURCES</span>
+  <h1>La boîte à outils.</h1>
+
+  <p class="lead">Tout ce qu'on utilise vraiment chez Money Makerz. Pas de pub déguisée — si on cite un outil, c'est qu'on l'a payé / utilisé.</p>
+
+  <div class="two-col">
+    <div>
+      <h4>★ CONTENU &amp; DESIGN</h4>
+      <ul class="check">
+        <li><b>Canva Pro</b> — visuels, ebooks, mockups (12 €/mois)</li>
+        <li><b>CapCut</b> — montage Reels et TikTok (gratuit)</li>
+        <li><b>Notion</b> — planification, templates (gratuit perso)</li>
+        <li><b>Figma</b> — design plus avancé (gratuit)</li>
+        <li><b>Loom</b> — vidéos perso et audits (gratuit / 12 €/mois)</li>
+      </ul>
+
+      <h4>★ VENTE &amp; PAIEMENT</h4>
+      <ul class="check">
+        <li><b>Gumroad</b> — ebooks, templates (10% par vente)</li>
+        <li><b>Stan.store</b> — link-in-bio + ventes (variable)</li>
+        <li><b>Systeme.io</b> — funnels, cours (gratuit jusqu'à 2k contacts)</li>
+        <li><b>Stripe</b> — paiements directs (1,5%+0,25€)</li>
+        <li><b>Lemon Squeezy</b> — alt. Gumroad (5%+0,50€)</li>
+      </ul>
+
+      <h4>★ EMAIL &amp; NEWSLETTER</h4>
+      <ul class="check">
+        <li><b>beehiiv</b> — newsletter scalable (gratuit jusqu'à 2,5k)</li>
+        <li><b>MailerLite</b> — alt. emails marketing (gratuit jusqu'à 1k)</li>
+        <li><b>Substack</b> — newsletter rapide (10% sur paid)</li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>★ IA &amp; AUTOMATISATION</h4>
+      <ul class="check">
+        <li><b>ChatGPT Plus</b> — idéation, copywriting (20 €/mois)</li>
+        <li><b>Claude</b> — analyse longue, structuration</li>
+        <li><b>Midjourney</b> — visuels (10 €/mois)</li>
+        <li><b>ElevenLabs</b> — voix off vidéo (5–22 €/mois)</li>
+        <li><b>Make / Zapier</b> — automatisations no-code</li>
+      </ul>
+
+      <h4>★ ANALYTIQUE &amp; SUIVI</h4>
+      <ul class="check">
+        <li><b>Not by AI</b> — tracking simple de revenus</li>
+        <li><b>Google Sheets</b> — tracker DIY (gratuit)</li>
+        <li><b>Plausible</b> — analytics web léger (9 €/mois)</li>
+      </ul>
+
+      <h4>★ ADMIN &amp; FACTURATION</h4>
+      <ul class="check">
+        <li><b>Tiime</b> — facture + compta (gratuit / 17 €/mois)</li>
+        <li><b>Indy</b> — auto-entrepreneur complet (12 €/mois)</li>
+        <li><b>Qonto</b> — compte pro (9–25 €/mois)</li>
+        <li><b>Shine</b> — alt. Qonto (8–25 €/mois)</li>
+      </ul>
+
+      <h4>★ COMMUNAUTÉS À SUIVRE</h4>
+      <ul class="check">
+        <li><b>Indie Hackers</b> (en anglais, makers global)</li>
+        <li><b>r/SideProject</b> (Reddit)</li>
+        <li><b>Discord "Indie French"</b> (français)</li>
+        <li><b>X / Twitter : #buildinpublic</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page-tag">CH.06 · RESSOURCES</div>
+  <div class="page-num">— 36 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 37 — CONCLUSION                              -->
+<!-- ================================================= -->
+<div class="page">
+  <span class="eyebrow">★ CONCLUSION</span>
+  <h1>Maintenant,<br>c'est à toi.</h1>
+
+  <p class="lead">Tu as lu 36 pages. Tu connais 15 idées chiffrées, 30 prompts, 10 erreurs, la checklist juridique. C'est plus que 95% des gens qui pensent au business en ligne.</p>
+
+  <p>Mais lire ne fait pas vendre. La seule chose qui compte maintenant, c'est ce que tu vas faire dans les 7 prochains jours.</p>
+
+  <h3>Ton plan pour les 7 prochains jours</h3>
+
+  <div class="step"><span class="n">1</span><h4>Aujourd'hui — choisis UNE idée.</h4><p>Ferme ce guide. Sans le rouvrir. Note sur un papier : l'idée que tu choisis. Pourquoi en 1 phrase. Combien d'heures par semaine tu y donneras.</p></div>
+
+  <div class="step"><span class="n">2</span><h4>Dans 3 jours — fais ton J1 du plan.</h4><p>Pas de prep. Tu suis le plan jour par jour comme un protocole. Sans broder. Sans optimiser.</p></div>
+
+  <div class="step"><span class="n">3</span><h4>Dans 7 jours — partage publiquement.</h4><p>Sur Insta, X, TikTok ou même WhatsApp à 3 amis. Annonce ton défi 30 jours. La déclaration publique multiplie tes chances par 3.</p></div>
+
+  <div class="step"><span class="n">4</span><h4>Dans 30 jours — reviens nous voir.</h4><p>Tag <b>@money.makerz</b> sur Insta avec tes résultats (bons ou mauvais). On reposte les meilleurs cas dans le prochain ebook. Tu deviens preuve, pour le suivant.</p></div>
+
+  <div class="callout">
+    <h4>★ La promesse du retour</h4>
+    <p>Si tu fais le J1–J30 d'une des 15 idées <b>sérieusement</b> et que tu ne génères pas 1 euro, écris-nous en DM. On te rembourse les 7 €. Et on cherche avec toi <em>pourquoi</em>. Ça nous intéresse autant que tes succès.</p>
+  </div>
+
+  <div class="quote-card">
+    <p>De l'idée aux revenus. Ce n'est pas un slogan. C'est un protocole. Tu l'as maintenant.</p>
+    <div class="who">— MONEY MAKERZ · ÉDITION 01</div>
+  </div>
+
+  <div class="page-tag">CONCLUSION</div>
+  <div class="page-num">— 37 —</div>
+</div>
+
+<!-- ================================================= -->
+<!-- PAGE 38 — BACK COVER                              -->
+<!-- ================================================= -->
+<div class="page dark" style="display:flex;flex-direction:column;justify-content:space-between;padding:25mm 22mm">
+  <div>
+    <div class="cover-mark" style="margin-bottom:14mm">MONEY<br>MAKERZ</div>
+    <h1 style="font-size:48pt;color:var(--white);line-height:1">"Un projet concret,<br>mesurable et scalable,<br>qui transforme du<br>contenu en valeur,<br>et des idées en<br><span style="color:var(--yellow)">revenus.</span>"</h1>
+  </div>
+
+  <div>
+    <div style="border-top:1.5pt dashed rgba(255,255,255,.3);padding-top:8mm;margin-bottom:8mm">
+      <p style="color:var(--white);font-size:11pt;opacity:.9;max-width:130mm">
+      <b style="color:var(--yellow)">Money Makerz</b> est un collectif français qui teste,
+      documente et partage les business digitaux qui marchent vraiment. Chaque idée
+      publiée dans ce guide a été expérimentée. Aucune n'a été inventée.
+      </p>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;align-items:flex-end">
+      <div>
+        <p style="font-family:var(--font-mono);font-size:9pt;letter-spacing:2pt;color:var(--yellow);margin-bottom:2mm">— SUIVRE LE LABO</p>
+        <p style="font-size:12pt;color:var(--white);font-weight:700">@money.makerz</p>
+        <p style="font-size:10pt;color:var(--white);opacity:.7">Instagram · TikTok · Newsletter</p>
+      </div>
+      <div style="text-align:right">
+        <p style="font-family:var(--font-mono);font-size:9pt;letter-spacing:2pt;color:var(--yellow);margin-bottom:2mm">— ÉDITION</p>
+        <p style="font-family:var(--font-display);font-size:24pt;color:var(--white)">01 · 7 €</p>
+        <p style="font-size:9pt;color:var(--white);opacity:.6;font-family:var(--font-mono)">v1.0 · MAI 2026 · FR</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute;top:35%;right:-20pt;transform:rotate(35deg);background:var(--red);color:var(--white);padding:5pt 40pt;font-family:var(--font-display);font-size:11pt;letter-spacing:3pt">★ ED.01 · LANCEMENT ★</div>
+
+  <div class="page-tag" style="color:rgba(255,255,255,.5)">DOS · ED.01</div>
+  <div class="page-num">— FIN —</div>
+</div>
+
+</body>
+</html>
