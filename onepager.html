@@ -131,7 +131,17 @@ html,body{font-family:var(--font-body);line-height:1.5;color:var(--white);backgr
   padding:4mm;position:relative;
   display:flex;gap:3mm;align-items:center;
   box-shadow:3mm 3mm 0 var(--red);
+  text-decoration:none;
+  transition:transform .15s ease, box-shadow .15s ease;
+  cursor:pointer;
 }
+.card:hover{
+  transform:translate(-1mm,-1mm);
+  box-shadow:4mm 4mm 0 var(--red);
+}
+.card.yellow-shadow:hover{box-shadow:4mm 4mm 0 var(--yellow)}
+.card.green-shadow:hover{box-shadow:4mm 4mm 0 var(--green)}
+.card.navy-shadow:hover{box-shadow:4mm 4mm 0 var(--navy-800)}
 .card.yellow-shadow{box-shadow:3mm 3mm 0 var(--yellow)}
 .card.green-shadow{box-shadow:3mm 3mm 0 var(--green)}
 .card.navy-shadow{box-shadow:3mm 3mm 0 var(--navy-800)}
@@ -252,7 +262,7 @@ html,body{font-family:var(--font-body);line-height:1.5;color:var(--white);backgr
   <!-- CARDS GRID -->
   <div class="cards">
 
-    <div class="card red-tape">
+    <a href="https://money-makerz.vercel.app/pitch" target="_blank" rel="noopener" class="card red-tape">
       <span class="tape">★ LE PITCH · 10 MIN</span>
       <img src="assets/qr-pitch.png" alt="QR code pitch" class="qr">
       <div class="info">
@@ -261,9 +271,9 @@ html,body{font-family:var(--font-body);line-height:1.5;color:var(--white);backgr
         <p>13 slides interactives · timer 10 min intégré · notes du présentateur.</p>
         <div class="url">money-makerz<br>.vercel.app/pitch</div>
       </div>
-    </div>
+    </a>
 
-    <div class="card yellow-shadow">
+    <a href="https://money-makerz.vercel.app/" target="_blank" rel="noopener" class="card yellow-shadow">
       <span class="tape">★ LE SITE</span>
       <img src="assets/qr-site.png" alt="QR code site" class="qr">
       <div class="info">
@@ -272,9 +282,9 @@ html,body{font-family:var(--font-body);line-height:1.5;color:var(--white);backgr
         <p>La landing page du projet. Manifeste, 2 piliers, méthode, équipe.</p>
         <div class="url">money-makerz<br>.vercel.app</div>
       </div>
-    </div>
+    </a>
 
-    <div class="card green-shadow green-tape">
+    <a href="https://money-makerz.vercel.app/ebook.pdf" target="_blank" rel="noopener" class="card green-shadow green-tape">
       <span class="tape">★ L'EBOOK · 80 PAGES</span>
       <img src="assets/qr-ebook.png" alt="QR code ebook" class="qr">
       <div class="info">
@@ -283,9 +293,9 @@ html,body{font-family:var(--font-body);line-height:1.5;color:var(--white);backgr
         <p>15 idées de business testées · 30 prompts IA · check juridique FR.</p>
         <div class="url">money-makerz<br>.vercel.app/ebook.pdf</div>
       </div>
-    </div>
+    </a>
 
-    <div class="card navy-shadow dark-tape">
+    <a href="https://money-makerz.vercel.app/pitch-script.pdf" target="_blank" rel="noopener" class="card navy-shadow dark-tape">
       <span class="tape">★ LE SCRIPT</span>
       <img src="assets/qr-script.png" alt="QR code script" class="qr">
       <div class="info">
@@ -294,7 +304,7 @@ html,body{font-family:var(--font-body);line-height:1.5;color:var(--white);backgr
         <p>Le texte exact du pitch · slide par slide · pour transparence totale.</p>
         <div class="url">money-makerz<br>.vercel.app/pitch-script.pdf</div>
       </div>
-    </div>
+    </a>
 
   </div>
 
