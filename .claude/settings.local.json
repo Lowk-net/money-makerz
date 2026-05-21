@@ -9,7 +9,8 @@
       "PowerShell(Get-Content \"$env:TEMP\\\\claude\\\\C--Users-laure-OneDrive-Desktop-Money-Maker\\\\1f93c5c5-db8c-4edd-8ff7-941dea306a4a\\\\tasks\\\\bzob9kwyt.output\" -Tail 30 -ErrorAction SilentlyContinue)",
       "PowerShell(winget install GitHub.cli --silent --accept-source-agreements --accept-package-agreements 2>&1)",
       "PowerShell(Get-ChildItem \"C:\\\\Users\\\\laure\\\\OneDrive\\\\Desktop\\\\Money Maker\" -Directory | Select-Object Name; \"\"; \"--- Raw ressources for pitch ---\"; Get-ChildItem \"C:\\\\Users\\\\laure\\\\OneDrive\\\\Desktop\\\\Money Maker\\\\Raw ressources for pitch\" -Recurse -ErrorAction SilentlyContinue | Select-Object FullName, @{N='Size';E={\"{0:N0} KB\" -f \\($_.Length/1KB\\)}} | Format-Table -AutoSize)",
-      "Bash(ffmpeg -version)"
+      "Bash(ffmpeg -version)",
+      "PowerShell($env:PATH += \";C:\\\\Program Files\\\\Git\\\\cmd;C:\\\\Program Files\\\\GitHub CLI\"; Set-Location \"C:\\\\Users\\\\laure\\\\OneDrive\\\\Desktop\\\\Money Maker\"; git add . 2>&1 | Select-Object -Last 3; git -c user.email=\"hello@money-makerz.fr\" -c user.name=\"Money Makerz\" commit -m \"polish: 4 micro-fixes \\(slide 1 reformul, IA example, slide 10 bridge, pricing %\\), embed Google Fonts locally for offline robustness, fix print color/animation bug on slide 1\" 2>&1 | Select-Object -Last 5; git push 2>&1 | Select-Object -Last 3)"
     ]
   }
 }

@@ -4,9 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Money Makerz — Pitch YDays · 10 min</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/fonts/v27__1Ptgg87LROyAm3K9-C8QSw.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/fonts.css">
 <style>
 :root{
   --navy-900:#0B2444;
@@ -358,9 +357,10 @@ ul.cross li::before{
 .pay-card h6{font-family:var(--font-display);font-size:13px;letter-spacing:1px;margin-bottom:1px}
 .pay-card p{font-size:11px;opacity:.85;line-height:1.3}
 .pay-card .badge-innov{
-  position:absolute;top:-7px;right:8px;
-  background:var(--red);color:var(--white);padding:2px 7px;
-  font-family:var(--font-display);font-size:8px;letter-spacing:1.5px;border-radius:20px;
+  position:absolute;top:-10px;right:10px;
+  background:var(--red);color:var(--white);padding:4px 12px;
+  font-family:var(--font-display);font-size:11px;letter-spacing:2px;border-radius:20px;
+  box-shadow:2px 2px 0 var(--ink);transform:rotate(2deg);
 }
 
 /* Scene caption boxes */
@@ -389,9 +389,10 @@ ul.cross li::before{
 
 @media print{
   @page{size:A4 landscape;margin:0}
-  html,body{background:#fff;overflow:visible;height:auto}
+  html,body{background:#fff;overflow:visible;height:auto;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  *{-webkit-print-color-adjust:exact !important;print-color-adjust:exact !important}
   .deck{position:static;display:block}
-  .slide{display:flex !important;position:relative;width:100%;height:100vh;page-break-after:always;animation:none}
+  .slide{display:flex !important;position:relative;width:100%;height:100vh;page-break-after:always;animation:none !important;opacity:1 !important;transform:none !important}
   .progress,.hud,.timer,.notes-panel{display:none !important}
 }
 </style>
@@ -420,8 +421,8 @@ On va vous raconter, en 10 minutes, pourquoi on s'est plantés — et ce que cet
     <h1 style="font-size:90px;line-height:.9"><span class="yellow">95%</span> des business<br>en ligne <span class="struck">échouent.</span></h1>
     <div class="callout" style="margin-top:26px;background:var(--navy-800);max-width:880px;padding:18px 26px">
       <p style="font-size:21px;color:#fff;line-height:1.4">
-        <b style="color:var(--yellow)">Money Makerz</b> veut <b>pallier ce problème</b><br>
-        et donner les clés pour réussir un business digital.
+        <b style="color:var(--yellow)">Money Makerz</b> s'est lancé pour <b>pallier ce problème</b>.<br>
+        Voici ce qu'on a vraiment appris en essayant.
       </p>
     </div>
     <p style="margin-top:22px;font-size:18px;opacity:.85;max-width:780px"><b style="color:var(--yellow)">7 étudiants</b> · une équipe en veille continue · <b>FR · 2026</b></p>
@@ -527,7 +528,7 @@ L'IA s'est intégrée d'elle-même dans nos workflows. C'est devenu logique.
         </ul>
         <div class="callout yellow-shadow" style="margin-top:14px;padding:14px 18px">
           <h4 style="color:var(--yellow);font-size:14px;margin-bottom:5px">★ L'IA, OUTIL LOGIQUE</h4>
-          <p style="font-size:15px;color:#fff;line-height:1.4">L'IA s'est intégrée de plus en plus naturellement dans notre projet : veille accélérée, génération de prompts, structuration de contenu. <b style="color:var(--yellow)">Pas un gadget — un levier.</b></p>
+          <p style="font-size:15px;color:#fff;line-height:1.4">L'IA s'est intégrée naturellement : veille accélérée, structuration de contenu. <b style="color:var(--yellow)">Exemple :</b> les 30 prompts de l'ebook générés et triés en 2h au lieu de 2 semaines.</p>
         </div>
         <div style="margin-top:14px">
           <div class="group-row" style="justify-content:flex-start;gap:5px;margin:0">
@@ -768,8 +769,8 @@ Sans elle, on est sept personnes avec des compétences. Avec elle, on est un col
       <div class="skills-col human">
         <h5>♡ COMPÉTENCES HUMAINES & DE GROUPE</h5>
         <ul>
-          <li><b>Se parler honnêtement</b> quand tout casse</li>
-          <li><b>Reconnaître ses limites</b> individuelles</li>
+          <li><b>Se parler honnêtement</b> quand tout casse <span style="opacity:.7;font-size:12px">(la nuit du ban)</span></li>
+          <li><b>Poser une limite éthique commune</b> <span style="opacity:.7;font-size:12px">(le choix d'arrêter le contenu IA)</span></li>
           <li><b>Distribuer les rôles</b> selon les vraies envies, pas les CV</li>
           <li><b>Décider à 7</b> quand il faut couper une voie</li>
           <li><b>Garder le lien</b> quand le projet vacille</li>
@@ -843,7 +844,9 @@ C'est ce qui nous a permis de monter deux nouvelles startups depuis : AI Need, a
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px">
+    <p style="text-align:center;margin-top:14px;font-size:18px"><span class="hand">→ une fois la leçon comprise, on a su construire ce qu'il fallait :</span></p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px">
       <div class="pay-card" style="padding:12px 16px">
         <div class="pay-icon" style="background:var(--yellow)">🤖</div>
         <div>
@@ -926,9 +929,9 @@ Notre vraie innovation, c'est en bas : on peut être payé *au pourcentage des l
         <div><h6 style="color:#fff">AU PROJET</h6><p style="color:#fff">Forfait fixe par livrable · facturation classique</p></div>
       </div>
       <div class="pay-card green" style="position:relative">
-        <span class="badge-innov">★ INNOVATION</span>
+        <span class="badge-innov">★ RARE EN FRANCE</span>
         <div class="pay-icon">📈</div>
-        <div><h6 style="color:#fff">% SUR LES LEADS APPORTÉS</h6><p style="color:#fff">Performance · on ne gagne que si vous gagnez</p></div>
+        <div><h6 style="color:#fff;font-size:16px">% SUR LES LEADS APPORTÉS</h6><p style="color:#fff"><b style="color:var(--green)">Si on ne livre pas, on ne gagne pas.</b> Performance pure.</p></div>
       </div>
     </div>
   </div>
